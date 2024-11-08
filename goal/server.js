@@ -51,11 +51,13 @@
 
 // app.listen(80);
 
-
 // const express = require("express");
 // const bodyParser = require("body-parser");
 // const app = express();
-// let goals = [{ goal: "Học Docker!", result: "Để biết DevOps!" }];
+
+// let goals = {
+//   "Học Docker!": ["Để biết DevOps!"],
+// };
 
 // app.use(
 //   bodyParser.urlencoded({
@@ -65,14 +67,14 @@
 // app.use(express.static("public"));
 
 // app.get("/", (req, res) => {
-//   let goalsHtml = goals
+//   let goalsHtml = Object.keys(goals)
 //     .map(
-//       (g) => `
+//       (goal) => `
 //     <section>
 //       <h2>Mục tiêu</h2>
-//       <h3>${g.goal}</h3>
+//       <h3>${goal}</h3>
 //       <h2>Kết quả</h2>
-//       <h3>${g.result}</h3>
+//       <h3>${goals[goal].join(", ")}</h3>
 //     </section>
 //   `
 //     )
@@ -102,11 +104,14 @@
 // });
 
 // app.post("/store-goal", (req, res) => {
-//   const newGoal = {
-//     goal: req.body.goal,
-//     result: req.body.result,
-//   };
-//   goals.push(newGoal);
+//   const enteredGoal = req.body.goal;
+//   const enteredResult = req.body.result;
+
+//   if (!goals[enteredGoal]) {
+//     goals[enteredGoal] = [];
+//   }
+//   goals[enteredGoal].push(enteredResult);
+
 //   res.redirect("/");
 // });
 
@@ -116,9 +121,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
-let goals = {
-  "Học Docker!": ["Để biết DevOps!"],
-};
+let userGoal = "Học Docker!";
+let userResult = ["Để biết DevOps!"];
 
 app.use(
   bodyParser.urlencoded({
@@ -128,18 +132,14 @@ app.use(
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  let goalsHtml = Object.keys(goals)
-    .map(
-      (goal) => `
+  let goalsHtml = `
     <section>
       <h2>Mục tiêu</h2>
-      <h3>${goal}</h3>
+      <h3>${userGoal}</h3>
       <h2>Kết quả</h2>
-      <h3>${goals[goal].join(", ")}</h3>
+      <h3>${userResult.join(", ")}</h3>
     </section>
-  `
-    )
-    .join("");
+  `;
 
   res.send(`
     <html>
@@ -151,7 +151,7 @@ app.get("/", (req, res) => {
         <form action="/store-goal" method="POST">
           <div class="form-control">
             <label>Mục tiêu</label>
-            <input type="text" name="goal" placeholder="Nhập mục tiêu">
+            <input type="text" name="goal" placeholder="${userGoal}">
           </div>
           <div class="form-control">
             <label>Kết quả</label>
@@ -168,10 +168,12 @@ app.post("/store-goal", (req, res) => {
   const enteredGoal = req.body.goal;
   const enteredResult = req.body.result;
 
-  if (!goals[enteredGoal]) {
-    goals[enteredGoal] = [];
+  if (enteredGoal === userGoal) {
+    userResult.push(enteredResult);
+  } else {
+    userGoal = enteredGoal;
+    userResult = [enteredResult];
   }
-  goals[enteredGoal].push(enteredResult);
 
   res.redirect("/");
 });
