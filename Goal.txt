@@ -136,6 +136,24 @@ DevOps
 Docker
 docker commands
 ^Ccontext canceled
+lehieu@Les-MacBook-Pro goal % docker logs -f goal-app
+DevOps
+Docker
+docker commands
+^Ccontext canceled
+lehieu@Les-MacBook-Pro goal % docker logs -f goal-app
+DevOps
+Docker
+docker commands
+^Ccontext canceled
+lehieu@Les-MacBook-Pro goal % docker start -a goal-app
+DevOps
+Docker
+docker commands
+lehieu@Les-MacBook-Pro goal % docker start -a goal-app
+DevOps
+Docker
+docker commands
 lehieu@Les-MacBook-Pro goal % docker start -a goal-app
 DevOps
 Docker
