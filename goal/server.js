@@ -121,8 +121,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
-let userGoal = "Học Docker!";
-let userResult = ["Để biết DevOps!"];
+let goals = {
+  "Học Docker!": ["Để biết DevOps!"],
+};
 
 app.use(
   bodyParser.urlencoded({
@@ -132,14 +133,18 @@ app.use(
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  let goalsHtml = `
+  let goalsHtml = Object.keys(goals)
+    .map(
+      (goal) => `
     <section>
       <h2>Mục tiêu</h2>
-      <h3>${userGoal}</h3>
+      <h3>${goal}</h3>
       <h2>Kết quả</h2>
-      <h3>${userResult.join(", ")}</h3>
+      <h3>${goals[goal].join(", ")}</h3>
     </section>
-  `;
+  `
+    )
+    .join("");
 
   res.send(`
     <html>
@@ -151,7 +156,7 @@ app.get("/", (req, res) => {
         <form action="/store-goal" method="POST">
           <div class="form-control">
             <label>Mục tiêu</label>
-            <input type="text" name="goal" placeholder="${userGoal}">
+            <input type="text" name="goal" placeholder="Nhập mục tiêu">
           </div>
           <div class="form-control">
             <label>Kết quả</label>
@@ -168,12 +173,25 @@ app.post("/store-goal", (req, res) => {
   const enteredGoal = req.body.goal;
   const enteredResult = req.body.result;
 
-  if (enteredGoal === userGoal) {
-    userResult.push(enteredResult);
-  } else {
-    userGoal = enteredGoal;
-    userResult = [enteredResult];
+  if (!enteredGoal) {
+    res.send(`
+      <html>
+        <head>
+          <script>
+            alert("You have not set a goal");
+            window.location.href = "/";
+          </script>
+        </head>
+        <body></body>
+      </html>
+    `);
+    return;
   }
+
+  if (!goals[enteredGoal]) {
+    goals[enteredGoal] = [];
+  }
+  goals[enteredGoal].push(enteredResult);
 
   res.redirect("/");
 });
