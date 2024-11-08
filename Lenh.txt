@@ -1,0 +1,7 @@
+lehieu@192 Projects % mkdir docker
+lehieu@192 Projects % cd docker
+lehieu@192 docker % docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@192 docker % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@192 docker % 
