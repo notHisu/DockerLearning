@@ -1143,4 +1143,256 @@ Error response from daemon: No such image: ago:latest
 Error response from daemon: invalid reference format: repository name (library/865MB) must be lowercase
 lehieu@Les-MacBook-Pro docker % docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-lehieu@Les-MacBook-Pro docker %
+lehieu@Les-MacBook-Pro docker % mkdir LeTrungHoaHieu-TH4
+lehieu@Les-MacBook-Pro docker % cd LeTrungHoaHieu-TH4
+lehieu@Les-MacBook-Pro LeTrungHoaHieu-TH4 % touch NotePython.txt
+lehieu@Les-MacBook-Pro LeTrungHoaHieu-TH4 % vi NotePython.txt
+lehieu@Les-MacBook-Pro LeTrungHoaHieu-TH4 % cd ..
+lehieu@Les-MacBook-Pro docker % cd python-app
+lehieu@Les-MacBook-Pro python-app % docker build -t python-image .
+[+] Building 3.0s (9/9) FINISHED                                                                                                         docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 359B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/python:latest                                                                                         2.9s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                            0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/3] FROM docker.io/library/python:latest@sha256:d8c03730973cf1891f1815ea16903a9c8fefb3e0af1ba5bb89f7a67d2c5a97c3                                   0.0s
+ => => resolve docker.io/library/python:latest@sha256:d8c03730973cf1891f1815ea16903a9c8fefb3e0af1ba5bb89f7a67d2c5a97c3                                   0.0s
+ => [internal] load build context                                                                                                                        0.0s
+ => => transferring context: 132B                                                                                                                        0.0s
+ => CACHED [2/3] WORKDIR /app                                                                                                                            0.0s
+ => CACHED [3/3] COPY . .                                                                                                                                0.0s
+ => exporting to image                                                                                                                                   0.0s
+ => => exporting layers                                                                                                                                  0.0s
+ => => writing image sha256:eb9a71c457a7b8dc58bfca06a7954830bf1c11c76c3231fbb746700a26609b60                                                             0.0s
+ => => naming to docker.io/library/python-image                                                                                                          0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/wpwd21883t1ekuk3eaju7swrc
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro python-app % docker run --rm -it --name python-app python-image
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 1
+Please enter your height in meters
+Your height: 1.62
+Please enter your weight in kilograms
+Your weight: 44
+Your body-mass-index: 16.76573693034598
+lehieu@Les-MacBook-Pro python-app % docker logs --help
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+
+Aliases:
+  docker container logs, docker logs
+
+Options:
+      --details        Show extra details provided to logs
+  -f, --follow         Follow log output
+      --since string   Show logs since timestamp (e.g. "2013-01-02T13:23:37Z") or relative (e.g. "42m" for 42 minutes)
+  -n, --tail string    Number of lines to show from the end of the logs (default "all")
+  -t, --timestamps     Show timestamps
+      --until string   Show logs before a timestamp (e.g. "2013-01-02T13:23:37Z") or relative (e.g. "42m" for 42 minutes)
+lehieu@Les-MacBook-Pro python-app % docker run -it --name python-app python-image
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 1
+Please enter your height in meters
+Your height: 1.62
+Please enter your weight in kilograms
+Your weight: 44
+Your body-mass-index: 16.76573693034598
+lehieu@Les-MacBook-Pro python-app % docker run -it --name python-app python-image
+docker: Error response from daemon: Conflict. The container name "/python-app" is already in use by container "056a96532a7e3ca69479b5877c9b8ab334662e2f44f5ed0708d42205a1fb7573". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+lehieu@Les-MacBook-Pro python-app % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED          STATUS                      PORTS                                                        NAMES
+056a96532a7e   python-image                                      "python bmi.py"           41 seconds ago   Exited (0) 20 seconds ago                                                                python-app
+8953fea7b6b4   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    5 minutes ago    Up 5 minutes (healthy)      0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+c5b4548bab82   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    6 minutes ago    Up 6 minutes (healthy)      8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+5ae598bfe7e7   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    6 minutes ago    Up 6 minutes                8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+1d3a48d9e71f   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                6 minutes ago    Up 6 minutes (healthy)      8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+a5ffbeac07cb   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    7 minutes ago    Up 7 minutes (healthy)      5000/tcp                                                     supabase_storage_creative-contact-prealpha
+6cb58d3f226a   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               7 minutes ago    Up 7 minutes                3000/tcp                                                     supabase_rest_creative-contact-prealpha
+ea41d1a3d9de   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    7 minutes ago    Up 7 minutes (healthy)      4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+e51dbcd00e21   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    7 minutes ago    Up 7 minutes (healthy)      1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+255a2edbd486   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    7 minutes ago    Up 7 minutes (healthy)      9999/tcp                                                     supabase_auth_creative-contact-prealpha
+aea1e33b1ea6   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    8 minutes ago    Up 8 minutes (healthy)      8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+07778da10199   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   8 minutes ago    Up 8 minutes (healthy)      0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro python-app % docker rm python-app
+python-app
+lehieu@Les-MacBook-Pro python-app % docker run -it --name python-app python-image
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 2
+Please enter your height in feet
+Your height: 5.11
+Please enter your weight in pounds
+Your weight: 30
+Your body-mass-index: 5.609392299312231
+lehieu@Les-MacBook-Pro python-app % docker restart python-app
+python-app
+lehieu@Les-MacBook-Pro python-app % docker start -it python-app
+unknown shorthand flag: 't' in -t
+See 'docker start --help'.
+lehieu@Les-MacBook-Pro python-app % docker stop python-app
+python-app
+lehieu@Les-MacBook-Pro python-app % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED              STATUS                        PORTS                                                        NAMES
+bce3c8291397   python-image                                      "python bmi.py"           About a minute ago   Exited (137) 14 seconds ago                                                                python-app
+8953fea7b6b4   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    7 minutes ago        Up 7 minutes (healthy)        0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+c5b4548bab82   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    8 minutes ago        Up 8 minutes (healthy)        8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+5ae598bfe7e7   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    8 minutes ago        Up 8 minutes                  8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+1d3a48d9e71f   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                8 minutes ago        Up 8 minutes (healthy)        8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+a5ffbeac07cb   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    9 minutes ago        Up 9 minutes (healthy)        5000/tcp                                                     supabase_storage_creative-contact-prealpha
+6cb58d3f226a   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               9 minutes ago        Up 9 minutes                  3000/tcp                                                     supabase_rest_creative-contact-prealpha
+ea41d1a3d9de   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    9 minutes ago        Up 9 minutes (healthy)        4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+e51dbcd00e21   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    9 minutes ago        Up 9 minutes (healthy)        1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+255a2edbd486   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    9 minutes ago        Up 9 minutes (healthy)        9999/tcp                                                     supabase_auth_creative-contact-prealpha
+aea1e33b1ea6   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    10 minutes ago       Up 10 minutes (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+07778da10199   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   10 minutes ago       Up 10 minutes (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro python-app % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED        SIZE
+python-image                            latest             eb9a71c457a7   3 hours ago    1.02GB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   5 days ago     692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   7 days ago     631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   2 weeks ago    45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   3 weeks ago    352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   4 weeks ago    478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago   206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   3 months ago   1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago   322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago    149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago    162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago    25.1MB
+lehieu@Les-MacBook-Pro python-app % cd ..
+lehieu@Les-MacBook-Pro docker % cd node-app
+lehieu@Les-MacBook-Pro node-app % docker build -t node-image .
+[+] Building 2.7s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 465B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.6s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.0s
+ => => transferring context: 59.59kB                                                                                                                     0.0s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => CACHED [3/5] COPY package*.json ./                                                                                                                   0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                         0.0s
+ => CACHED [5/5] COPY . .                                                                                                                                0.0s
+ => exporting to image                                                                                                                                   0.0s
+ => => exporting layers                                                                                                                                  0.0s
+ => => writing image sha256:470e4f94a4027afe5061eaf57772caeea6054da26205227945edf79dbbca80f7                                                             0.0s
+ => => naming to docker.io/library/node-image                                                                                                            0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/afolbo4qzspvj55i8nbudcsge
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro node-app % docker build -d -p --name node-app node-image
+unknown shorthand flag: 'd' in -d
+See 'docker buildx build --help'.
+lehieu@Les-MacBook-Pro node-app % docker build -d -p 3000:3000 --name node-app node-image
+unknown shorthand flag: 'd' in -d
+See 'docker buildx build --help'.
+lehieu@Les-MacBook-Pro node-app % docker run -d -p 3000:3000 --name node-app node-image
+9300c762b8abe43ede65b43f9ff7d42325db653eb4984c28c7058d6181094289
+lehieu@Les-MacBook-Pro node-app %
+Last login: Tue Nov 12 13:24:24 on ttys009
+lehieu@192 python-app % docker logs
+"docker logs" requires exactly 1 argument.
+See 'docker logs --help'.
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+lehieu@192 python-app % docker logs python-app
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+lehieu@192 python-app % docker logs -it python-app
+unknown shorthand flag: 'i' in -it
+See 'docker logs --help'.
+lehieu@192 python-app % docker logs python-app
+Error response from daemon: No such container: python-app
+lehieu@192 python-app % docker logs python-app
+Error response from daemon: No such container: python-app
+lehieu@192 python-app % docker logs python-app
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+lehieu@192 python-app % docker logs python-app
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 1
+Please enter your height in meters
+Your height: 1.62
+Please enter your weight in kilograms
+Your weight: 44
+Your body-mass-index: 16.76573693034598
+lehieu@192 python-app % docker logs python-app
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 2
+Please enter your height in feet
+Your height: 5.11
+Please enter your weight in pounds
+Your weight: 30
+Your body-mass-index: 5.609392299312231
+lehieu@192 python-app % docker logs python-app
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 2
+Please enter your height in feet
+Your height: 5.11
+Please enter your weight in pounds
+Your weight: 30
+Your body-mass-index: 5.609392299312231
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: %                                                                                                                                              lehieu@192 python-app % docker logs python-app
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 2
+Please enter your height in feet
+Your height: 5.11
+Please enter your weight in pounds
+Your weight: 30
+Your body-mass-index: 5.609392299312231
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: %                                                                                                                                              lehieu@192 python-app % docker logs python-app
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 2
+Please enter your height in feet
+Your height: 5.11
+Please enter your weight in pounds
+Your weight: 30
+Your body-mass-index: 5.609392299312231
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: %                                                                                                                                              lehieu@192 python-app % docker logs python-app
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 2
+Please enter your height in feet
+Your height: 5.11
+Please enter your weight in pounds
+Your weight: 30
+Your body-mass-index: 5.609392299312231
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: %                                                                                                                                              lehieu@192 python-app % docker logs
+"docker logs" requires exactly 1 argument.
+See 'docker logs --help'.
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+lehieu@192 python-app % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED          STATUS                       PORTS                                                        NAMES
+9300c762b8ab   node-image                                        "docker-entrypoint.s…"    13 seconds ago   Up 12 seconds                0.0.0.0:3000->3000/tcp                                       node-app
+bce3c8291397   python-image                                      "python bmi.py"           3 minutes ago    Exited (137) 2 minutes ago                                                                python-app
+8953fea7b6b4   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    9 minutes ago    Up 9 minutes (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+c5b4548bab82   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    10 minutes ago   Up 10 minutes (healthy)      8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+5ae598bfe7e7   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    10 minutes ago   Up 10 minutes                8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+1d3a48d9e71f   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                10 minutes ago   Up 10 minutes (healthy)      8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+a5ffbeac07cb   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    11 minutes ago   Up 11 minutes (healthy)      5000/tcp                                                     supabase_storage_creative-contact-prealpha
+6cb58d3f226a   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               11 minutes ago   Up 11 minutes                3000/tcp                                                     supabase_rest_creative-contact-prealpha
+ea41d1a3d9de   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    11 minutes ago   Up 11 minutes (healthy)      4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+e51dbcd00e21   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    12 minutes ago   Up 12 minutes (healthy)      1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+255a2edbd486   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    12 minutes ago   Up 12 minutes (healthy)      9999/tcp                                                     supabase_auth_creative-contact-prealpha
+aea1e33b1ea6   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    12 minutes ago   Up 12 minutes (healthy)      8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+07778da10199   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   12 minutes ago   Up 12 minutes (healthy)      0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@192 python-app % docker logs node-app
+lehieu@192 python-app %
