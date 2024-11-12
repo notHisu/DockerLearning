@@ -1,4 +1,4 @@
-ast login: Mon Nov 11 16:33:31 on ttys003
+Last login: Mon Nov 11 16:33:31 on ttys003
 lehieu@Les-MacBook-Pro ~ % cd Downloads/Hisu/Projects/docker
 lehieu@Les-MacBook-Pro docker % ls -a
 .		.DS_Store	.gitattributes	Hello.txt	goal
@@ -1395,4 +1395,1133 @@ e51dbcd00e21   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucke
 aea1e33b1ea6   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    12 minutes ago   Up 12 minutes (healthy)      8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
 07778da10199   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   12 minutes ago   Up 12 minutes (healthy)      0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
 lehieu@192 python-app % docker logs node-app
-lehieu@192 python-app %
+lehieu@192 python-app % ls
+bmi.py		dockerfile
+lehieu@192 python-app % cd ..
+lehieu@192 docker % ls
+LeTrungHoaHieu-TH1	LeTrungHoaHieu-TH3	goal			node-app
+LeTrungHoaHieu-TH2	LeTrungHoaHieu-TH4	hello			python-app
+lehieu@192 docker % ls -ll
+total 0
+drwxr-xr-x@ 3 lehieu  staff   96 Nov 12 14:05 LeTrungHoaHieu-TH1
+drwxr-xr-x  3 lehieu  staff   96 Nov 12 14:11 LeTrungHoaHieu-TH2
+drwxr-xr-x  3 lehieu  staff   96 Nov 12 14:13 LeTrungHoaHieu-TH3
+drwxr-xr-x@ 3 lehieu  staff   96 Nov 12 15:32 LeTrungHoaHieu-TH4
+drwxr-xr-x@ 9 lehieu  staff  288 Nov  8 18:07 goal
+drwxr-xr-x@ 9 lehieu  staff  288 Nov  7 19:48 hello
+drwxr-xr-x@ 8 lehieu  staff  256 Nov 12 14:18 node-app
+drwxr-xr-x@ 4 lehieu  staff  128 Nov 12 14:25 python-app
+lehieu@192 docker % cd node-app
+lehieu@192 node-app % ls -ll
+total 80
+-rw-r--r--@  1 lehieu  staff    389 Nov 12 14:18 dockerfile
+drwxr-xr-x@ 68 lehieu  staff   2176 Nov 12 14:10 node_modules
+-rw-r--r--@  1 lehieu  staff  27472 Nov 12 13:29 package-lock.json
+-rw-r--r--@  1 lehieu  staff    249 Nov 12 13:29 package.json
+-rw-r--r--@  1 lehieu  staff    187 Nov 12 13:28 server.js
+lehieu@192 node-app % cd ..
+lehieu@192 docker % cd python-app
+lehieu@192 python-app % ls -ll
+total 16
+-rw-r--r--@ 1 lehieu  staff  803 Nov 12 13:32 bmi.py
+-rw-r--r--@ 1 lehieu  staff  283 Nov 12 14:37 dockerfile
+lehieu@192 python-app % cd ..
+lehieu@192 docker % ls -R
+LeTrungHoaHieu-TH1	LeTrungHoaHieu-TH3	goal			node-app
+LeTrungHoaHieu-TH2	LeTrungHoaHieu-TH4	hello			python-app
+
+./LeTrungHoaHieu-TH1:
+Lenh.txt
+
+./LeTrungHoaHieu-TH2:
+Hello.txt
+
+./LeTrungHoaHieu-TH3:
+Goal.txt
+
+./LeTrungHoaHieu-TH4:
+NotePython.txt
+
+./goal:
+dockerfile		node_modules		package-lock.json	package.json		public			server.js
+
+./goal/node_modules:
+accepts				es-errors			inherits			range-parser
+array-flatten			escape-html			ipaddr.js			raw-body
+body-parser			etag				media-typer			safe-buffer
+bytes				express				merge-descriptors		safer-buffer
+call-bind			finalhandler			methods				send
+content-disposition		forwarded			mime				serve-static
+content-type			fresh				mime-db				set-function-length
+cookie				function-bind			mime-types			setprototypeof
+cookie-signature		get-intrinsic			ms				side-channel
+debug				gopd				negotiator			statuses
+define-data-property		has-property-descriptors	object-inspect			toidentifier
+depd				has-proto			on-finished			type-is
+destroy				has-symbols			parseurl			unpipe
+ee-first			hasown				path-to-regexp			utils-merge
+encodeurl			http-errors			proxy-addr			vary
+es-define-property		iconv-lite			qs
+
+./goal/node_modules/accepts:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/array-flatten:
+LICENSE			README.md		array-flatten.js	package.json
+
+./goal/node_modules/body-parser:
+HISTORY.md	LICENSE		README.md	index.js	lib		package.json
+
+./goal/node_modules/body-parser/lib:
+read.js	types
+
+./goal/node_modules/body-parser/lib/types:
+json.js		raw.js		text.js		urlencoded.js
+
+./goal/node_modules/bytes:
+History.md	LICENSE		Readme.md	index.js	package.json
+
+./goal/node_modules/call-bind:
+CHANGELOG.md	LICENSE		README.md	callBound.js	index.js	package.json	test
+
+./goal/node_modules/call-bind/test:
+callBound.js	index.js
+
+./goal/node_modules/content-disposition:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/content-type:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/cookie:
+LICENSE		README.md	SECURITY.md	index.js	package.json
+
+./goal/node_modules/cookie-signature:
+History.md	Readme.md	index.js	package.json
+
+./goal/node_modules/debug:
+CHANGELOG.md	LICENSE		Makefile	README.md	component.json	karma.conf.js	node.js		package.json	src
+
+./goal/node_modules/debug/src:
+browser.js		debug.js		index.js		inspector-log.js	node.js
+
+./goal/node_modules/define-data-property:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./goal/node_modules/define-data-property/test:
+index.js
+
+./goal/node_modules/depd:
+History.md	LICENSE		Readme.md	index.js	lib		package.json
+
+./goal/node_modules/depd/lib:
+browser	compat
+
+./goal/node_modules/depd/lib/browser:
+index.js
+
+./goal/node_modules/depd/lib/compat:
+callsite-tostring.js	event-listener-count.js	index.js
+
+./goal/node_modules/destroy:
+LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/ee-first:
+LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/encodeurl:
+LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/es-define-property:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./goal/node_modules/es-define-property/test:
+index.js
+
+./goal/node_modules/es-errors:
+CHANGELOG.md	eval.d.ts	index.js	range.js	syntax.d.ts	tsconfig.json	uri.d.ts
+LICENSE		eval.js		package.json	ref.d.ts	syntax.js	type.d.ts	uri.js
+README.md	index.d.ts	range.d.ts	ref.js		test		type.js
+
+./goal/node_modules/es-errors/test:
+index.js
+
+./goal/node_modules/escape-html:
+LICENSE		Readme.md	index.js	package.json
+
+./goal/node_modules/etag:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/express:
+History.md	LICENSE		Readme.md	index.js	lib		node_modules	package.json
+
+./goal/node_modules/express/lib:
+application.js	express.js	middleware	request.js	response.js	router		utils.js	view.js
+
+./goal/node_modules/express/lib/middleware:
+init.js		query.js
+
+./goal/node_modules/express/lib/router:
+index.js	layer.js	route.js
+
+./goal/node_modules/express/node_modules:
+body-parser	bytes		depd		http-errors	inherits	on-finished	qs		raw-body	toidentifier
+
+./goal/node_modules/express/node_modules/body-parser:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	lib		package.json
+
+./goal/node_modules/express/node_modules/body-parser/lib:
+read.js	types
+
+./goal/node_modules/express/node_modules/body-parser/lib/types:
+json.js		raw.js		text.js		urlencoded.js
+
+./goal/node_modules/express/node_modules/bytes:
+History.md	LICENSE		Readme.md	index.js	package.json
+
+./goal/node_modules/express/node_modules/depd:
+History.md	LICENSE		Readme.md	index.js	lib		package.json
+
+./goal/node_modules/express/node_modules/depd/lib:
+browser
+
+./goal/node_modules/express/node_modules/depd/lib/browser:
+index.js
+
+./goal/node_modules/express/node_modules/http-errors:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/express/node_modules/inherits:
+LICENSE			README.md		inherits.js		inherits_browser.js	package.json
+
+./goal/node_modules/express/node_modules/on-finished:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/express/node_modules/qs:
+CHANGELOG.md	LICENSE.md	README.md	dist		lib		package.json	test
+
+./goal/node_modules/express/node_modules/qs/dist:
+qs.js
+
+./goal/node_modules/express/node_modules/qs/lib:
+formats.js	index.js	parse.js	stringify.js	utils.js
+
+./goal/node_modules/express/node_modules/qs/test:
+empty-keys-cases.js	parse.js		stringify.js		utils.js
+
+./goal/node_modules/express/node_modules/raw-body:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.d.ts	index.js	package.json
+
+./goal/node_modules/express/node_modules/toidentifier:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/finalhandler:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	node_modules	package.json
+
+./goal/node_modules/finalhandler/node_modules:
+on-finished
+
+./goal/node_modules/finalhandler/node_modules/on-finished:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/forwarded:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/fresh:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/function-bind:
+CHANGELOG.md		README.md		index.js		test
+LICENSE			implementation.js	package.json
+
+./goal/node_modules/function-bind/test:
+index.js
+
+./goal/node_modules/get-intrinsic:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./goal/node_modules/get-intrinsic/test:
+GetIntrinsic.js
+
+./goal/node_modules/gopd:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./goal/node_modules/gopd/test:
+index.js
+
+./goal/node_modules/has-property-descriptors:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./goal/node_modules/has-property-descriptors/test:
+index.js
+
+./goal/node_modules/has-proto:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./goal/node_modules/has-proto/test:
+index.js
+
+./goal/node_modules/has-symbols:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	shams.js	test
+
+./goal/node_modules/has-symbols/test:
+index.js	shams		tests.js
+
+./goal/node_modules/has-symbols/test/shams:
+core-js.js			get-own-property-symbols.js
+
+./goal/node_modules/hasown:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	tsconfig.json
+
+./goal/node_modules/http-errors:
+HISTORY.md	LICENSE		README.md	index.js	node_modules	package.json
+
+./goal/node_modules/http-errors/node_modules:
+setprototypeof	statuses
+
+./goal/node_modules/http-errors/node_modules/setprototypeof:
+LICENSE		README.md	index.d.ts	index.js	package.json	test
+
+./goal/node_modules/http-errors/node_modules/setprototypeof/test:
+index.js
+
+./goal/node_modules/http-errors/node_modules/statuses:
+HISTORY.md	LICENSE		README.md	codes.json	index.js	package.json
+
+./goal/node_modules/iconv-lite:
+Changelog.md	LICENSE		README.md	encodings	lib		package.json
+
+./goal/node_modules/iconv-lite/encodings:
+dbcs-codec.js		index.js		sbcs-codec.js		sbcs-data.js		utf16.js
+dbcs-data.js		internal.js		sbcs-data-generated.js	tables			utf7.js
+
+./goal/node_modules/iconv-lite/encodings/tables:
+big5-added.json		cp949.json		eucjp.json		gbk-added.json
+cp936.json		cp950.json		gb18030-ranges.json	shiftjis.json
+
+./goal/node_modules/iconv-lite/lib:
+bom-handling.js	extend-node.js	index.d.ts	index.js	streams.js
+
+./goal/node_modules/inherits:
+LICENSE			README.md		inherits.js		inherits_browser.js	package.json
+
+./goal/node_modules/ipaddr.js:
+LICENSE		README.md	ipaddr.min.js	lib		package.json
+
+./goal/node_modules/ipaddr.js/lib:
+ipaddr.js	ipaddr.js.d.ts
+
+./goal/node_modules/media-typer:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/merge-descriptors:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/methods:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/mime:
+CHANGELOG.md	LICENSE		README.md	cli.js		mime.js		package.json	src		types.json
+
+./goal/node_modules/mime/src:
+build.js	test.js
+
+./goal/node_modules/mime-db:
+HISTORY.md	LICENSE		README.md	db.json		index.js	package.json
+
+./goal/node_modules/mime-types:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/ms:
+index.js	license.md	package.json	readme.md
+
+./goal/node_modules/negotiator:
+HISTORY.md	LICENSE		README.md	index.js	lib		package.json
+
+./goal/node_modules/negotiator/lib:
+charset.js	encoding.js	language.js	mediaType.js
+
+./goal/node_modules/object-inspect:
+CHANGELOG.md		example			package-support.json	readme.markdown		test-core-js.js
+LICENSE			index.js		package.json		test			util.inspect.js
+
+./goal/node_modules/object-inspect/example:
+all.js		circular.js	fn.js		inspect.js
+
+./goal/node_modules/object-inspect/test:
+bigint.js		element.js		global.js		inspect.js		toStringTag.js
+browser			err.js			has.js			lowbyte.js		undef.js
+circular.js		fakes.js		holes.js		number.js		values.js
+deep.js			fn.js			indent-option.js	quoteStyle.js
+
+./goal/node_modules/object-inspect/test/browser:
+dom.js
+
+./goal/node_modules/on-finished:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/parseurl:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/path-to-regexp:
+LICENSE		Readme.md	index.js	package.json
+
+./goal/node_modules/proxy-addr:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/qs:
+CHANGELOG.md	LICENSE		README.md	dist		lib		package.json	test
+
+./goal/node_modules/qs/dist:
+qs.js
+
+./goal/node_modules/qs/lib:
+formats.js	index.js	parse.js	stringify.js	utils.js
+
+./goal/node_modules/qs/test:
+index.js	parse.js	stringify.js	utils.js
+
+./goal/node_modules/range-parser:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/raw-body:
+HISTORY.md	LICENSE		README.md	index.d.ts	index.js	package.json
+
+./goal/node_modules/safe-buffer:
+LICENSE		README.md	index.d.ts	index.js	package.json
+
+./goal/node_modules/safer-buffer:
+LICENSE			Readme.md		package.json		tests.js
+Porting-Buffer.md	dangerous.js		safer.js
+
+./goal/node_modules/send:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	node_modules	package.json
+
+./goal/node_modules/send/node_modules:
+depd		encodeurl	http-errors	inherits	ms		on-finished	toidentifier
+
+./goal/node_modules/send/node_modules/depd:
+History.md	LICENSE		Readme.md	index.js	lib		package.json
+
+./goal/node_modules/send/node_modules/depd/lib:
+browser
+
+./goal/node_modules/send/node_modules/depd/lib/browser:
+index.js
+
+./goal/node_modules/send/node_modules/encodeurl:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/send/node_modules/http-errors:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/send/node_modules/inherits:
+LICENSE			README.md		inherits.js		inherits_browser.js	package.json
+
+./goal/node_modules/send/node_modules/ms:
+index.js	license.md	package.json	readme.md
+
+./goal/node_modules/send/node_modules/on-finished:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/send/node_modules/toidentifier:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/serve-static:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/set-function-length:
+CHANGELOG.md	LICENSE		README.md	env.d.ts	env.js		index.d.ts	index.js	package.json	tsconfig.json
+
+./goal/node_modules/setprototypeof:
+LICENSE		README.md	index.d.ts	index.js	package.json	test
+
+./goal/node_modules/setprototypeof/test:
+index.js
+
+./goal/node_modules/side-channel:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./goal/node_modules/side-channel/test:
+index.js
+
+./goal/node_modules/statuses:
+HISTORY.md	LICENSE		README.md	codes.json	index.js	package.json
+
+./goal/node_modules/toidentifier:
+LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/type-is:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/unpipe:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/utils-merge:
+LICENSE		README.md	index.js	package.json
+
+./goal/node_modules/vary:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./goal/public:
+styles.css
+
+./hello:
+app.mjs			dockerfile		helpers.mjs		node_modules		package-lock.json	package.json
+
+./hello/node_modules:
+accepts				es-errors			inherits			range-parser
+array-flatten			escape-html			ipaddr.js			raw-body
+body-parser			etag				media-typer			safe-buffer
+bytes				express				merge-descriptors		safer-buffer
+call-bind			finalhandler			methods				send
+content-disposition		forwarded			mime				serve-static
+content-type			fresh				mime-db				set-function-length
+cookie				function-bind			mime-types			setprototypeof
+cookie-signature		get-intrinsic			ms				side-channel
+debug				gopd				negotiator			statuses
+define-data-property		has-property-descriptors	object-inspect			toidentifier
+depd				has-proto			on-finished			type-is
+destroy				has-symbols			parseurl			unpipe
+ee-first			hasown				path-to-regexp			utils-merge
+encodeurl			http-errors			proxy-addr			vary
+es-define-property		iconv-lite			qs
+
+./hello/node_modules/accepts:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/array-flatten:
+LICENSE			README.md		array-flatten.js	package.json
+
+./hello/node_modules/body-parser:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	lib		package.json
+
+./hello/node_modules/body-parser/lib:
+read.js	types
+
+./hello/node_modules/body-parser/lib/types:
+json.js		raw.js		text.js		urlencoded.js
+
+./hello/node_modules/bytes:
+History.md	LICENSE		Readme.md	index.js	package.json
+
+./hello/node_modules/call-bind:
+CHANGELOG.md	LICENSE		README.md	callBound.js	index.js	package.json	test
+
+./hello/node_modules/call-bind/test:
+callBound.js	index.js
+
+./hello/node_modules/content-disposition:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/content-type:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/cookie:
+LICENSE		README.md	SECURITY.md	index.js	package.json
+
+./hello/node_modules/cookie-signature:
+History.md	Readme.md	index.js	package.json
+
+./hello/node_modules/debug:
+CHANGELOG.md	LICENSE		Makefile	README.md	component.json	karma.conf.js	node.js		package.json	src
+
+./hello/node_modules/debug/src:
+browser.js		debug.js		index.js		inspector-log.js	node.js
+
+./hello/node_modules/define-data-property:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./hello/node_modules/define-data-property/test:
+index.js
+
+./hello/node_modules/depd:
+History.md	LICENSE		Readme.md	index.js	lib		package.json
+
+./hello/node_modules/depd/lib:
+browser
+
+./hello/node_modules/depd/lib/browser:
+index.js
+
+./hello/node_modules/destroy:
+LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/ee-first:
+LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/encodeurl:
+LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/es-define-property:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./hello/node_modules/es-define-property/test:
+index.js
+
+./hello/node_modules/es-errors:
+CHANGELOG.md	eval.d.ts	index.js	range.js	syntax.d.ts	tsconfig.json	uri.d.ts
+LICENSE		eval.js		package.json	ref.d.ts	syntax.js	type.d.ts	uri.js
+README.md	index.d.ts	range.d.ts	ref.js		test		type.js
+
+./hello/node_modules/es-errors/test:
+index.js
+
+./hello/node_modules/escape-html:
+LICENSE		Readme.md	index.js	package.json
+
+./hello/node_modules/etag:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/express:
+History.md	LICENSE		Readme.md	index.js	lib		package.json
+
+./hello/node_modules/express/lib:
+application.js	express.js	middleware	request.js	response.js	router		utils.js	view.js
+
+./hello/node_modules/express/lib/middleware:
+init.js		query.js
+
+./hello/node_modules/express/lib/router:
+index.js	layer.js	route.js
+
+./hello/node_modules/finalhandler:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	package.json
+
+./hello/node_modules/forwarded:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/fresh:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/function-bind:
+CHANGELOG.md		README.md		index.js		test
+LICENSE			implementation.js	package.json
+
+./hello/node_modules/function-bind/test:
+index.js
+
+./hello/node_modules/get-intrinsic:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./hello/node_modules/get-intrinsic/test:
+GetIntrinsic.js
+
+./hello/node_modules/gopd:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./hello/node_modules/gopd/test:
+index.js
+
+./hello/node_modules/has-property-descriptors:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./hello/node_modules/has-property-descriptors/test:
+index.js
+
+./hello/node_modules/has-proto:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./hello/node_modules/has-proto/test:
+index.js
+
+./hello/node_modules/has-symbols:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	shams.js	test
+
+./hello/node_modules/has-symbols/test:
+index.js	shams		tests.js
+
+./hello/node_modules/has-symbols/test/shams:
+core-js.js			get-own-property-symbols.js
+
+./hello/node_modules/hasown:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	tsconfig.json
+
+./hello/node_modules/http-errors:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/iconv-lite:
+Changelog.md	LICENSE		README.md	encodings	lib		package.json
+
+./hello/node_modules/iconv-lite/encodings:
+dbcs-codec.js		index.js		sbcs-codec.js		sbcs-data.js		utf16.js
+dbcs-data.js		internal.js		sbcs-data-generated.js	tables			utf7.js
+
+./hello/node_modules/iconv-lite/encodings/tables:
+big5-added.json		cp949.json		eucjp.json		gbk-added.json
+cp936.json		cp950.json		gb18030-ranges.json	shiftjis.json
+
+./hello/node_modules/iconv-lite/lib:
+bom-handling.js	extend-node.js	index.d.ts	index.js	streams.js
+
+./hello/node_modules/inherits:
+LICENSE			README.md		inherits.js		inherits_browser.js	package.json
+
+./hello/node_modules/ipaddr.js:
+LICENSE		README.md	ipaddr.min.js	lib		package.json
+
+./hello/node_modules/ipaddr.js/lib:
+ipaddr.js	ipaddr.js.d.ts
+
+./hello/node_modules/media-typer:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/merge-descriptors:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/methods:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/mime:
+CHANGELOG.md	LICENSE		README.md	cli.js		mime.js		package.json	src		types.json
+
+./hello/node_modules/mime/src:
+build.js	test.js
+
+./hello/node_modules/mime-db:
+HISTORY.md	LICENSE		README.md	db.json		index.js	package.json
+
+./hello/node_modules/mime-types:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/ms:
+index.js	license.md	package.json	readme.md
+
+./hello/node_modules/negotiator:
+HISTORY.md	LICENSE		README.md	index.js	lib		package.json
+
+./hello/node_modules/negotiator/lib:
+charset.js	encoding.js	language.js	mediaType.js
+
+./hello/node_modules/object-inspect:
+CHANGELOG.md		example			package-support.json	readme.markdown		test-core-js.js
+LICENSE			index.js		package.json		test			util.inspect.js
+
+./hello/node_modules/object-inspect/example:
+all.js		circular.js	fn.js		inspect.js
+
+./hello/node_modules/object-inspect/test:
+bigint.js		element.js		global.js		inspect.js		toStringTag.js
+browser			err.js			has.js			lowbyte.js		undef.js
+circular.js		fakes.js		holes.js		number.js		values.js
+deep.js			fn.js			indent-option.js	quoteStyle.js
+
+./hello/node_modules/object-inspect/test/browser:
+dom.js
+
+./hello/node_modules/on-finished:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/parseurl:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/path-to-regexp:
+LICENSE		Readme.md	index.js	package.json
+
+./hello/node_modules/proxy-addr:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/qs:
+CHANGELOG.md	LICENSE.md	README.md	dist		lib		package.json	test
+
+./hello/node_modules/qs/dist:
+qs.js
+
+./hello/node_modules/qs/lib:
+formats.js	index.js	parse.js	stringify.js	utils.js
+
+./hello/node_modules/qs/test:
+empty-keys-cases.js	parse.js		stringify.js		utils.js
+
+./hello/node_modules/range-parser:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/raw-body:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.d.ts	index.js	package.json
+
+./hello/node_modules/safe-buffer:
+LICENSE		README.md	index.d.ts	index.js	package.json
+
+./hello/node_modules/safer-buffer:
+LICENSE			Readme.md		package.json		tests.js
+Porting-Buffer.md	dangerous.js		safer.js
+
+./hello/node_modules/send:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	node_modules	package.json
+
+./hello/node_modules/send/node_modules:
+encodeurl	ms
+
+./hello/node_modules/send/node_modules/encodeurl:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/send/node_modules/ms:
+index.js	license.md	package.json	readme.md
+
+./hello/node_modules/serve-static:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/set-function-length:
+CHANGELOG.md	LICENSE		README.md	env.d.ts	env.js		index.d.ts	index.js	package.json	tsconfig.json
+
+./hello/node_modules/setprototypeof:
+LICENSE		README.md	index.d.ts	index.js	package.json	test
+
+./hello/node_modules/setprototypeof/test:
+index.js
+
+./hello/node_modules/side-channel:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./hello/node_modules/side-channel/test:
+index.js
+
+./hello/node_modules/statuses:
+HISTORY.md	LICENSE		README.md	codes.json	index.js	package.json
+
+./hello/node_modules/toidentifier:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/type-is:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/unpipe:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/utils-merge:
+LICENSE		README.md	index.js	package.json
+
+./hello/node_modules/vary:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app:
+dockerfile		node_modules		package-lock.json	package.json		server.js
+
+./node-app/node_modules:
+accepts				es-errors			inherits			range-parser
+array-flatten			escape-html			ipaddr.js			raw-body
+body-parser			etag				media-typer			safe-buffer
+bytes				express				merge-descriptors		safer-buffer
+call-bind			finalhandler			methods				send
+content-disposition		forwarded			mime				serve-static
+content-type			fresh				mime-db				set-function-length
+cookie				function-bind			mime-types			setprototypeof
+cookie-signature		get-intrinsic			ms				side-channel
+debug				gopd				negotiator			statuses
+define-data-property		has-property-descriptors	object-inspect			toidentifier
+depd				has-proto			on-finished			type-is
+destroy				has-symbols			parseurl			unpipe
+ee-first			hasown				path-to-regexp			utils-merge
+encodeurl			http-errors			proxy-addr			vary
+es-define-property		iconv-lite			qs
+
+./node-app/node_modules/accepts:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/array-flatten:
+LICENSE			README.md		array-flatten.js	package.json
+
+./node-app/node_modules/body-parser:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	lib		package.json
+
+./node-app/node_modules/body-parser/lib:
+read.js	types
+
+./node-app/node_modules/body-parser/lib/types:
+json.js		raw.js		text.js		urlencoded.js
+
+./node-app/node_modules/bytes:
+History.md	LICENSE		Readme.md	index.js	package.json
+
+./node-app/node_modules/call-bind:
+CHANGELOG.md	LICENSE		README.md	callBound.js	index.js	package.json	test
+
+./node-app/node_modules/call-bind/test:
+callBound.js	index.js
+
+./node-app/node_modules/content-disposition:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/content-type:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/cookie:
+LICENSE		README.md	SECURITY.md	index.js	package.json
+
+./node-app/node_modules/cookie-signature:
+History.md	Readme.md	index.js	package.json
+
+./node-app/node_modules/debug:
+CHANGELOG.md	LICENSE		Makefile	README.md	component.json	karma.conf.js	node.js		package.json	src
+
+./node-app/node_modules/debug/src:
+browser.js		debug.js		index.js		inspector-log.js	node.js
+
+./node-app/node_modules/define-data-property:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./node-app/node_modules/define-data-property/test:
+index.js
+
+./node-app/node_modules/depd:
+History.md	LICENSE		Readme.md	index.js	lib		package.json
+
+./node-app/node_modules/depd/lib:
+browser
+
+./node-app/node_modules/depd/lib/browser:
+index.js
+
+./node-app/node_modules/destroy:
+LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/ee-first:
+LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/encodeurl:
+LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/es-define-property:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./node-app/node_modules/es-define-property/test:
+index.js
+
+./node-app/node_modules/es-errors:
+CHANGELOG.md	eval.d.ts	index.js	range.js	syntax.d.ts	tsconfig.json	uri.d.ts
+LICENSE		eval.js		package.json	ref.d.ts	syntax.js	type.d.ts	uri.js
+README.md	index.d.ts	range.d.ts	ref.js		test		type.js
+
+./node-app/node_modules/es-errors/test:
+index.js
+
+./node-app/node_modules/escape-html:
+LICENSE		Readme.md	index.js	package.json
+
+./node-app/node_modules/etag:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/express:
+History.md	LICENSE		Readme.md	index.js	lib		package.json
+
+./node-app/node_modules/express/lib:
+application.js	express.js	middleware	request.js	response.js	router		utils.js	view.js
+
+./node-app/node_modules/express/lib/middleware:
+init.js		query.js
+
+./node-app/node_modules/express/lib/router:
+index.js	layer.js	route.js
+
+./node-app/node_modules/finalhandler:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	package.json
+
+./node-app/node_modules/forwarded:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/fresh:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/function-bind:
+CHANGELOG.md		README.md		index.js		test
+LICENSE			implementation.js	package.json
+
+./node-app/node_modules/function-bind/test:
+index.js
+
+./node-app/node_modules/get-intrinsic:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./node-app/node_modules/get-intrinsic/test:
+GetIntrinsic.js
+
+./node-app/node_modules/gopd:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./node-app/node_modules/gopd/test:
+index.js
+
+./node-app/node_modules/has-property-descriptors:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	test
+
+./node-app/node_modules/has-property-descriptors/test:
+index.js
+
+./node-app/node_modules/has-proto:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./node-app/node_modules/has-proto/test:
+index.js
+
+./node-app/node_modules/has-symbols:
+CHANGELOG.md	LICENSE		README.md	index.js	package.json	shams.js	test
+
+./node-app/node_modules/has-symbols/test:
+index.js	shams		tests.js
+
+./node-app/node_modules/has-symbols/test/shams:
+core-js.js			get-own-property-symbols.js
+
+./node-app/node_modules/hasown:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	tsconfig.json
+
+./node-app/node_modules/http-errors:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/iconv-lite:
+Changelog.md	LICENSE		README.md	encodings	lib		package.json
+
+./node-app/node_modules/iconv-lite/encodings:
+dbcs-codec.js		index.js		sbcs-codec.js		sbcs-data.js		utf16.js
+dbcs-data.js		internal.js		sbcs-data-generated.js	tables			utf7.js
+
+./node-app/node_modules/iconv-lite/encodings/tables:
+big5-added.json		cp949.json		eucjp.json		gbk-added.json
+cp936.json		cp950.json		gb18030-ranges.json	shiftjis.json
+
+./node-app/node_modules/iconv-lite/lib:
+bom-handling.js	extend-node.js	index.d.ts	index.js	streams.js
+
+./node-app/node_modules/inherits:
+LICENSE			README.md		inherits.js		inherits_browser.js	package.json
+
+./node-app/node_modules/ipaddr.js:
+LICENSE		README.md	ipaddr.min.js	lib		package.json
+
+./node-app/node_modules/ipaddr.js/lib:
+ipaddr.js	ipaddr.js.d.ts
+
+./node-app/node_modules/media-typer:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/merge-descriptors:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/methods:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/mime:
+CHANGELOG.md	LICENSE		README.md	cli.js		mime.js		package.json	src		types.json
+
+./node-app/node_modules/mime/src:
+build.js	test.js
+
+./node-app/node_modules/mime-db:
+HISTORY.md	LICENSE		README.md	db.json		index.js	package.json
+
+./node-app/node_modules/mime-types:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/ms:
+index.js	license.md	package.json	readme.md
+
+./node-app/node_modules/negotiator:
+HISTORY.md	LICENSE		README.md	index.js	lib		package.json
+
+./node-app/node_modules/negotiator/lib:
+charset.js	encoding.js	language.js	mediaType.js
+
+./node-app/node_modules/object-inspect:
+CHANGELOG.md		example			package-support.json	readme.markdown		test-core-js.js
+LICENSE			index.js		package.json		test			util.inspect.js
+
+./node-app/node_modules/object-inspect/example:
+all.js		circular.js	fn.js		inspect.js
+
+./node-app/node_modules/object-inspect/test:
+bigint.js		element.js		global.js		inspect.js		toStringTag.js
+browser			err.js			has.js			lowbyte.js		undef.js
+circular.js		fakes.js		holes.js		number.js		values.js
+deep.js			fn.js			indent-option.js	quoteStyle.js
+
+./node-app/node_modules/object-inspect/test/browser:
+dom.js
+
+./node-app/node_modules/on-finished:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/parseurl:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/path-to-regexp:
+LICENSE		Readme.md	index.js	package.json
+
+./node-app/node_modules/proxy-addr:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/qs:
+CHANGELOG.md	LICENSE.md	README.md	dist		lib		package.json	test
+
+./node-app/node_modules/qs/dist:
+qs.js
+
+./node-app/node_modules/qs/lib:
+formats.js	index.js	parse.js	stringify.js	utils.js
+
+./node-app/node_modules/qs/test:
+empty-keys-cases.js	parse.js		stringify.js		utils.js
+
+./node-app/node_modules/range-parser:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/raw-body:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.d.ts	index.js	package.json
+
+./node-app/node_modules/safe-buffer:
+LICENSE		README.md	index.d.ts	index.js	package.json
+
+./node-app/node_modules/safer-buffer:
+LICENSE			Readme.md		package.json		tests.js
+Porting-Buffer.md	dangerous.js		safer.js
+
+./node-app/node_modules/send:
+HISTORY.md	LICENSE		README.md	SECURITY.md	index.js	node_modules	package.json
+
+./node-app/node_modules/send/node_modules:
+encodeurl	ms
+
+./node-app/node_modules/send/node_modules/encodeurl:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/send/node_modules/ms:
+index.js	license.md	package.json	readme.md
+
+./node-app/node_modules/serve-static:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/set-function-length:
+CHANGELOG.md	LICENSE		README.md	env.d.ts	env.js		index.d.ts	index.js	package.json	tsconfig.json
+
+./node-app/node_modules/setprototypeof:
+LICENSE		README.md	index.d.ts	index.js	package.json	test
+
+./node-app/node_modules/setprototypeof/test:
+index.js
+
+./node-app/node_modules/side-channel:
+CHANGELOG.md	LICENSE		README.md	index.d.ts	index.js	package.json	test		tsconfig.json
+
+./node-app/node_modules/side-channel/test:
+index.js
+
+./node-app/node_modules/statuses:
+HISTORY.md	LICENSE		README.md	codes.json	index.js	package.json
+
+./node-app/node_modules/toidentifier:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/type-is:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/unpipe:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/utils-merge:
+LICENSE		README.md	index.js	package.json
+
+./node-app/node_modules/vary:
+HISTORY.md	LICENSE		README.md	index.js	package.json
+
+./python-app:
+bmi.py		dockerfile
+lehieu@192 docker %
