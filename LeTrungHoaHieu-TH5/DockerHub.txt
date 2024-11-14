@@ -1238,34 +1238,301 @@ REPOSITORY            TAG       IMAGE ID       CREATED       SIZE
 nothisu/goal          latest    993291ec6fc8   2 hours ago   872MB
 tuongan123/goal-app   latest    a04a16c7305f   5 hours ago   926MB
 lehieu@192 goal % 
-lehieu@192 goal % docker pull tantien208203/goal-app
+lehieu@192 goal % docker pull kais4rx/g
+oal-app
 Using default tag: latest
-latest: Pulling from tantien208203/goal-app
-1fe172e4850f: Pull complete
-e668081a2733: Pull complete
-a55e0b57fcd3: Pull complete
-123f877d197e: Pull complete
-cc38f6504a4f: Pull complete
-2b33b2313a88: Pull complete
-88ad0a049cd6: Pull complete
-429705504f75: Pull complete
-cd0bb6baa89e: Pull complete
-Digest: sha256:1b2c62b4c89ffd6433d150d0c69760f6c53c285977914578ae962a86c2677a49
-Status: Downloaded newer image for tantien208203/goal-app:latest
-docker.io/tantien208203/goal-app:latest
-
-
-2111896-Nguyễn Tân Tiến
+latest: Pulling from kais4rx/goal-app
+f5196cdf2518: Already exists 
+9bed1e86f01e: Already exists 
+f44e4bdb3a6c: Already exists 
+2f75d131f406: Already exists 
+07dff4ad21eb: Already exists 
+e0ac4f13b766: Already exists 
+df2c3b2eb7cc: Already exists 
+efe636eac583: Already exists 
+fe17849545bb: Already exists 
+f94c8eda5a05: Pull complete 
+4e105405e156: Pull complete 
+245eff31a05e: Pull complete 
+53929e890534: Pull complete            Digest: sha256:f2aff6fff71c3ed06c46b60c3ca5a5688a3bf49d41e897cc4e2a28275bc5ab6f
+Status: Downloaded newer image for kais4rx/goal-app:latest
+docker.io/kais4rx/goal-app:latest
 
 What's next:
-    View a summary of image vulnerabilities and recommendations → docker scout quickview tantien208203/goal-app
-
+    View a summary of image vulnerabilities and recommendations → docker scout quickview kais4rx/goal-app
 lehieu@192 goal % docker images
-REPOSITORY              TAG       IMAGE ID       CREATED       SIZE
-nothisu/goal            latest    993291ec6fc8   2 hours ago   872MB
-tuongan123/goal-app     latest    a04a16c7305f   5 hours ago   926MB
-tantien208203/goal-app  latest    1f28bf9d5eb5   3 hours ago   173MB
-lehieu@192 goal % docker run --rm -d -p 80:80 --name goal-app tantien208203/goal-app
+REPOSITORY            TAG       IMAGE ID       CREATED             SIZE
+kais4rx/goal-app      latest    55bae630f2ec   About an hour ago   926MB
+nothisu/goal          latest    993291ec6fc8   3 hours ago         872MB
+tuongan123/goal-app   latest    a04a16c7305f   6 hours ago         926MB
+lehieu@192 goal % docker run --rm -d -p
+ 80:80 --name goal-app kais4rx/goal-app
+
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+485552524c3027ed32347609404776ddcb49a02cb7c2829e925d30d8e3c3d474
+lehieu@192 goal % docker run --rm -d -p 80:80 --name goal-app kais4rx/goal-app
+docker: Error response from daemon: Conflict. The container name "/goal-app" is already in use by container "485552524c3027ed32347609404776ddcb49a02cb7c2829e925d30d8e3c3d474". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+lehieu@192 goal % docker rm goal-app
+Error response from daemon: cannot remove container "/goal-app": container is running: stop the container before removing or force remove
 lehieu@192 goal % docker stop goal-app
 goal-app
-lehieu@192 goal %
+lehieu@192 goal % docker run --rm -d -p 80:80 --name goal-app kais4rx/goal-app
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+349404ac0cf4bb3645e0b7ea0842a26c8850d06740978aaec0f4c248798f5731
+lehieu@192 goal % docker ps -a 
+CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS         PORTS                NAMES
+349404ac0cf4   kais4rx/goal-app   "docker-entrypoint.s…"   8 seconds ago   Up 7 seconds   0.0.0.0:80->80/tcp   goal-app
+lehieu@192 goal % docker images
+REPOSITORY            TAG       IMAGE ID       CREATED             SIZE
+kais4rx/goal-app      latest    55bae630f2ec   About an hour ago   926MB
+nothisu/goal          latest    993291ec6fc8   3 hours ago         872MB
+tuongan123/goal-app   latest    a04a16c7305f   6 hours ago         926MB
+lehieu@192 goal % docker pull chariesdang97/goal-image
+Using default tag: latest
+latest: Pulling from chariesdang97/goal-image
+f5196cdf2518: Already exists 
+9bed1e86f01e: Already exists 
+f44e4bdb3a6c: Already exists 
+2f75d131f406: Already exists 
+07dff4ad21eb: Already exists 
+e0ac4f13b766: Already exists 
+df2c3b2eb7cc: Already exists 
+efe636eac583: Already exists 
+fe17849545bb: Already exists 
+f94c8eda5a05: Already exists 
+15974eb97765: Pull complete 
+c639d4360fff: Pull complete 
+066e384cbc8e: Pull complete 
+Digest: sha256:dcdf45ebb3c6d9b2bbab9e829be6881f6db1351dc601c81dc204f10d57969c18
+Status: Downloaded newer image for chariesdang97/goal-image:latest
+docker.io/chariesdang97/goal-image:latest
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview chariesdang97/goal-image
+lehieu@192 goal % docker images
+REPOSITORY                 TAG       IMAGE ID       CREATED             SIZE
+kais4rx/goal-app           latest    55bae630f2ec   About an hour ago   926MB
+chariesdang97/goal-image   latest    61d357c79bbe   2 hours ago         926MB
+nothisu/goal               latest    993291ec6fc8   3 hours ago         872MB
+tuongan123/goal-app        latest    a04a16c7305f   6 hours ago         926MB
+lehieu@192 goal % docker stop goal-app
+goal-app
+lehieu@192 goal % docker run --rm -d -p 80:80 --name goal-app chariesdang97/goal-image
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+0809ade2ebef47892193146fb10501e3d67572dba6682c5bf1f3e8b657dbd7b1
+lehieu@192 goal % docker stop goal-app
+goal-app
+
+---------
+style.css
+
+html {
+    font-family: 'Poppins', sans-serif;
+    color: #3a3a3a;
+}
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+}
+
+h2,
+h3,
+h4 {
+    color: #000000;
+    text-align: left;
+}
+
+section,
+form {
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin: 2rem auto;
+    max-width: 38rem;
+}
+
+section {
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #023f78;
+    /* Adds a colorful accent */
+}
+
+h2 {
+    font-size: 1.7rem;
+    margin: 0.5rem 0;
+    text-align: left;
+    color: #023f78;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin: 0.25rem 0;
+    font-weight: 400;
+}
+
+.form-control {
+    margin: 1rem 0;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: #fefefe;
+    color: #3a3a3a;
+}
+
+input:focus {
+    outline: none;
+    border-color: #023f78;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+button {
+    display: inline-block;
+    background-color: #023f78;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:active {
+    background-color: #023f78;
+}
+
+.display {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.form-control label,
+.form-control input {
+    display: block;
+}
+
+.form-control input {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+
+    section,
+    form {
+        max-width: 90%;
+        margin: 1rem auto;
+    }
+}
+---------
+server.js
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+
+let goals = [{ userGoal: "Học Docker!", userResults: ["Để biết DevOps!"] }];
+
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  const goalSections = goals
+    .map(
+      ({ userGoal: goal, userResults: results }) => `
+    <section>
+      <h2>Lê Trung Hoà Hiếu</h2>
+      <h3>${goal}</h3>
+      <h2>Kết quả</h2>
+      ${results.map((result) => `<h4>${result}</h4>`).join("")}
+    </section>
+  `
+    )
+    .join("");
+
+  res.send(`
+    <html>
+      <head>
+        <link rel="stylesheet" href="styles.css">
+      </head>
+      <body>
+        ${goalSections}
+        <form action="/store-goal" method="POST">
+          <div class="form-control">
+            <label>Mục tiêu</label>
+            <input type="text" name="goal">
+          </div>
+          <div class="form-control">
+            <label>Kết quả</label>
+            <input type="text" name="result">
+          </div>
+          <button>Đặt mục tiêu và kết quả</button>
+        </form>
+      </body>
+    </html> 
+  `);
+});
+
+app.post("/store-goal", (req, res) => {
+  const enteredGoal = req.body.goal;
+  const enteredResult = req.body.result;
+
+  console.log("Goal:", enteredGoal);
+  console.log("Result:", enteredResult);
+
+  const existingGoal = goals.find((g) => g.userGoal === enteredGoal);
+
+  if (existingGoal) {
+    if (!existingGoal.userResults.includes(enteredResult)) {
+      existingGoal.userResults.push(enteredResult);
+    }
+  } else {
+    goals.push({ userGoal: enteredGoal, userResults: [enteredResult] });
+  }
+
+  res.redirect("/");
+});
+
+app.listen(80);
+---------
+
+
+lehieu@192 goal % docker images
+REPOSITORY                 TAG       IMAGE ID       CREATED             SIZE
+kais4rx/goal-app           latest    55bae630f2ec   About an hour ago   926MB
+-- Lê Trần Anh Khôi
+chariesdang97/goal-image   latest    61d357c79bbe   2 hours ago         926MB
+-- Đặng Thị Quỳnh Như
+nothisu/goal               latest    993291ec6fc8   3 hours ago         872MB
+tuongan123/goal-app        latest    a04a16c7305f   6 hours ago         926MB
+-- Nguyễn Xuân Tường An
+lehieu@192 goal % 

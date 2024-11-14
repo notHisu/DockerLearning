@@ -1,48 +1,122 @@
 html {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: #3a3a3a;
 }
 
 body {
     margin: 0;
+    background-color: #ffffff;
+}
+
+h2,
+h3,
+h4 {
+    color: #000000;
+    text-align: left;
 }
 
 section,
 form {
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
     margin: 2rem auto;
-    max-width: 40rem;
+    max-width: 38rem;
+}
+
+section {
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #023f78;
+    /* Adds a colorful accent */
+}
+
+h2 {
+    font-size: 1.7rem;
+    margin: 0.5rem 0;
+    text-align: left;
+    color: #023f78;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin: 0.25rem 0;
+    font-weight: 400;
 }
 
 .form-control {
-    margin: 0.5rem 0;
+    margin: 1rem 0;
 }
 
 input {
-    font: inherit;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: #fefefe;
+    color: #3a3a3a;
 }
 
-input,
-label {
-    display: block;
+input:focus {
+    outline: none;
+    border-color: #023f78;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 label {
     font-weight: bold;
     margin-bottom: 0.5rem;
+    color: #000000;
 }
 
 button {
-    background-color: #2f005a;
-    border: 1px solid #2f005a;
-    color: white;
+    display: inline-block;
+    background-color: #023f78;
+    border: none;
+    color: #ffffff;
     cursor: pointer;
-    padding: 0.5rem 1.5rem;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 button:hover,
 button:active {
-    background-color: #50005a;
-    border-color: #50005a;
+    background-color: #023f78;
+}
+
+.display {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.form-control label,
+.form-control input {
+    display: block;
+}
+
+.form-control input {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+
+    section,
+    form {
+        max-width: 90%;
+        margin: 1rem auto;
+    }
 }
