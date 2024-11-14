@@ -137,7 +137,7 @@ app.get("/", (req, res) => {
     .map(
       (goal) => `
     <section>
-      <h2>Mục tiêu</h2>
+      <h2>Lê Trung Hoà Hiếu</h2>
       <h3>${goal}</h3>
       <h2>Kết quả</h2>
       <h3>${goals[goal].join(", ")}</h3>
