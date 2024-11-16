@@ -1,0 +1,2252 @@
+Last login: Fri Nov 15 17:31:13 on ttys005
+lehieu@Les-MacBook-Pro ~ % cd Downloads/Hisu/Projects/docker
+lehieu@Les-MacBook-Pro docker % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                       PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    21 hours ago   Exited (255) 3 minutes ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                21 hours ago   Up 3 minutes (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               21 hours ago   Up 3 minutes                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    21 hours ago   Up 3 minutes (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    21 hours ago   Up 3 minutes (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    21 hours ago   Up 3 minutes (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    21 hours ago   Up 3 minutes (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   21 hours ago   Up 3 minutes (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro docker % docker ps
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                   PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                21 hours ago   Up 3 minutes (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               21 hours ago   Up 3 minutes             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    21 hours ago   Up 3 minutes (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    21 hours ago   Up 3 minutes (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    21 hours ago   Up 3 minutes (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    21 hours ago   Up 3 minutes (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   21 hours ago   Up 3 minutes (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro docker % docker stop $(docker ps -a)
+unknown shorthand flag: 'c' in -c
+See 'docker stop --help'.
+lehieu@Les-MacBook-Pro docker % docker stop help
+Error response from daemon: No such container: help
+lehieu@Les-MacBook-Pro docker % docker stop --help
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+
+Aliases:
+  docker container stop, docker stop
+
+Options:
+  -s, --signal string   Signal to send to the container
+  -t, --time int        Seconds to wait before killing the container
+lehieu@Les-MacBook-Pro docker %
+Last login: Sat Nov 16 14:12:53 on ttys005
+lehieu@Les-MacBook-Pro docker % mkdir feedback
+lehieu@Les-MacBook-Pro docker % cd feedback
+lehieu@Les-MacBook-Pro feedback % mkdir feedback
+lehieu@Les-MacBook-Pro feedback % mkdir pages
+lehieu@Les-MacBook-Pro feedback % mkdir public
+lehieu@Les-MacBook-Pro feedback % mkdir temp
+lehieu@Les-MacBook-Pro feedback % touch server.js
+lehieu@Les-MacBook-Pro feedback % touch package.json
+lehieu@Les-MacBook-Pro feedback % touch dockerfile
+lehieu@Les-MacBook-Pro feedback % ls
+dockerfile	feedback	package.json	pages		public		server.js	temp
+lehieu@Les-MacBook-Pro feedback % cd public
+lehieu@Les-MacBook-Pro public % touch styles.css
+lehieu@Les-MacBook-Pro public % cd ..
+lehieu@Les-MacBook-Pro feedback % cd pages
+lehieu@Les-MacBook-Pro pages % touch exists.html
+lehieu@Les-MacBook-Pro pages % touch feedback.html
+lehieu@Les-MacBook-Pro pages % cd ..
+lehieu@Les-MacBook-Pro feedback % ls
+dockerfile	feedback	package.json	pages		public		server.js	temp
+lehieu@Les-MacBook-Pro feedback % vi server.js
+lehieu@Les-MacBook-Pro feedback % vi server.js
+lehieu@Les-MacBook-Pro feedback % cd pages
+lehieu@Les-MacBook-Pro pages % vi exists.html
+lehieu@Les-MacBook-Pro pages % vi feedback.html
+lehieu@Les-MacBook-Pro pages % cd ..
+lehieu@Les-MacBook-Pro feedback % cd public
+lehieu@Les-MacBook-Pro public % vi styles.css
+lehieu@Les-MacBook-Pro public % cd ..
+lehieu@Les-MacBook-Pro feedback % vi server.js
+lehieu@Les-MacBook-Pro feedback % vi package.json
+lehieu@Les-MacBook-Pro feedback % vi dockerfile
+lehieu@Les-MacBook-Pro feedback % cd ..
+lehieu@Les-MacBook-Pro docker % cd feedback
+lehieu@Les-MacBook-Pro feedback % npm install
+
+added 175 packages, and audited 176 packages in 10s
+
+28 packages are looking for funding
+  run `npm fund` for details
+
+5 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+lehieu@Les-MacBook-Pro feedback % npm start
+
+> data-volume-example@1.0.0 start
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+[nodemon] clean exit - waiting for changes before restart
+^C
+lehieu@Les-MacBook-Pro feedback % node server.js
+lehieu@Les-MacBook-Pro feedback %
+lehieu@Les-MacBook-Pro feedback % npm start
+
+> data-volume-example@1.0.0 start
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+^C
+lehieu@Les-MacBook-Pro feedback % docker build -t feedback-image .
+[+] Building 8.0s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 220B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.7s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.1s
+ => => transferring context: 4.33MB                                                                                                                      0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => [3/5] COPY package.json .                                                                                                                            0.1s
+ => [4/5] RUN npm install                                                                                                                                4.8s
+ => [5/5] COPY . .                                                                                                                                       0.1s
+ => exporting to image                                                                                                                                   0.1s
+ => => exporting layers                                                                                                                                  0.1s
+ => => writing image sha256:29da2b4fda27e70dd75e822153a1cde5ee38dd5c707005a4739c1bd0dde36950                                                             0.0s
+ => => naming to docker.io/library/feedback-image                                                                                                        0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/g1uj2jdd0i3sdjspkp7vluzoi
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED          SIZE
+feedback-image                          latest             29da2b4fda27   15 seconds ago   873MB
+nothisu/goal                            latest             88934ca3c9c7   44 hours ago     872MB
+kais4rx/goal-app                        latest             55bae630f2ec   46 hours ago     926MB
+chariesdang97/goal-image                latest             61d357c79bbe   46 hours ago     926MB
+tuongan123/goal-app                     latest             a04a16c7305f   2 days ago       926MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   9 days ago       692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   11 days ago      631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago      45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago      352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   5 weeks ago      478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago     206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   4 months ago     1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago     322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago      149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago      162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago      25.1MB
+lehieu@Les-MacBook-Pro feedback % docker ps
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                 PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago   Up 5 hours (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago   Up 5 hours             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago   Up 5 hours (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago   Up 5 hours (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago   Up 5 hours (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago   Up 5 hours (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago   Up 5 hours (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker run -d -p 3000:80 --rm --name feedback-app feedback-image
+04f728bde804dc4e5171bce3324a4ba0bfc30d5a736afee42ffee31602abf1b4
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED          STATUS                     PORTS                                                        NAMES
+04f728bde804   feedback-image                                    "docker-entrypoint.s…"    54 seconds ago   Up 54 seconds              0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago     Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago     Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago     Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago     Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago     Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago     Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago     Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago     Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago     Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago     Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago     Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                     PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago   Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago   Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago   Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago   Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago   Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago   Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago   Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago   Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker run -d -p 3000:80 -v feedback:/app/feedback --rm --name feedback-app feedback-image
+72ab3af11af4f8660bcf90ffcb0daeb11966cca42a5dff5d0ed9a1b3ba7e57da
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                     PORTS                                                        NAMES
+72ab3af11af4   feedback-image                                    "docker-entrypoint.s…"    4 seconds ago   Up 4 seconds               0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago    Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago    Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago    Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago    Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago    Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago    Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago    Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker ps
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                 PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago   Up 5 hours (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago   Up 5 hours             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago   Up 5 hours (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago   Up 5 hours (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago   Up 5 hours (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago   Up 5 hours (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago   Up 5 hours (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker run -d -p 3000:80 -v feedback:/app/feedback --rm --name feedback-app feedback-image
+b98061f673e4ccca2e70b746c32fff73c546b55a6644144a88e530c435f4ecd5
+lehieu@Les-MacBook-Pro feedback % docker logs
+"docker logs" requires exactly 1 argument.
+See 'docker logs --help'.
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+lehieu@Les-MacBook-Pro feedback % docker los feedback-app
+docker: 'los' is not a docker command.
+See 'docker --help'
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                     PORTS                                                        NAMES
+b98061f673e4   feedback-image                                    "docker-entrypoint.s…"    2 minutes ago   Up 2 minutes               0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago    Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago    Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago    Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago    Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago    Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago    Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago    Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED         SIZE
+feedback-image                          latest             29da2b4fda27   8 minutes ago   873MB
+nothisu/goal                            latest             88934ca3c9c7   44 hours ago    872MB
+kais4rx/goal-app                        latest             55bae630f2ec   46 hours ago    926MB
+chariesdang97/goal-image                latest             61d357c79bbe   47 hours ago    926MB
+tuongan123/goal-app                     latest             a04a16c7305f   2 days ago      926MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   9 days ago      692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   11 days ago     631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago     45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago     352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   5 weeks ago     478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago    206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   4 months ago    1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago    322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago     149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago     162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago     25.1MB
+lehieu@Les-MacBook-Pro feedback % docker volume
+
+Usage:  docker volume COMMAND
+
+Manage volumes
+
+Commands:
+  create      Create a volume
+  inspect     Display detailed information on one or more volumes
+  ls          List volumes
+  prune       Remove unused local volumes
+  rm          Remove one or more volumes
+
+Run 'docker volume COMMAND --help' for more information on a command.
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "/Users/lehieu/Downloads/Hisu/Projects/docker/feedback":/app -v /app/node_modules feedback-image
+3becb785f22f244051dd292b339b274aed7433ddff451f0240e74fd108f4d376
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426
+local     feedback
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker volume inspect feedback
+[
+    {
+        "CreatedAt": "2024-11-16T12:08:53Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/feedback/_data",
+        "Name": "feedback",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+lehieu@Les-MacBook-Pro feedback % docker volume inspect b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426
+[
+    {
+        "CreatedAt": "2024-11-16T12:18:41Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.volume.anonymous": ""
+        },
+        "Mountpoint": "/var/lib/docker/volumes/b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426/_data",
+        "Name": "b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                     PORTS                                                        NAMES
+3becb785f22f   feedback-image                                    "docker-entrypoint.s…"    2 minutes ago   Up 2 minutes               0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago    Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago    Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago    Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago    Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago    Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago    Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago    Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker rm -f $(docker ps -a)
+unknown shorthand flag: 'c' in -c
+See 'docker rm --help'.
+lehieu@Les-MacBook-Pro feedback % docker rm --help
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+Remove one or more containers
+
+Aliases:
+  docker container rm, docker container remove, docker rm
+
+Options:
+  -f, --force     Force the removal of a running container (uses SIGKILL)
+  -l, --link      Remove the specified link
+  -v, --volumes   Remove anonymous volumes associated with the container
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                     PORTS                                                        NAMES
+3becb785f22f   feedback-image                                    "docker-entrypoint.s…"    4 minutes ago   Up 4 minutes               0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago    Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago    Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago    Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago    Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago    Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago    Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago    Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED          SIZE
+feedback-image                          latest             29da2b4fda27   19 minutes ago   873MB
+nothisu/goal                            latest             88934ca3c9c7   44 hours ago     872MB
+kais4rx/goal-app                        latest             55bae630f2ec   46 hours ago     926MB
+chariesdang97/goal-image                latest             61d357c79bbe   47 hours ago     926MB
+tuongan123/goal-app                     latest             a04a16c7305f   2 days ago       926MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   9 days ago       692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   11 days ago      631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago      45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago      352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   5 weeks ago      478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago     206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   4 months ago     1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago     322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago      149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago      162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago      25.1MB
+lehieu@Les-MacBook-Pro feedback % docker stop --help
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+
+Aliases:
+  docker container stop, docker stop
+
+Options:
+  -s, --signal string   Signal to send to the container
+  -t, --time int        Seconds to wait before killing the container
+lehieu@Les-MacBook-Pro feedback % docker stop -f --help
+unknown shorthand flag: 'f' in -f
+See 'docker stop --help'.
+lehieu@Les-MacBook-Pro feedback % docker --help
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  debug*      Get a shell into any image or container
+  desktop*    Docker Desktop commands (Alpha)
+  dev*        Docker Dev Environments
+  extension*  Manages Docker extensions
+  feedback*   Provide feedback, right in your terminal!
+  image       Manage images
+  init*       Creates Docker-related starter files for your project
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image
+  scout*      Docker Scout
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/Users/lehieu/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker
+                           context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/Users/lehieu/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/Users/lehieu/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/Users/lehieu/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+lehieu@Les-MacBook-Pro feedback % docker rm -f --help
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+Remove one or more containers
+
+Aliases:
+  docker container rm, docker container remove, docker rm
+
+Options:
+  -f, --force     Force the removal of a running container (uses SIGKILL)
+  -l, --link      Remove the specified link
+  -v, --volumes   Remove anonymous volumes associated with the container
+lehieu@Les-MacBook-Pro feedback % docker rm -f $(docker ps -a -q)
+3becb785f22f
+6ee562133c76
+e66fa2795557
+e6fe3fb8d872
+57768f71d949
+0fe214556763
+86ce38506640
+797285ad9425
+94d4a51a7e25
+f2e3a9a11a78
+c94ac235ef3a
+295cd3b90f67
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED          SIZE
+feedback-image                          latest             29da2b4fda27   26 minutes ago   873MB
+nothisu/goal                            latest             88934ca3c9c7   44 hours ago     872MB
+kais4rx/goal-app                        latest             55bae630f2ec   46 hours ago     926MB
+chariesdang97/goal-image                latest             61d357c79bbe   47 hours ago     926MB
+tuongan123/goal-app                     latest             a04a16c7305f   2 days ago       926MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   9 days ago       692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   11 days ago      631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago      45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago      352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   5 weeks ago      478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago     206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   4 months ago     1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago     322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago      149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago      162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago      25.1MB
+lehieu@Les-MacBook-Pro feedback % docker rmi -f $(docker images -q)
+Untagged: feedback-image:latest
+Deleted: sha256:29da2b4fda27e70dd75e822153a1cde5ee38dd5c707005a4739c1bd0dde36950
+Untagged: nothisu/goal:latest
+Untagged: nothisu/goal@sha256:73db837b23900b3252bc0d3b684aa9c3a8255664de4407b6180e29b53ef27eaf
+Deleted: sha256:88934ca3c9c753063ba962c9e63a13b5b090501ddd25c41fd3eef77e6615a385
+Untagged: kais4rx/goal-app:latest
+Untagged: kais4rx/goal-app@sha256:f2aff6fff71c3ed06c46b60c3ca5a5688a3bf49d41e897cc4e2a28275bc5ab6f
+Deleted: sha256:55bae630f2eca300c8214fa9d872c3a9b2ace60a1650329e4ea9af8ef9a1795f
+Deleted: sha256:84bda44b803a15eb28386327856811b94c15e0616777debaa9cee61aff9c7605
+Deleted: sha256:d32524b3c01bb97dd06595280a6bf9a36aa3dd0f4613dcef246b78a5c564463b
+Deleted: sha256:31c953ff89bd309961b378c8599d005a75c260032e2ec4ccfc711c823bc5ffc0
+Untagged: chariesdang97/goal-image:latest
+Untagged: chariesdang97/goal-image@sha256:dcdf45ebb3c6d9b2bbab9e829be6881f6db1351dc601c81dc204f10d57969c18
+Deleted: sha256:61d357c79bbe5ddf0e6109bb4115ddcff21a813bcfb32f6f7394d66887248851
+Deleted: sha256:8a91c1ff261fa8741a7cc11554e28fef604a55c812e6412f031526be77cd3d9b
+Deleted: sha256:9f6da4c51f555f6bc3c51a3adf51f923ad7098c6d761f2decea11bde6480596e
+Deleted: sha256:21e865c3644e76f6e61e5b1b6532e56642e0fe740a1572e2c5facebdefae941e
+Deleted: sha256:11bc2905f282f70d57f5bd47b0c6a66cfb0f258a07fe71010305b13e42b6a567
+Untagged: tuongan123/goal-app:latest
+Untagged: tuongan123/goal-app@sha256:5281eee25394b873544e6a43c175999e0d657b50302df4fb5e5875f9cb38945d
+Deleted: sha256:a04a16c7305fd7b2e1f7b1de8ad27176d5bdb0accc10da812e03a5dd3ee28c3e
+Deleted: sha256:9ec5d9f111a7c33a5eae4f40a1bbedaa6eb4a8a3d00cb9cee3a954b6a477973c
+Deleted: sha256:3d77e0a22ac025b85a247d9d9e9b5a3d6ab01151d52d3cfc6b28fcd8100dee78
+Deleted: sha256:239a1fd9188950d0e9d721dbb9c22a4dd3fe0dd0a94e99ab3d9ac4f8edde3a2a
+Deleted: sha256:14aac5318e91f961a6bc4ef7c20d43c41e52b1f49377bbc5068bc0e349910575
+Deleted: sha256:48a1cb575a53492203b210742623b1d13adb139d0749d38d25106ac1f3320b51
+Deleted: sha256:a6253fc13a810dbe1da64ed93c07e1cc2c184978c1e9b4e08652bd0e800d79ad
+Deleted: sha256:db909f385a82a377792f7377d99a3f55f461964ccb24ae18ddc81aa8fa9afc56
+Deleted: sha256:ee2b3f0d9813cf166884e53c80c4107383b3c3700ece66186bad431a9b518eeb
+Deleted: sha256:c2968a5df84beac6e0852f1624eacd178f60313c049ef7d3e281a26ea3fc96ec
+Deleted: sha256:09d0e0dc08ffc3f540e65c8146e9f8a3153e79ce8b325b6a1cf54f9361ddf33e
+Deleted: sha256:f12afbce95c45bc6503fa8530ceaeae7fd369c3c0affa81a27d338f21a7b998a
+Deleted: sha256:31dc859a2b0f6c41d272cc6bf02aee3a770104db7c5cc3d89d7591da5a7302c6
+Deleted: sha256:2f4dc9775f33d9f80dff490ce6f9b38c36dbbec4c1951662e8a2e7dab6d6001f
+Untagged: public.ecr.aws/supabase/studio:20241106-f29003e
+Untagged: public.ecr.aws/supabase/studio@sha256:e5cf72d1ccd858ab0404e4b9381ea6decb1cb3d72dc5be496c6a73c157a042c7
+Deleted: sha256:7e36aff11700753362cc49ef38ab368370f419ec8405348f69509dc5cb85f84f
+Deleted: sha256:ba8a58ce6abfe97f455f0d875276a5b816a35637965806236500a8799b597983
+Deleted: sha256:41ef8fac9195407cbceca057b207fd95834106db202fdcc640529b13c9fc4fff
+Deleted: sha256:7cae5972c8547142a9262f1ba89359cce0aa1abb000310ac761ca5375543e3c1
+Deleted: sha256:c719c0fc2542779fce9a6379cafe03f6b69a333ed10e3f1c1969d49c076c7b80
+Deleted: sha256:b42954b7c8b2cba7570800941efd2f2351304394ce930b45312e45a2b5d7fed2
+Untagged: public.ecr.aws/supabase/edge-runtime:v1.61.0
+Untagged: public.ecr.aws/supabase/edge-runtime@sha256:809d51481499b233ec6be7f842a5f74bb0fa4a58cb894164cf4ff0af222a82ee
+Deleted: sha256:a5ce919477973ae8bae79ddfd49b3b5c174fe7c5e4cb773184cc8d8383040ac3
+Deleted: sha256:22b5347a78603a1a2ffab8c4a70ac456c559a2e1c66278b5922f28090dd2f2b7
+Deleted: sha256:0aa959370f977961cd9c5deda36af02665ef0d447c3baaa2997807b9e7b78c1a
+Deleted: sha256:6ed9a19b8ad52846884e62f5bbed5be65df7eb82dbc509db4959aecaf23e598a
+Deleted: sha256:c28d57c00b6158436abb9ee103643c3f666ea1d264adf6ff931a29bd23e22c23
+Deleted: sha256:44f92f2e26d516e365d597623a696e93dfac653312d0dc01f2617b27e51b4c19
+Deleted: sha256:9e40c379477f19e821a5fa3bc9bbcf8a60db108a14d1cd08cd637c3622ccfe6a
+Untagged: public.ecr.aws/supabase/gotrue:v2.163.2
+Untagged: public.ecr.aws/supabase/gotrue@sha256:9b27ddb75b3b926af49e817d8268cc28ab78fc473fa3f8c348a4b33b8d90d54d
+Deleted: sha256:861c8b9e6fc2b3e5fbf78decfdf7c705dea7bb4985595a24ae19a0658b62f86e
+Deleted: sha256:e1d45397db97fedff11337ae21da862040ac3bd56b3d7494a32af11e5210963b
+Deleted: sha256:6bed95d552514a7e2faccc53216a22bd07e1b24e4bab815579f42e007696e9f0
+Deleted: sha256:74c33ec35d8def4a22961f9dfff159470f2f93fc3014d0cee279ef6ba21fb4d3
+Deleted: sha256:ab7cb2ebc5e05f4787bdb2aabb580d05c326fcdeac993eaacb31f4f0642beb17
+Deleted: sha256:108b943e9c1b3b5e777b0c622d6a29f9d28422c3cebb8ef966807a3fe223c106
+Untagged: public.ecr.aws/supabase/postgres-meta:v0.84.2
+Untagged: public.ecr.aws/supabase/postgres-meta@sha256:d0a96973e9f1b6303f7500421a459af3d7273b3f9f1db38610899f9f573da7c7
+Deleted: sha256:b8655f4b182ce413ff3462472f63994d573e8fcbd1270c650f4b24e91e5a83b7
+Deleted: sha256:e1de6237b354d1734d07c1eed7e244261062d907856299572fe27b5af0894b55
+Deleted: sha256:aaf92212a929ba04e4acdef88b822256384fc6c7572d35f97621d8e9cf30b80d
+Deleted: sha256:680034684ed93732e61cebb529004173901daa8a5ad14871441fa5ff2fca2f42
+Deleted: sha256:fa6dde92b4ee175d42b0c9f4bdbe35df81c990fae1260714111bd96420ea3cd7
+Deleted: sha256:3defb4b8cd1004d25420420d5c4e44df2dc188d0a7cc346a293704da5cfde137
+Deleted: sha256:a63f91af056017554c62019d81a8d21921a53791f3db7ad1e0b43c6da24bec62
+Deleted: sha256:0a09d95ddf4fb566d0b76718b158d0eceb47948afd18cfdf89ba92f162b1f332
+Deleted: sha256:f437484083ce9eba0e000c10e0cd9a0ee52adc158c8c5c15afd26b35407ccb33
+Deleted: sha256:be41006b101c99f0b155bd5d1939956dd625f5c79a3306513570002455f291b2
+Deleted: sha256:f0f039847c0897e41273775d599cc761049c809342ff8362efb4caf561186ada
+Untagged: public.ecr.aws/supabase/storage-api:v1.11.13
+Untagged: public.ecr.aws/supabase/storage-api@sha256:1e85dad48e8b3e85890a555e5114dc7ee48c2e8be4cfd97dd4e3564b4f104fcd
+Deleted: sha256:8a1af72634a9a9d9d368c70507815c5b6eda4a95f507c5ac99aa7f1211c2b9d6
+Deleted: sha256:ef2bbec23d011326d5d6581aa304ae30b5c1b9face79031277fd228ac7850af1
+Deleted: sha256:a202153d2e54bd681baeb140926e0ea077b70416ffe6008213379fac242cb5a5
+Deleted: sha256:9deadcb93d5ea67260f8fd989e4c0167598787dfaba6a18af6aba406776ad785
+Deleted: sha256:bca2a986f033160e41da7c30336fdad2cba985ef5ce95b84a24cd6ef68fce2dd
+Deleted: sha256:2df2003d399c5dce546d306d0ea53eb61b1a7f3a28213457d973be01da9c826d
+Deleted: sha256:a0617ac645110d048ff703e6f138d4c95132caf290f625b2a90f0b00d8713e84
+Deleted: sha256:73436f551e6dd48646e1e97c05a4784d44a4006120f656ed9b279b86770257ce
+Deleted: sha256:bb5e62a73d4534e402d0d40a310aa9463ee9ca3bc1d32174aef3986c877cb8df
+Deleted: sha256:ca90f1f834adae4603f7805631559b2b654c6eb68044464ac9a930f52b6c541a
+Deleted: sha256:16113d51b7181f20135f51e8ffbaead20a7671cd783017601f198748ce8a8ebf
+Untagged: public.ecr.aws/supabase/realtime:v2.30.34
+Untagged: public.ecr.aws/supabase/realtime@sha256:f43c080c74915340687727a34b21ae9cacc5ac21380d05b61efebeca6fd7ca4f
+Deleted: sha256:2b0b74db6d56339ca9e7a94fb1c73af390a1de618ee72c27e0d1c6c8187fff1f
+Deleted: sha256:708f2da0f0d9a2602d1cf39d66ce4d0e3feb24be969d2f48d514e76aab34a5c9
+Deleted: sha256:a61b509f6201e184627275a6832caecfdd5afaeba43e26425d7d788ebe730955
+Deleted: sha256:098e106ca347277ed0e882d8762b09eaf9d4337a2d755153e496fcf144b2847e
+Deleted: sha256:2ab0f0e51de088db779174a1d9ed47eb7115604f312441aa5f0d84e6a00aac18
+Deleted: sha256:69e603f9a58cc7430cbd9db9945d0bdc5fa2686f3eaee80758b076ecf7c71e27
+Deleted: sha256:0af638d67aa558f0960787b84deb05ff1e2c3a633e0cddd9043117f1d004527d
+Deleted: sha256:b533c686323117e5a75f370d85b180461d71810f15b8f4f391c4a0315ea4143b
+Deleted: sha256:2bd1a2222589b50b52ff960c3d004829633df61532e7a670a91618cd775f2d47
+Untagged: public.ecr.aws/supabase/postgres:15.1.1.78
+Untagged: public.ecr.aws/supabase/postgres@sha256:881ac26a02870c6784d9fbec67a6a9c5026905216bbd7dfbfa289ecc48073387
+Deleted: sha256:cc555cbbe281c6e7ef014048f41f0fdaaf6553f9ef58d1a09d25542b7d7099f5
+Deleted: sha256:aa64c450604536eb074eb0af13a5715c434851b833d04451eaf7baeddd968877
+Deleted: sha256:22abb3bc0053407197904b7d024672ff01d6991edb2a920fecfe868e08deab1e
+Deleted: sha256:ed26f19005c53ac9c983181c53bab5eb797445dda44d16d4e040cd6f9a30d5a5
+Deleted: sha256:44d9765694e19df5b61a3f956be71f64b4c5d262dcfb06dd4ab970bb6cb6aba0
+Deleted: sha256:c66b5367ac83a4b37b5323810eda4ac3a03dff48567e44c888b45504b1668677
+Deleted: sha256:fd7265c383a0ac51a0b2dd45a74baff56340748b86e50400be5bce5417b6132e
+Deleted: sha256:59b6f2cefae947d899395d7d48b6f954b70e328bdd26f6142ca9829ddbabb7b1
+Deleted: sha256:86861196f642beadade11ff0c2844e956f75c365835e23633f1279ed9bcfa9b7
+Deleted: sha256:476a033e0560f293d1ac456b5b4a8ad06a5ae35e7013f0173e33f04b27badd11
+Deleted: sha256:e1752311d35bda3c4dcaa354b36b4832db6c365e5ce1b35e8890865e03ef4813
+Deleted: sha256:2a9e787a8361218c1fa934aa1d227a58d31a468eda60c6b35010af6c853375ed
+Deleted: sha256:7e352227ffc9a87aaf12d4954923bf1f2532be23e78882013917079620204682
+Deleted: sha256:fa96fa518270b4ed4f188b5fcec3bddb249b576ced75c6f62d235b4a01af1cc1
+Deleted: sha256:3316b249469e3917ceffcb04a15de518fcd5770a6529b5d8e87d0798a73d2c99
+Deleted: sha256:6c44c46a15f3a9891d9dec4d1f4c8e9a3978d3565b1d31ae6eab76137dba2dad
+Deleted: sha256:5e1aa8b58ed404c15f5c682d8d0033f99a0b239758879b9d1c9885663a8fc2cc
+Deleted: sha256:761d35dda6ced8479f06e6d30374c55061ebe030d608b0dd3064f7f801463a77
+Deleted: sha256:f3ce4ff8bbd359f25fcae56949aeb016f33142a956db525886e44089bda19390
+Deleted: sha256:6b017bdfad18822a9b8f7ea3b1675910a223aafd040340867d019b862b852426
+Deleted: sha256:a03720ed265f751e8b0b54cbd26275aa758d3ef86629eec6b555f8550857faf5
+Deleted: sha256:8267f12b3859e9ac5d44b6c2aa67acf429a3f289f4db33345033e3c80ec71a72
+Deleted: sha256:fe456c3705ede1a83c1824772b79634744e8a1298502cf3fe810172c734e8e43
+Deleted: sha256:75036070682c2512f4616d7c52ee2498e8400f03119ca3e926473de7afd9e27f
+Deleted: sha256:a8c68591d421fc2d4bdda704f67a796edf5ff880c59358d75107eb5261821650
+Untagged: public.ecr.aws/supabase/postgrest:v12.2.0
+Untagged: public.ecr.aws/supabase/postgrest@sha256:2cf1efd2c9c2e7606610c113cc73e936d8ce9ba089271cb9cbf11aa564bc30c7
+Deleted: sha256:7bb9e110af3fc25f2ae40524478623f3fba73c68694365b9ece29e8a32c5af62
+Deleted: sha256:08f777d1b644a2e49015d3f797e84140f3b9ee20a1f57b0e237f6554d1e6046d
+Deleted: sha256:69b0afc713ccc816650c6540a6f4a311b521f2578dc6c8ee4ed4b7d9788ae1fd
+Deleted: sha256:03fdf04efd9e8117f277abeef88a9d51d45c154bfa042591f85656e8ffccc141
+Untagged: public.ecr.aws/supabase/kong:2.8.1
+Untagged: public.ecr.aws/supabase/kong@sha256:1b53405d8680a09d6f44494b7990bf7da2ea43f84a258c59717d4539abf09f6d
+Deleted: sha256:a5957d67fc55af3d11bdbd87de76f7480e3c4d8bcb715d6cfd01922780f46ea9
+Deleted: sha256:76be0defb992cc7bf80cfec25c6f4abd7f84d07f4f364cf84a99eacda3ea8848
+Deleted: sha256:8f10b5ff0a69ecff27cb4a9c2ef506255aa30accdfaf45121b75bd53f43ee21e
+Deleted: sha256:2c2ab91a0cb62e4fbedd3e226ecb774499e0f975f885cda4a2f28008c3b8e764
+Deleted: sha256:5d3e392a13a0fdfbf8806cb4a5e4b0a92b5021103a146249d8a2c999f06a9772
+Untagged: public.ecr.aws/supabase/imgproxy:v3.8.0
+Untagged: public.ecr.aws/supabase/imgproxy@sha256:0facd355d50f3be665ebe674486f2b2e9cdaebd3f74404acd9b7fece2f661435
+Deleted: sha256:696a5c233e29165b01ba3a93ae5eceb67be624d5deaa9ed259683beb94f55102
+Deleted: sha256:407577d084eebfd2f7603b15ac9d2e878ddf8cac33bf5cb07056d577e918b2b7
+Deleted: sha256:6aa114f583a9fc43f6a45a1d5acf7d5d6c5905f2128154f6177db78a12966e87
+Deleted: sha256:bdb0ff833d73f76fce8b58c7793365d4b9804f16cca95ab37abc4d25538e3b31
+Deleted: sha256:ff158763365ed54efa1c7c584cb59bfbdbdd7ef01ebb63f8cad9854c2b9ef887
+Deleted: sha256:a1c0d5cead8539f5efd87e0b00a8ca5f7541da10feea7778b3de7dea8a2b817a
+Deleted: sha256:c75eaa0eefd3c60b86bed7b8e234f032b2234382d113a6125c40c553146271fe
+Untagged: public.ecr.aws/supabase/inbucket:3.0.3
+Untagged: public.ecr.aws/supabase/inbucket@sha256:dc912ab76de647ca2a363fe285515e512e964cf699166773f3c2c73f5e7f71c0
+Deleted: sha256:e50d7c2197ff536d529815cbc742ee4d891b7d85de8c3a04f4e9b073d9259b09
+Deleted: sha256:fb8c00d863035646633903593c5036560d96fa3b6bdc699ed85c188dd2d16b9e
+Deleted: sha256:ba381ad90461275c606ae34422c71ca4dbad062043a403241d8bc4148109ccc3
+Deleted: sha256:f20a94955f304f909fab6697ccf93141f2feeabf0a7056eeab16ef0e0268b095
+Deleted: sha256:b327552be35d8e80a7e8560868631c3c863522d9efaaba88314d8507c69a338b
+Deleted: sha256:8154221dc1079a1aeac84240aa3bf990a3beb5cea4f6505702e1e79138c814c1
+Deleted: sha256:2188e229d24168a19467ad070557026defff95677e161ef3b96dd1a09c17b78d
+Deleted: sha256:8e2df713f3de5130fc99a08d2e1b2103c8bd10b653954ecfb3ebcf928c4bd31a
+Deleted: sha256:5b7df235d876e8cd4a2a329ae786db3fb152eff939f88379c49bcaaabbafbd9c
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426
+local     feedback
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker volume rm --help
+
+Usage:  docker volume rm [OPTIONS] VOLUME [VOLUME...]
+
+Remove one or more volumes. You cannot remove a volume that is in use by a container.
+
+Aliases:
+  docker volume rm, docker volume remove
+
+Examples:
+
+$ docker volume rm hello
+hello
+
+
+Options:
+  -f, --force   Force the removal of one or more volumes
+lehieu@Les-MacBook-Pro feedback % docker volume rm -f $(docker volume ls -q)
+b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426
+feedback
+supabase_config_creative-contact-prealpha
+supabase_db_creative-contact-prealpha
+supabase_inbucket_creative-contact-prealpha
+supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+lehieu@Les-MacBook-Pro feedback % docker build -t feedback-image .
+[+] Building 3.0s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 220B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.8s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.1s
+ => => transferring context: 138.22kB                                                                                                                    0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                     0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                         0.0s
+ => [5/5] COPY . .                                                                                                                                       0.1s
+ => exporting to image                                                                                                                                   0.1s
+ => => exporting layers                                                                                                                                  0.1s
+ => => writing image sha256:cc33733a8ae5823f6dd7cdf956a5c47f3700ffbaa7d6b28908f7481c3ac41dc9                                                             0.0s
+ => => naming to docker.io/library/feedback-image                                                                                                        0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/z6q0sgebuid9hh13vcap52p2b
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED         SIZE
+feedback-image   latest    cc33733a8ae5   3 seconds ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app feedback-image
+5228973a00c7fd97385b230eaa065cb24bb7c5162e49df4c86f79aabeaa37bce
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                  NAMES
+5228973a00c7   feedback-image   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app -v feedback:/app/feedback -v "/Users/lehieu/Downloads/Hisu/Projects/docker/feedback":/app -v /app/node_modules feedback-image
+eb822989fa2d6db4e288cba5d541906fca06d15e2e041796dfd5d591b96506c6
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                  NAMES
+eb822989fa2d   feedback-image   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     480320541a56cd0d11de112e45cb1f06853a0f1fe9a5cfc1958432a13a8e90ad
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker volume inspect feedback
+[
+    {
+        "CreatedAt": "2024-11-16T12:48:21Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/feedback/_data",
+        "Name": "feedback",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+lehieu@Les-MacBook-Pro feedback % docker volume inspect 480320541a56cd0d11de112e45cb1f06853a0f1fe9a5cfc1958432a13a8e90ad
+[
+    {
+        "CreatedAt": "2024-11-16T12:48:21Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.volume.anonymous": ""
+        },
+        "Mountpoint": "/var/lib/docker/volumes/480320541a56cd0d11de112e45cb1f06853a0f1fe9a5cfc1958432a13a8e90ad/_data",
+        "Name": "480320541a56cd0d11de112e45cb1f06853a0f1fe9a5cfc1958432a13a8e90ad",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app feedback-image
+643da0b330a63c2c2a9fba401680761738bb1b2bda23462f9e177c4d323a70fe
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                  NAMES
+643da0b330a6   feedback-image   "docker-entrypoint.s…"   30 seconds ago   Up 29 seconds   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 -v feedback:/app/feedback --name feedback-app feedback-image
+0b43a6f9032626c6244cc97c79e8fa2fdcf48f9567b574e629339ff03db6e43f
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+feedback-image   latest    cc33733a8ae5   21 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app -v "/Users/lehieu/Downloads/Hisu/Projects/docker/feedback":/app feedback-image
+92c7081c0bcff6a002302d0649bbe9b208c475ce6b87a3d9d64f4603c2c3c770
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+feedback-image   latest    cc33733a8ae5   24 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS              PORTS                  NAMES
+92c7081c0bcf   feedback-image   "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+feedback-image   latest    cc33733a8ae5   28 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback % docker rmi feedback-image
+Untagged: feedback-image:latest
+Deleted: sha256:cc33733a8ae5823f6dd7cdf956a5c47f3700ffbaa7d6b28908f7481c3ac41dc9
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@Les-MacBook-Pro feedback % docker build -t feedback-image .
+[+] Building 2.9s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 220B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.6s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.1s
+ => => transferring context: 138.34kB                                                                                                                    0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                     0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                         0.0s
+ => [5/5] COPY . .                                                                                                                                       0.1s
+ => exporting to image                                                                                                                                   0.1s
+ => => exporting layers                                                                                                                                  0.0s
+ => => writing image sha256:2ed3d592dda7da3aef6f7c7b4457041b48371713de346374e3b03d218894118f                                                             0.0s
+ => => naming to docker.io/library/feedback-image                                                                                                        0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/u9abg2ke059qg6pby2vdc23xk
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED         SIZE
+feedback-image   latest    2ed3d592dda7   6 seconds ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app -v feedback:/app/feedback feedback-image
+38605ec49e03753e8558b672dfbb113f3670e1f9aac9caec1a0818dbcabd0fc7
+lehieu@Les-MacBook-Pro feedback % docker push nothisuu/feedback
+Using default tag: latest
+The push refers to repository [docker.io/nothisuu/feedback]
+An image does not exist locally with the tag: nothisuu/feedback
+lehieu@Les-MacBook-Pro feedback %
+lehieu@Les-MacBook-Pro feedback % docker push nothisu/feedback
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/feedback]
+An image does not exist locally with the tag: nothisu/feedback
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED         SIZE
+feedback-image   latest    2ed3d592dda7   5 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker rmi feedback-image
+Untagged: feedback-image:latest
+Deleted: sha256:2ed3d592dda7da3aef6f7c7b4457041b48371713de346374e3b03d218894118f
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@Les-MacBook-Pro feedback % docker build -t nothisu/feedback .
+[+] Building 2.3s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 220B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.2s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.1s
+ => => transferring context: 137.44kB                                                                                                                    0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                     0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                         0.0s
+ => CACHED [5/5] COPY . .                                                                                                                                0.0s
+ => exporting to image                                                                                                                                   0.0s
+ => => exporting layers                                                                                                                                  0.0s
+ => => writing image sha256:2ed3d592dda7da3aef6f7c7b4457041b48371713de346374e3b03d218894118f                                                             0.0s
+ => => naming to docker.io/nothisu/feedback                                                                                                              0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/q2ipjtvl1epcsjtpjgwd6puzx
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
+nothisu/feedback   latest    2ed3d592dda7   5 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app -v feedback:/app/feedback nothisu/feedback
+45e957750acacabe209cdaa6508f4059a5a46e999d5201d6f64305e1fa23baf4
+lehieu@Les-MacBook-Pro feedback % docker push nothisu/feedback
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/feedback]
+0249e8e13016: Pushed
+5db5f6675eb7: Pushed
+d0692092e0b7: Pushed
+18d06d17ef91: Pushed
+4d772e48367e: Mounted from library/node
+b078da4dfde3: Mounted from library/node
+20649f23472c: Mounted from library/node
+476197c298e4: Mounted from library/node
+708291ce0534: Mounted from library/node
+82da4502ad28: Mounted from library/node
+f3e76aaba7cc: Mounted from library/node
+cfec405a23bc: Mounted from library/node
+173621e7addd: Mounted from library/node
+latest: digest: sha256:f764de4dd70dbdeaba023e9cd5101490e7563b04ca7626b14c6c5880fb65d459 size: 3050
+lehieu@Les-MacBook-Pro feedback % docker commit feedback-app nothisu/feedback
+sha256:27b84ccb847d34047a9ba17d7c24a61df414b9ebc5d49c78dfcc1ce532278569
+lehieu@Les-MacBook-Pro feedback % docker push nothisu/feedback
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/feedback]
+d77ff307fb72: Pushed
+0249e8e13016: Layer already exists
+5db5f6675eb7: Layer already exists
+d0692092e0b7: Layer already exists
+18d06d17ef91: Layer already exists
+4d772e48367e: Layer already exists
+b078da4dfde3: Layer already exists
+20649f23472c: Layer already exists
+476197c298e4: Layer already exists
+708291ce0534: Layer already exists
+82da4502ad28: Layer already exists
+f3e76aaba7cc: Layer already exists
+cfec405a23bc: Layer already exists
+173621e7addd: Layer already exists
+latest: digest: sha256:7cf51622cff7f17d63ad9b92d675ef2487bdf5b5c05f2308b748bf9cb6907ac0 size: 3257
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES
+45e957750aca   2ed3d592dda7   "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY         TAG       IMAGE ID       CREATED          SIZE
+nothisu/feedback   latest    27b84ccb847d   2 minutes ago    873MB
+nothisu/feedback   <none>    2ed3d592dda7   12 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker rmi -f $(docker images -q)
+Untagged: nothisu/feedback:latest
+Untagged: nothisu/feedback@sha256:7cf51622cff7f17d63ad9b92d675ef2487bdf5b5c05f2308b748bf9cb6907ac0
+Deleted: sha256:27b84ccb847d34047a9ba17d7c24a61df414b9ebc5d49c78dfcc1ce532278569
+Deleted: sha256:45733a0692687e5663f8254097e6494348782fb78078ce61663eb464d4a8f591
+Untagged: nothisu/feedback@sha256:f764de4dd70dbdeaba023e9cd5101490e7563b04ca7626b14c6c5880fb65d459
+Deleted: sha256:2ed3d592dda7da3aef6f7c7b4457041b48371713de346374e3b03d218894118f
+lehieu@Les-MacBook-Pro feedback % docker volume rm feedback
+feedback
+lehieu@Les-MacBook-Pro feedback % docker pull nothisu/feedback
+Using default tag: latest
+latest: Pulling from nothisu/feedback
+b4910c31031a: Already exists
+208f`d`617b499: Already exists
+1efadebfda14: Already exists
+efe7e7c43811: Already exists
+33997ebd7335: Already exists
+67501d6724b2: Already exists
+852f2ac51586: Already exists
+b481e8e2da86: Already exists
+d3d53ad8b21a: Already exists
+532c94ebe71d: Already exists
+223b7fc3dda6: Already exists
+9125e97aa710: Already exists
+5974f753c6c9: Already exists
+7ba356bf5671: Pull complete
+Digest: sha256:7cf51622cff7f17d63ad9b92d675ef2487bdf5b5c05f2308b748bf9cb6907ac0
+Status: Downloaded newer image for nothisu/feedback:latest
+docker.io/nothisu/feedback:latest
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview nothisu/feedback
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
+nothisu/feedback   latest    27b84ccb847d   4 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app nothisu/feedback
+5c889762f7bf2a820fc3fff16286fdfbcd820dc7127155452f6835900d379c1d
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker rmi nothisu/feedback-app
+Error response from daemon: No such image: nothisu/feedback-app:latest
+lehieu@Les-MacBook-Pro feedback % docker rmi nothisu/feedback
+Untagged: nothisu/feedback:latest
+Untagged: nothisu/feedback@sha256:7cf51622cff7f17d63ad9b92d675ef2487bdf5b5c05f2308b748bf9cb6907ac0
+Deleted: sha256:27b84ccb847d34047a9ba17d7c24a61df414b9ebc5d49c78dfcc1ce532278569
+Deleted: sha256:45733a0692687e5663f8254097e6494348782fb78078ce61663eb464d4a8f591
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback %
+Last login: Fri Nov 15 17:31:13 on ttys005
+lehieu@Les-MacBook-Pro ~ % cd Downloads/Hisu/Projects/docker
+lehieu@Les-MacBook-Pro docker % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                       PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    21 hours ago   Exited (255) 3 minutes ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                21 hours ago   Up 3 minutes (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               21 hours ago   Up 3 minutes                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    21 hours ago   Up 3 minutes (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    21 hours ago   Up 3 minutes (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    21 hours ago   Up 3 minutes (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    21 hours ago   Up 3 minutes (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   21 hours ago   Up 3 minutes (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro docker % docker ps
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                   PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                21 hours ago   Up 3 minutes (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    21 hours ago   Up 3 minutes (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               21 hours ago   Up 3 minutes             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    21 hours ago   Up 3 minutes (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    21 hours ago   Up 3 minutes (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    21 hours ago   Up 3 minutes (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    21 hours ago   Up 3 minutes (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   21 hours ago   Up 3 minutes (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro docker % docker stop $(docker ps -a)
+unknown shorthand flag: 'c' in -c
+See 'docker stop --help'.
+lehieu@Les-MacBook-Pro docker % docker stop help
+Error response from daemon: No such container: help
+lehieu@Les-MacBook-Pro docker % docker stop --help
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+
+Aliases:
+  docker container stop, docker stop
+
+Options:
+  -s, --signal string   Signal to send to the container
+  -t, --time int        Seconds to wait before killing the container
+lehieu@Les-MacBook-Pro docker %
+Last login: Sat Nov 16 14:12:53 on ttys005
+lehieu@Les-MacBook-Pro docker % mkdir feedback
+lehieu@Les-MacBook-Pro docker % cd feedback
+lehieu@Les-MacBook-Pro feedback % mkdir feedback
+lehieu@Les-MacBook-Pro feedback % mkdir pages
+lehieu@Les-MacBook-Pro feedback % mkdir public
+lehieu@Les-MacBook-Pro feedback % mkdir temp
+lehieu@Les-MacBook-Pro feedback % touch server.js
+lehieu@Les-MacBook-Pro feedback % touch package.json
+lehieu@Les-MacBook-Pro feedback % touch dockerfile
+lehieu@Les-MacBook-Pro feedback % ls
+dockerfile	feedback	package.json	pages		public		server.js	temp
+lehieu@Les-MacBook-Pro feedback % cd public
+lehieu@Les-MacBook-Pro public % touch styles.css
+lehieu@Les-MacBook-Pro public % cd ..
+lehieu@Les-MacBook-Pro feedback % cd pages
+lehieu@Les-MacBook-Pro pages % touch exists.html
+lehieu@Les-MacBook-Pro pages % touch feedback.html
+lehieu@Les-MacBook-Pro pages % cd ..
+lehieu@Les-MacBook-Pro feedback % ls
+dockerfile	feedback	package.json	pages		public		server.js	temp
+lehieu@Les-MacBook-Pro feedback % vi server.js
+lehieu@Les-MacBook-Pro feedback % vi server.js
+lehieu@Les-MacBook-Pro feedback % cd pages
+lehieu@Les-MacBook-Pro pages % vi exists.html
+lehieu@Les-MacBook-Pro pages % vi feedback.html
+lehieu@Les-MacBook-Pro pages % cd ..
+lehieu@Les-MacBook-Pro feedback % cd public
+lehieu@Les-MacBook-Pro public % vi styles.css
+lehieu@Les-MacBook-Pro public % cd ..
+lehieu@Les-MacBook-Pro feedback % vi server.js
+lehieu@Les-MacBook-Pro feedback % vi package.json
+lehieu@Les-MacBook-Pro feedback % vi dockerfile
+lehieu@Les-MacBook-Pro feedback % cd ..
+lehieu@Les-MacBook-Pro docker % cd feedback
+lehieu@Les-MacBook-Pro feedback % npm install
+
+added 175 packages, and audited 176 packages in 10s
+
+28 packages are looking for funding
+  run `npm fund` for details
+
+5 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+lehieu@Les-MacBook-Pro feedback % npm start
+
+> data-volume-example@1.0.0 start
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+[nodemon] clean exit - waiting for changes before restart
+^C
+lehieu@Les-MacBook-Pro feedback % node server.js
+lehieu@Les-MacBook-Pro feedback %
+lehieu@Les-MacBook-Pro feedback % npm start
+
+> data-volume-example@1.0.0 start
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+^C
+lehieu@Les-MacBook-Pro feedback % docker build -t feedback-image .
+[+] Building 8.0s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 220B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.7s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.1s
+ => => transferring context: 4.33MB                                                                                                                      0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => [3/5] COPY package.json .                                                                                                                            0.1s
+ => [4/5] RUN npm install                                                                                                                                4.8s
+ => [5/5] COPY . .                                                                                                                                       0.1s
+ => exporting to image                                                                                                                                   0.1s
+ => => exporting layers                                                                                                                                  0.1s
+ => => writing image sha256:29da2b4fda27e70dd75e822153a1cde5ee38dd5c707005a4739c1bd0dde36950                                                             0.0s
+ => => naming to docker.io/library/feedback-image                                                                                                        0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/g1uj2jdd0i3sdjspkp7vluzoi
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED          SIZE
+feedback-image                          latest             29da2b4fda27   15 seconds ago   873MB
+nothisu/goal                            latest             88934ca3c9c7   44 hours ago     872MB
+kais4rx/goal-app                        latest             55bae630f2ec   46 hours ago     926MB
+chariesdang97/goal-image                latest             61d357c79bbe   46 hours ago     926MB
+tuongan123/goal-app                     latest             a04a16c7305f   2 days ago       926MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   9 days ago       692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   11 days ago      631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago      45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago      352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   5 weeks ago      478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago     206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   4 months ago     1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago     322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago      149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago      162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago      25.1MB
+lehieu@Les-MacBook-Pro feedback % docker ps
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                 PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago   Up 5 hours (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago   Up 5 hours             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago   Up 5 hours (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago   Up 5 hours (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago   Up 5 hours (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago   Up 5 hours (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago   Up 5 hours (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker run -d -p 3000:80 --rm --name feedback-app feedback-image
+04f728bde804dc4e5171bce3324a4ba0bfc30d5a736afee42ffee31602abf1b4
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED          STATUS                     PORTS                                                        NAMES
+04f728bde804   feedback-image                                    "docker-entrypoint.s…"    54 seconds ago   Up 54 seconds              0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago     Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago     Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago     Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago     Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago     Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago     Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago     Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago     Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago     Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago     Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago     Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                     PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago   Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago   Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago   Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago   Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago   Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago   Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago   Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago   Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker run -d -p 3000:80 -v feedback:/app/feedback --rm --name feedback-app feedback-image
+72ab3af11af4f8660bcf90ffcb0daeb11966cca42a5dff5d0ed9a1b3ba7e57da
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                     PORTS                                                        NAMES
+72ab3af11af4   feedback-image                                    "docker-entrypoint.s…"    4 seconds ago   Up 4 seconds               0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago    Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago    Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago    Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago    Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago    Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago    Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago    Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker ps
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED        STATUS                 PORTS                                                        NAMES
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago   Up 5 hours (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago   Up 5 hours (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago   Up 5 hours             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago   Up 5 hours (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago   Up 5 hours (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago   Up 5 hours (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago   Up 5 hours (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago   Up 5 hours (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker run -d -p 3000:80 -v feedback:/app/feedback --rm --name feedback-app feedback-image
+b98061f673e4ccca2e70b746c32fff73c546b55a6644144a88e530c435f4ecd5
+lehieu@Les-MacBook-Pro feedback % docker logs
+"docker logs" requires exactly 1 argument.
+See 'docker logs --help'.
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+lehieu@Les-MacBook-Pro feedback % docker los feedback-app
+docker: 'los' is not a docker command.
+See 'docker --help'
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                     PORTS                                                        NAMES
+b98061f673e4   feedback-image                                    "docker-entrypoint.s…"    2 minutes ago   Up 2 minutes               0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago    Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago    Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago    Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago    Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago    Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago    Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago    Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED         SIZE
+feedback-image                          latest             29da2b4fda27   8 minutes ago   873MB
+nothisu/goal                            latest             88934ca3c9c7   44 hours ago    872MB
+kais4rx/goal-app                        latest             55bae630f2ec   46 hours ago    926MB
+chariesdang97/goal-image                latest             61d357c79bbe   47 hours ago    926MB
+tuongan123/goal-app                     latest             a04a16c7305f   2 days ago      926MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   9 days ago      692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   11 days ago     631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago     45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago     352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   5 weeks ago     478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago    206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   4 months ago    1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago    322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago     149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago     162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago     25.1MB
+lehieu@Les-MacBook-Pro feedback % docker volume
+
+Usage:  docker volume COMMAND
+
+Manage volumes
+
+Commands:
+  create      Create a volume
+  inspect     Display detailed information on one or more volumes
+  ls          List volumes
+  prune       Remove unused local volumes
+  rm          Remove one or more volumes
+
+Run 'docker volume COMMAND --help' for more information on a command.
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "/Users/lehieu/Downloads/Hisu/Projects/docker/feedback":/app -v /app/node_modules feedback-image
+3becb785f22f244051dd292b339b274aed7433ddff451f0240e74fd108f4d376
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426
+local     feedback
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker volume inspect feedback
+[
+    {
+        "CreatedAt": "2024-11-16T12:08:53Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/feedback/_data",
+        "Name": "feedback",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+lehieu@Les-MacBook-Pro feedback % docker volume inspect b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426
+[
+    {
+        "CreatedAt": "2024-11-16T12:18:41Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.volume.anonymous": ""
+        },
+        "Mountpoint": "/var/lib/docker/volumes/b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426/_data",
+        "Name": "b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                     PORTS                                                        NAMES
+3becb785f22f   feedback-image                                    "docker-entrypoint.s…"    2 minutes ago   Up 2 minutes               0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago    Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago    Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago    Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago    Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago    Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago    Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago    Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker rm -f $(docker ps -a)
+unknown shorthand flag: 'c' in -c
+See 'docker rm --help'.
+lehieu@Les-MacBook-Pro feedback % docker rm --help
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+Remove one or more containers
+
+Aliases:
+  docker container rm, docker container remove, docker rm
+
+Options:
+  -f, --force     Force the removal of a running container (uses SIGKILL)
+  -l, --link      Remove the specified link
+  -v, --volumes   Remove anonymous volumes associated with the container
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                     PORTS                                                        NAMES
+3becb785f22f   feedback-image                                    "docker-entrypoint.s…"    4 minutes ago   Up 4 minutes               0.0.0.0:3000->80/tcp                                         feedback-app
+6ee562133c76   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+e66fa2795557   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+e6fe3fb8d872   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    26 hours ago    Exited (255) 5 hours ago   8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+57768f71d949   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                26 hours ago    Up 5 hours (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+0fe214556763   public.ecr.aws/supabase/storage-api:v1.11.13      "docker-entrypoint.s…"    26 hours ago    Up 5 hours (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+86ce38506640   public.ecr.aws/supabase/postgrest:v12.2.0         "postgrest"               26 hours ago    Up 5 hours                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+797285ad9425   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    26 hours ago    Up 5 hours (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+94d4a51a7e25   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    26 hours ago    Up 5 hours (healthy)       1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+f2e3a9a11a78   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    26 hours ago    Up 5 hours (healthy)       9999/tcp                                                     supabase_auth_creative-contact-prealpha
+c94ac235ef3a   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    26 hours ago    Up 5 hours (healthy)       8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+295cd3b90f67   public.ecr.aws/supabase/postgres:15.1.1.78        "sh -c '\ncat <<'EOF'…"   26 hours ago    Up 5 hours (healthy)       0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED          SIZE
+feedback-image                          latest             29da2b4fda27   19 minutes ago   873MB
+nothisu/goal                            latest             88934ca3c9c7   44 hours ago     872MB
+kais4rx/goal-app                        latest             55bae630f2ec   46 hours ago     926MB
+chariesdang97/goal-image                latest             61d357c79bbe   47 hours ago     926MB
+tuongan123/goal-app                     latest             a04a16c7305f   2 days ago       926MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   9 days ago       692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   11 days ago      631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago      45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago      352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   5 weeks ago      478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago     206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   4 months ago     1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago     322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago      149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago      162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago      25.1MB
+lehieu@Les-MacBook-Pro feedback % docker stop --help
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+
+Aliases:
+  docker container stop, docker stop
+
+Options:
+  -s, --signal string   Signal to send to the container
+  -t, --time int        Seconds to wait before killing the container
+lehieu@Les-MacBook-Pro feedback % docker stop -f --help
+unknown shorthand flag: 'f' in -f
+See 'docker stop --help'.
+lehieu@Les-MacBook-Pro feedback % docker --help
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  debug*      Get a shell into any image or container
+  desktop*    Docker Desktop commands (Alpha)
+  dev*        Docker Dev Environments
+  extension*  Manages Docker extensions
+  feedback*   Provide feedback, right in your terminal!
+  image       Manage images
+  init*       Creates Docker-related starter files for your project
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image
+  scout*      Docker Scout
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/Users/lehieu/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker
+                           context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/Users/lehieu/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/Users/lehieu/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/Users/lehieu/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+lehieu@Les-MacBook-Pro feedback % docker rm -f --help
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+Remove one or more containers
+
+Aliases:
+  docker container rm, docker container remove, docker rm
+
+Options:
+  -f, --force     Force the removal of a running container (uses SIGKILL)
+  -l, --link      Remove the specified link
+  -v, --volumes   Remove anonymous volumes associated with the container
+lehieu@Les-MacBook-Pro feedback % docker rm -f $(docker ps -a -q)
+3becb785f22f
+6ee562133c76
+e66fa2795557
+e6fe3fb8d872
+57768f71d949
+0fe214556763
+86ce38506640
+797285ad9425
+94d4a51a7e25
+f2e3a9a11a78
+c94ac235ef3a
+295cd3b90f67
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED          SIZE
+feedback-image                          latest             29da2b4fda27   26 minutes ago   873MB
+nothisu/goal                            latest             88934ca3c9c7   44 hours ago     872MB
+kais4rx/goal-app                        latest             55bae630f2ec   46 hours ago     926MB
+chariesdang97/goal-image                latest             61d357c79bbe   47 hours ago     926MB
+tuongan123/goal-app                     latest             a04a16c7305f   2 days ago       926MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   9 days ago       692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   11 days ago      631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago      45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago      352MB
+public.ecr.aws/supabase/storage-api     v1.11.13           8a1af72634a9   5 weeks ago      478MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago     206MB
+public.ecr.aws/supabase/postgres        15.1.1.78          cc555cbbe281   4 months ago     1.17GB
+public.ecr.aws/supabase/postgrest       v12.2.0            7bb9e110af3f   5 months ago     322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago      149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago      162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago      25.1MB
+lehieu@Les-MacBook-Pro feedback % docker rmi -f $(docker images -q)
+Untagged: feedback-image:latest
+Deleted: sha256:29da2b4fda27e70dd75e822153a1cde5ee38dd5c707005a4739c1bd0dde36950
+Untagged: nothisu/goal:latest
+Untagged: nothisu/goal@sha256:73db837b23900b3252bc0d3b684aa9c3a8255664de4407b6180e29b53ef27eaf
+Deleted: sha256:88934ca3c9c753063ba962c9e63a13b5b090501ddd25c41fd3eef77e6615a385
+Untagged: kais4rx/goal-app:latest
+Untagged: kais4rx/goal-app@sha256:f2aff6fff71c3ed06c46b60c3ca5a5688a3bf49d41e897cc4e2a28275bc5ab6f
+Deleted: sha256:55bae630f2eca300c8214fa9d872c3a9b2ace60a1650329e4ea9af8ef9a1795f
+Deleted: sha256:84bda44b803a15eb28386327856811b94c15e0616777debaa9cee61aff9c7605
+Deleted: sha256:d32524b3c01bb97dd06595280a6bf9a36aa3dd0f4613dcef246b78a5c564463b
+Deleted: sha256:31c953ff89bd309961b378c8599d005a75c260032e2ec4ccfc711c823bc5ffc0
+Untagged: chariesdang97/goal-image:latest
+Untagged: chariesdang97/goal-image@sha256:dcdf45ebb3c6d9b2bbab9e829be6881f6db1351dc601c81dc204f10d57969c18
+Deleted: sha256:61d357c79bbe5ddf0e6109bb4115ddcff21a813bcfb32f6f7394d66887248851
+Deleted: sha256:8a91c1ff261fa8741a7cc11554e28fef604a55c812e6412f031526be77cd3d9b
+Deleted: sha256:9f6da4c51f555f6bc3c51a3adf51f923ad7098c6d761f2decea11bde6480596e
+Deleted: sha256:21e865c3644e76f6e61e5b1b6532e56642e0fe740a1572e2c5facebdefae941e
+Deleted: sha256:11bc2905f282f70d57f5bd47b0c6a66cfb0f258a07fe71010305b13e42b6a567
+Untagged: tuongan123/goal-app:latest
+Untagged: tuongan123/goal-app@sha256:5281eee25394b873544e6a43c175999e0d657b50302df4fb5e5875f9cb38945d
+Deleted: sha256:a04a16c7305fd7b2e1f7b1de8ad27176d5bdb0accc10da812e03a5dd3ee28c3e
+Deleted: sha256:9ec5d9f111a7c33a5eae4f40a1bbedaa6eb4a8a3d00cb9cee3a954b6a477973c
+Deleted: sha256:3d77e0a22ac025b85a247d9d9e9b5a3d6ab01151d52d3cfc6b28fcd8100dee78
+Deleted: sha256:239a1fd9188950d0e9d721dbb9c22a4dd3fe0dd0a94e99ab3d9ac4f8edde3a2a
+Deleted: sha256:14aac5318e91f961a6bc4ef7c20d43c41e52b1f49377bbc5068bc0e349910575
+Deleted: sha256:48a1cb575a53492203b210742623b1d13adb139d0749d38d25106ac1f3320b51
+Deleted: sha256:a6253fc13a810dbe1da64ed93c07e1cc2c184978c1e9b4e08652bd0e800d79ad
+Deleted: sha256:db909f385a82a377792f7377d99a3f55f461964ccb24ae18ddc81aa8fa9afc56
+Deleted: sha256:ee2b3f0d9813cf166884e53c80c4107383b3c3700ece66186bad431a9b518eeb
+Deleted: sha256:c2968a5df84beac6e0852f1624eacd178f60313c049ef7d3e281a26ea3fc96ec
+Deleted: sha256:09d0e0dc08ffc3f540e65c8146e9f8a3153e79ce8b325b6a1cf54f9361ddf33e
+Deleted: sha256:f12afbce95c45bc6503fa8530ceaeae7fd369c3c0affa81a27d338f21a7b998a
+Deleted: sha256:31dc859a2b0f6c41d272cc6bf02aee3a770104db7c5cc3d89d7591da5a7302c6
+Deleted: sha256:2f4dc9775f33d9f80dff490ce6f9b38c36dbbec4c1951662e8a2e7dab6d6001f
+Untagged: public.ecr.aws/supabase/studio:20241106-f29003e
+Untagged: public.ecr.aws/supabase/studio@sha256:e5cf72d1ccd858ab0404e4b9381ea6decb1cb3d72dc5be496c6a73c157a042c7
+Deleted: sha256:7e36aff11700753362cc49ef38ab368370f419ec8405348f69509dc5cb85f84f
+Deleted: sha256:ba8a58ce6abfe97f455f0d875276a5b816a35637965806236500a8799b597983
+Deleted: sha256:41ef8fac9195407cbceca057b207fd95834106db202fdcc640529b13c9fc4fff
+Deleted: sha256:7cae5972c8547142a9262f1ba89359cce0aa1abb000310ac761ca5375543e3c1
+Deleted: sha256:c719c0fc2542779fce9a6379cafe03f6b69a333ed10e3f1c1969d49c076c7b80
+Deleted: sha256:b42954b7c8b2cba7570800941efd2f2351304394ce930b45312e45a2b5d7fed2
+Untagged: public.ecr.aws/supabase/edge-runtime:v1.61.0
+Untagged: public.ecr.aws/supabase/edge-runtime@sha256:809d51481499b233ec6be7f842a5f74bb0fa4a58cb894164cf4ff0af222a82ee
+Deleted: sha256:a5ce919477973ae8bae79ddfd49b3b5c174fe7c5e4cb773184cc8d8383040ac3
+Deleted: sha256:22b5347a78603a1a2ffab8c4a70ac456c559a2e1c66278b5922f28090dd2f2b7
+Deleted: sha256:0aa959370f977961cd9c5deda36af02665ef0d447c3baaa2997807b9e7b78c1a
+Deleted: sha256:6ed9a19b8ad52846884e62f5bbed5be65df7eb82dbc509db4959aecaf23e598a
+Deleted: sha256:c28d57c00b6158436abb9ee103643c3f666ea1d264adf6ff931a29bd23e22c23
+Deleted: sha256:44f92f2e26d516e365d597623a696e93dfac653312d0dc01f2617b27e51b4c19
+Deleted: sha256:9e40c379477f19e821a5fa3bc9bbcf8a60db108a14d1cd08cd637c3622ccfe6a
+Untagged: public.ecr.aws/supabase/gotrue:v2.163.2
+Untagged: public.ecr.aws/supabase/gotrue@sha256:9b27ddb75b3b926af49e817d8268cc28ab78fc473fa3f8c348a4b33b8d90d54d
+Deleted: sha256:861c8b9e6fc2b3e5fbf78decfdf7c705dea7bb4985595a24ae19a0658b62f86e
+Deleted: sha256:e1d45397db97fedff11337ae21da862040ac3bd56b3d7494a32af11e5210963b
+Deleted: sha256:6bed95d552514a7e2faccc53216a22bd07e1b24e4bab815579f42e007696e9f0
+Deleted: sha256:74c33ec35d8def4a22961f9dfff159470f2f93fc3014d0cee279ef6ba21fb4d3
+Deleted: sha256:ab7cb2ebc5e05f4787bdb2aabb580d05c326fcdeac993eaacb31f4f0642beb17
+Deleted: sha256:108b943e9c1b3b5e777b0c622d6a29f9d28422c3cebb8ef966807a3fe223c106
+Untagged: public.ecr.aws/supabase/postgres-meta:v0.84.2
+Untagged: public.ecr.aws/supabase/postgres-meta@sha256:d0a96973e9f1b6303f7500421a459af3d7273b3f9f1db38610899f9f573da7c7
+Deleted: sha256:b8655f4b182ce413ff3462472f63994d573e8fcbd1270c650f4b24e91e5a83b7
+Deleted: sha256:e1de6237b354d1734d07c1eed7e244261062d907856299572fe27b5af0894b55
+Deleted: sha256:aaf92212a929ba04e4acdef88b822256384fc6c7572d35f97621d8e9cf30b80d
+Deleted: sha256:680034684ed93732e61cebb529004173901daa8a5ad14871441fa5ff2fca2f42
+Deleted: sha256:fa6dde92b4ee175d42b0c9f4bdbe35df81c990fae1260714111bd96420ea3cd7
+Deleted: sha256:3defb4b8cd1004d25420420d5c4e44df2dc188d0a7cc346a293704da5cfde137
+Deleted: sha256:a63f91af056017554c62019d81a8d21921a53791f3db7ad1e0b43c6da24bec62
+Deleted: sha256:0a09d95ddf4fb566d0b76718b158d0eceb47948afd18cfdf89ba92f162b1f332
+Deleted: sha256:f437484083ce9eba0e000c10e0cd9a0ee52adc158c8c5c15afd26b35407ccb33
+Deleted: sha256:be41006b101c99f0b155bd5d1939956dd625f5c79a3306513570002455f291b2
+Deleted: sha256:f0f039847c0897e41273775d599cc761049c809342ff8362efb4caf561186ada
+Untagged: public.ecr.aws/supabase/storage-api:v1.11.13
+Untagged: public.ecr.aws/supabase/storage-api@sha256:1e85dad48e8b3e85890a555e5114dc7ee48c2e8be4cfd97dd4e3564b4f104fcd
+Deleted: sha256:8a1af72634a9a9d9d368c70507815c5b6eda4a95f507c5ac99aa7f1211c2b9d6
+Deleted: sha256:ef2bbec23d011326d5d6581aa304ae30b5c1b9face79031277fd228ac7850af1
+Deleted: sha256:a202153d2e54bd681baeb140926e0ea077b70416ffe6008213379fac242cb5a5
+Deleted: sha256:9deadcb93d5ea67260f8fd989e4c0167598787dfaba6a18af6aba406776ad785
+Deleted: sha256:bca2a986f033160e41da7c30336fdad2cba985ef5ce95b84a24cd6ef68fce2dd
+Deleted: sha256:2df2003d399c5dce546d306d0ea53eb61b1a7f3a28213457d973be01da9c826d
+Deleted: sha256:a0617ac645110d048ff703e6f138d4c95132caf290f625b2a90f0b00d8713e84
+Deleted: sha256:73436f551e6dd48646e1e97c05a4784d44a4006120f656ed9b279b86770257ce
+Deleted: sha256:bb5e62a73d4534e402d0d40a310aa9463ee9ca3bc1d32174aef3986c877cb8df
+Deleted: sha256:ca90f1f834adae4603f7805631559b2b654c6eb68044464ac9a930f52b6c541a
+Deleted: sha256:16113d51b7181f20135f51e8ffbaead20a7671cd783017601f198748ce8a8ebf
+Untagged: public.ecr.aws/supabase/realtime:v2.30.34
+Untagged: public.ecr.aws/supabase/realtime@sha256:f43c080c74915340687727a34b21ae9cacc5ac21380d05b61efebeca6fd7ca4f
+Deleted: sha256:2b0b74db6d56339ca9e7a94fb1c73af390a1de618ee72c27e0d1c6c8187fff1f
+Deleted: sha256:708f2da0f0d9a2602d1cf39d66ce4d0e3feb24be969d2f48d514e76aab34a5c9
+Deleted: sha256:a61b509f6201e184627275a6832caecfdd5afaeba43e26425d7d788ebe730955
+Deleted: sha256:098e106ca347277ed0e882d8762b09eaf9d4337a2d755153e496fcf144b2847e
+Deleted: sha256:2ab0f0e51de088db779174a1d9ed47eb7115604f312441aa5f0d84e6a00aac18
+Deleted: sha256:69e603f9a58cc7430cbd9db9945d0bdc5fa2686f3eaee80758b076ecf7c71e27
+Deleted: sha256:0af638d67aa558f0960787b84deb05ff1e2c3a633e0cddd9043117f1d004527d
+Deleted: sha256:b533c686323117e5a75f370d85b180461d71810f15b8f4f391c4a0315ea4143b
+Deleted: sha256:2bd1a2222589b50b52ff960c3d004829633df61532e7a670a91618cd775f2d47
+Untagged: public.ecr.aws/supabase/postgres:15.1.1.78
+Untagged: public.ecr.aws/supabase/postgres@sha256:881ac26a02870c6784d9fbec67a6a9c5026905216bbd7dfbfa289ecc48073387
+Deleted: sha256:cc555cbbe281c6e7ef014048f41f0fdaaf6553f9ef58d1a09d25542b7d7099f5
+Deleted: sha256:aa64c450604536eb074eb0af13a5715c434851b833d04451eaf7baeddd968877
+Deleted: sha256:22abb3bc0053407197904b7d024672ff01d6991edb2a920fecfe868e08deab1e
+Deleted: sha256:ed26f19005c53ac9c983181c53bab5eb797445dda44d16d4e040cd6f9a30d5a5
+Deleted: sha256:44d9765694e19df5b61a3f956be71f64b4c5d262dcfb06dd4ab970bb6cb6aba0
+Deleted: sha256:c66b5367ac83a4b37b5323810eda4ac3a03dff48567e44c888b45504b1668677
+Deleted: sha256:fd7265c383a0ac51a0b2dd45a74baff56340748b86e50400be5bce5417b6132e
+Deleted: sha256:59b6f2cefae947d899395d7d48b6f954b70e328bdd26f6142ca9829ddbabb7b1
+Deleted: sha256:86861196f642beadade11ff0c2844e956f75c365835e23633f1279ed9bcfa9b7
+Deleted: sha256:476a033e0560f293d1ac456b5b4a8ad06a5ae35e7013f0173e33f04b27badd11
+Deleted: sha256:e1752311d35bda3c4dcaa354b36b4832db6c365e5ce1b35e8890865e03ef4813
+Deleted: sha256:2a9e787a8361218c1fa934aa1d227a58d31a468eda60c6b35010af6c853375ed
+Deleted: sha256:7e352227ffc9a87aaf12d4954923bf1f2532be23e78882013917079620204682
+Deleted: sha256:fa96fa518270b4ed4f188b5fcec3bddb249b576ced75c6f62d235b4a01af1cc1
+Deleted: sha256:3316b249469e3917ceffcb04a15de518fcd5770a6529b5d8e87d0798a73d2c99
+Deleted: sha256:6c44c46a15f3a9891d9dec4d1f4c8e9a3978d3565b1d31ae6eab76137dba2dad
+Deleted: sha256:5e1aa8b58ed404c15f5c682d8d0033f99a0b239758879b9d1c9885663a8fc2cc
+Deleted: sha256:761d35dda6ced8479f06e6d30374c55061ebe030d608b0dd3064f7f801463a77
+Deleted: sha256:f3ce4ff8bbd359f25fcae56949aeb016f33142a956db525886e44089bda19390
+Deleted: sha256:6b017bdfad18822a9b8f7ea3b1675910a223aafd040340867d019b862b852426
+Deleted: sha256:a03720ed265f751e8b0b54cbd26275aa758d3ef86629eec6b555f8550857faf5
+Deleted: sha256:8267f12b3859e9ac5d44b6c2aa67acf429a3f289f4db33345033e3c80ec71a72
+Deleted: sha256:fe456c3705ede1a83c1824772b79634744e8a1298502cf3fe810172c734e8e43
+Deleted: sha256:75036070682c2512f4616d7c52ee2498e8400f03119ca3e926473de7afd9e27f
+Deleted: sha256:a8c68591d421fc2d4bdda704f67a796edf5ff880c59358d75107eb5261821650
+Untagged: public.ecr.aws/supabase/postgrest:v12.2.0
+Untagged: public.ecr.aws/supabase/postgrest@sha256:2cf1efd2c9c2e7606610c113cc73e936d8ce9ba089271cb9cbf11aa564bc30c7
+Deleted: sha256:7bb9e110af3fc25f2ae40524478623f3fba73c68694365b9ece29e8a32c5af62
+Deleted: sha256:08f777d1b644a2e49015d3f797e84140f3b9ee20a1f57b0e237f6554d1e6046d
+Deleted: sha256:69b0afc713ccc816650c6540a6f4a311b521f2578dc6c8ee4ed4b7d9788ae1fd
+Deleted: sha256:03fdf04efd9e8117f277abeef88a9d51d45c154bfa042591f85656e8ffccc141
+Untagged: public.ecr.aws/supabase/kong:2.8.1
+Untagged: public.ecr.aws/supabase/kong@sha256:1b53405d8680a09d6f44494b7990bf7da2ea43f84a258c59717d4539abf09f6d
+Deleted: sha256:a5957d67fc55af3d11bdbd87de76f7480e3c4d8bcb715d6cfd01922780f46ea9
+Deleted: sha256:76be0defb992cc7bf80cfec25c6f4abd7f84d07f4f364cf84a99eacda3ea8848
+Deleted: sha256:8f10b5ff0a69ecff27cb4a9c2ef506255aa30accdfaf45121b75bd53f43ee21e
+Deleted: sha256:2c2ab91a0cb62e4fbedd3e226ecb774499e0f975f885cda4a2f28008c3b8e764
+Deleted: sha256:5d3e392a13a0fdfbf8806cb4a5e4b0a92b5021103a146249d8a2c999f06a9772
+Untagged: public.ecr.aws/supabase/imgproxy:v3.8.0
+Untagged: public.ecr.aws/supabase/imgproxy@sha256:0facd355d50f3be665ebe674486f2b2e9cdaebd3f74404acd9b7fece2f661435
+Deleted: sha256:696a5c233e29165b01ba3a93ae5eceb67be624d5deaa9ed259683beb94f55102
+Deleted: sha256:407577d084eebfd2f7603b15ac9d2e878ddf8cac33bf5cb07056d577e918b2b7
+Deleted: sha256:6aa114f583a9fc43f6a45a1d5acf7d5d6c5905f2128154f6177db78a12966e87
+Deleted: sha256:bdb0ff833d73f76fce8b58c7793365d4b9804f16cca95ab37abc4d25538e3b31
+Deleted: sha256:ff158763365ed54efa1c7c584cb59bfbdbdd7ef01ebb63f8cad9854c2b9ef887
+Deleted: sha256:a1c0d5cead8539f5efd87e0b00a8ca5f7541da10feea7778b3de7dea8a2b817a
+Deleted: sha256:c75eaa0eefd3c60b86bed7b8e234f032b2234382d113a6125c40c553146271fe
+Untagged: public.ecr.aws/supabase/inbucket:3.0.3
+Untagged: public.ecr.aws/supabase/inbucket@sha256:dc912ab76de647ca2a363fe285515e512e964cf699166773f3c2c73f5e7f71c0
+Deleted: sha256:e50d7c2197ff536d529815cbc742ee4d891b7d85de8c3a04f4e9b073d9259b09
+Deleted: sha256:fb8c00d863035646633903593c5036560d96fa3b6bdc699ed85c188dd2d16b9e
+Deleted: sha256:ba381ad90461275c606ae34422c71ca4dbad062043a403241d8bc4148109ccc3
+Deleted: sha256:f20a94955f304f909fab6697ccf93141f2feeabf0a7056eeab16ef0e0268b095
+Deleted: sha256:b327552be35d8e80a7e8560868631c3c863522d9efaaba88314d8507c69a338b
+Deleted: sha256:8154221dc1079a1aeac84240aa3bf990a3beb5cea4f6505702e1e79138c814c1
+Deleted: sha256:2188e229d24168a19467ad070557026defff95677e161ef3b96dd1a09c17b78d
+Deleted: sha256:8e2df713f3de5130fc99a08d2e1b2103c8bd10b653954ecfb3ebcf928c4bd31a
+Deleted: sha256:5b7df235d876e8cd4a2a329ae786db3fb152eff939f88379c49bcaaabbafbd9c
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426
+local     feedback
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker volume rm --help
+
+Usage:  docker volume rm [OPTIONS] VOLUME [VOLUME...]
+
+Remove one or more volumes. You cannot remove a volume that is in use by a container.
+
+Aliases:
+  docker volume rm, docker volume remove
+
+Examples:
+
+$ docker volume rm hello
+hello
+
+
+Options:
+  -f, --force   Force the removal of one or more volumes
+lehieu@Les-MacBook-Pro feedback % docker volume rm -f $(docker volume ls -q)
+b8d7b2314a1d7d32e2c3c62d316528ee6e0171aa608f1854563a251e74e53426
+feedback
+supabase_config_creative-contact-prealpha
+supabase_db_creative-contact-prealpha
+supabase_inbucket_creative-contact-prealpha
+supabase_storage_creative-contact-prealpha
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+lehieu@Les-MacBook-Pro feedback % docker build -t feedback-image .
+[+] Building 3.0s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 220B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.8s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.1s
+ => => transferring context: 138.22kB                                                                                                                    0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                     0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                         0.0s
+ => [5/5] COPY . .                                                                                                                                       0.1s
+ => exporting to image                                                                                                                                   0.1s
+ => => exporting layers                                                                                                                                  0.1s
+ => => writing image sha256:cc33733a8ae5823f6dd7cdf956a5c47f3700ffbaa7d6b28908f7481c3ac41dc9                                                             0.0s
+ => => naming to docker.io/library/feedback-image                                                                                                        0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/z6q0sgebuid9hh13vcap52p2b
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED         SIZE
+feedback-image   latest    cc33733a8ae5   3 seconds ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app feedback-image
+5228973a00c7fd97385b230eaa065cb24bb7c5162e49df4c86f79aabeaa37bce
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                  NAMES
+5228973a00c7   feedback-image   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app -v feedback:/app/feedback -v "/Users/lehieu/Downloads/Hisu/Projects/docker/feedback":/app -v /app/node_modules feedback-image
+eb822989fa2d6db4e288cba5d541906fca06d15e2e041796dfd5d591b96506c6
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                  NAMES
+eb822989fa2d   feedback-image   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     480320541a56cd0d11de112e45cb1f06853a0f1fe9a5cfc1958432a13a8e90ad
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker volume inspect feedback
+[
+    {
+        "CreatedAt": "2024-11-16T12:48:21Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/feedback/_data",
+        "Name": "feedback",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+lehieu@Les-MacBook-Pro feedback % docker volume inspect 480320541a56cd0d11de112e45cb1f06853a0f1fe9a5cfc1958432a13a8e90ad
+[
+    {
+        "CreatedAt": "2024-11-16T12:48:21Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.volume.anonymous": ""
+        },
+        "Mountpoint": "/var/lib/docker/volumes/480320541a56cd0d11de112e45cb1f06853a0f1fe9a5cfc1958432a13a8e90ad/_data",
+        "Name": "480320541a56cd0d11de112e45cb1f06853a0f1fe9a5cfc1958432a13a8e90ad",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app feedback-image
+643da0b330a63c2c2a9fba401680761738bb1b2bda23462f9e177c4d323a70fe
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                  NAMES
+643da0b330a6   feedback-image   "docker-entrypoint.s…"   30 seconds ago   Up 29 seconds   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 -v feedback:/app/feedback --name feedback-app feedback-image
+0b43a6f9032626c6244cc97c79e8fa2fdcf48f9567b574e629339ff03db6e43f
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+feedback-image   latest    cc33733a8ae5   21 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app -v "/Users/lehieu/Downloads/Hisu/Projects/docker/feedback":/app feedback-image
+92c7081c0bcff6a002302d0649bbe9b208c475ce6b87a3d9d64f4603c2c3c770
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+feedback-image   latest    cc33733a8ae5   24 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS              PORTS                  NAMES
+92c7081c0bcf   feedback-image   "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker logs feedback-app
+
+> data-volume-example@1.0.0 start /app
+> nodemon server.js
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+TEST!!!!!
+TEST!!!!!
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+feedback-image   latest    cc33733a8ae5   28 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback % docker rmi feedback-image
+Untagged: feedback-image:latest
+Deleted: sha256:cc33733a8ae5823f6dd7cdf956a5c47f3700ffbaa7d6b28908f7481c3ac41dc9
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@Les-MacBook-Pro feedback % docker build -t feedback-image .
+[+] Building 2.9s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 220B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.6s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.1s
+ => => transferring context: 138.34kB                                                                                                                    0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                     0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                         0.0s
+ => [5/5] COPY . .                                                                                                                                       0.1s
+ => exporting to image                                                                                                                                   0.1s
+ => => exporting layers                                                                                                                                  0.0s
+ => => writing image sha256:2ed3d592dda7da3aef6f7c7b4457041b48371713de346374e3b03d218894118f                                                             0.0s
+ => => naming to docker.io/library/feedback-image                                                                                                        0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/u9abg2ke059qg6pby2vdc23xk
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED         SIZE
+feedback-image   latest    2ed3d592dda7   6 seconds ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+local     feedback
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app -v feedback:/app/feedback feedback-image
+38605ec49e03753e8558b672dfbb113f3670e1f9aac9caec1a0818dbcabd0fc7
+lehieu@Les-MacBook-Pro feedback % docker push nothisuu/feedback
+Using default tag: latest
+The push refers to repository [docker.io/nothisuu/feedback]
+An image does not exist locally with the tag: nothisuu/feedback
+lehieu@Les-MacBook-Pro feedback %
+lehieu@Les-MacBook-Pro feedback % docker push nothisu/feedback
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/feedback]
+An image does not exist locally with the tag: nothisu/feedback
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED         SIZE
+feedback-image   latest    2ed3d592dda7   5 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker rmi feedback-image
+Untagged: feedback-image:latest
+Deleted: sha256:2ed3d592dda7da3aef6f7c7b4457041b48371713de346374e3b03d218894118f
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@Les-MacBook-Pro feedback % docker build -t nothisu/feedback .
+[+] Building 2.3s (11/11) FINISHED                                                                                                       docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 220B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                                               2.2s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                                         0.0s
+ => [internal] load build context                                                                                                                        0.1s
+ => => transferring context: 137.44kB                                                                                                                    0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                            0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                     0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                         0.0s
+ => CACHED [5/5] COPY . .                                                                                                                                0.0s
+ => exporting to image                                                                                                                                   0.0s
+ => => exporting layers                                                                                                                                  0.0s
+ => => writing image sha256:2ed3d592dda7da3aef6f7c7b4457041b48371713de346374e3b03d218894118f                                                             0.0s
+ => => naming to docker.io/nothisu/feedback                                                                                                              0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/q2ipjtvl1epcsjtpjgwd6puzx
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
+nothisu/feedback   latest    2ed3d592dda7   5 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app -v feedback:/app/feedback nothisu/feedback
+45e957750acacabe209cdaa6508f4059a5a46e999d5201d6f64305e1fa23baf4
+lehieu@Les-MacBook-Pro feedback % docker push nothisu/feedback
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/feedback]
+0249e8e13016: Pushed
+5db5f6675eb7: Pushed
+d0692092e0b7: Pushed
+18d06d17ef91: Pushed
+4d772e48367e: Mounted from library/node
+b078da4dfde3: Mounted from library/node
+20649f23472c: Mounted from library/node
+476197c298e4: Mounted from library/node
+708291ce0534: Mounted from library/node
+82da4502ad28: Mounted from library/node
+f3e76aaba7cc: Mounted from library/node
+cfec405a23bc: Mounted from library/node
+173621e7addd: Mounted from library/node
+latest: digest: sha256:f764de4dd70dbdeaba023e9cd5101490e7563b04ca7626b14c6c5880fb65d459 size: 3050
+lehieu@Les-MacBook-Pro feedback % docker commit feedback-app nothisu/feedback
+sha256:27b84ccb847d34047a9ba17d7c24a61df414b9ebc5d49c78dfcc1ce532278569
+lehieu@Les-MacBook-Pro feedback % docker push nothisu/feedback
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/feedback]
+d77ff307fb72: Pushed
+0249e8e13016: Layer already exists
+5db5f6675eb7: Layer already exists
+d0692092e0b7: Layer already exists
+18d06d17ef91: Layer already exists
+4d772e48367e: Layer already exists
+b078da4dfde3: Layer already exists
+20649f23472c: Layer already exists
+476197c298e4: Layer already exists
+708291ce0534: Layer already exists
+82da4502ad28: Layer already exists
+f3e76aaba7cc: Layer already exists
+cfec405a23bc: Layer already exists
+173621e7addd: Layer already exists
+latest: digest: sha256:7cf51622cff7f17d63ad9b92d675ef2487bdf5b5c05f2308b748bf9cb6907ac0 size: 3257
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES
+45e957750aca   2ed3d592dda7   "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes   0.0.0.0:3000->80/tcp   feedback-app
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY         TAG       IMAGE ID       CREATED          SIZE
+nothisu/feedback   latest    27b84ccb847d   2 minutes ago    873MB
+nothisu/feedback   <none>    2ed3d592dda7   12 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker rmi -f $(docker images -q)
+Untagged: nothisu/feedback:latest
+Untagged: nothisu/feedback@sha256:7cf51622cff7f17d63ad9b92d675ef2487bdf5b5c05f2308b748bf9cb6907ac0
+Deleted: sha256:27b84ccb847d34047a9ba17d7c24a61df414b9ebc5d49c78dfcc1ce532278569
+Deleted: sha256:45733a0692687e5663f8254097e6494348782fb78078ce61663eb464d4a8f591
+Untagged: nothisu/feedback@sha256:f764de4dd70dbdeaba023e9cd5101490e7563b04ca7626b14c6c5880fb65d459
+Deleted: sha256:2ed3d592dda7da3aef6f7c7b4457041b48371713de346374e3b03d218894118f
+lehieu@Les-MacBook-Pro feedback % docker volume rm feedback
+feedback
+lehieu@Les-MacBook-Pro feedback % docker pull nothisu/feedback
+Using default tag: latest
+latest: Pulling from nothisu/feedback
+b4910c31031a: Already exists
+208f`d`617b499: Already exists
+1efadebfda14: Already exists
+efe7e7c43811: Already exists
+33997ebd7335: Already exists
+67501d6724b2: Already exists
+852f2ac51586: Already exists
+b481e8e2da86: Already exists
+d3d53ad8b21a: Already exists
+532c94ebe71d: Already exists
+223b7fc3dda6: Already exists
+9125e97aa710: Already exists
+5974f753c6c9: Already exists
+7ba356bf5671: Pull complete
+Digest: sha256:7cf51622cff7f17d63ad9b92d675ef2487bdf5b5c05f2308b748bf9cb6907ac0
+Status: Downloaded newer image for nothisu/feedback:latest
+docker.io/nothisu/feedback:latest
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview nothisu/feedback
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
+nothisu/feedback   latest    27b84ccb847d   4 minutes ago   873MB
+lehieu@Les-MacBook-Pro feedback % docker run --rm -d -p 3000:80 --name feedback-app nothisu/feedback
+5c889762f7bf2a820fc3fff16286fdfbcd820dc7127155452f6835900d379c1d
+lehieu@Les-MacBook-Pro feedback % docker stop feedback-app
+feedback-app
+lehieu@Les-MacBook-Pro feedback % docker rmi nothisu/feedback-app
+Error response from daemon: No such image: nothisu/feedback-app:latest
+lehieu@Les-MacBook-Pro feedback % docker rmi nothisu/feedback
+Untagged: nothisu/feedback:latest
+Untagged: nothisu/feedback@sha256:7cf51622cff7f17d63ad9b92d675ef2487bdf5b5c05f2308b748bf9cb6907ac0
+Deleted: sha256:27b84ccb847d34047a9ba17d7c24a61df414b9ebc5d49c78dfcc1ce532278569
+Deleted: sha256:45733a0692687e5663f8254097e6494348782fb78078ce61663eb464d4a8f591
+lehieu@Les-MacBook-Pro feedback % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+lehieu@Les-MacBook-Pro feedback % docker volume ls
+DRIVER    VOLUME NAME
+lehieu@Les-MacBook-Pro feedback % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+lehieu@Les-MacBook-Pro feedback %
+
+---------
+feedback.html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Share some Feedback!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">MySite</a></h1>
+    </header>
+    <main>
+      <section>
+        <h2>Lê Trung Hoà Hiếu</h2>
+        <form action="/create" method="POST">
+          <div class="form-control">
+            <label for="title">New Title</label>
+            <input type="text" id="title" name="title" />
+          </div>
+          <div class="form-control">
+            <label for="text">Document Text</label>
+            <textarea name="text" id="text" rows="10"></textarea>
+          </div>
+          <button>Save</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
