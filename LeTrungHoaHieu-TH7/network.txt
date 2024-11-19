@@ -1,0 +1,980 @@
+lehieu@192 docker % mkdir network
+lehieu@192 docker % cd network
+lehieu@192 network % 
+lehieu@192 network % ls     
+app.js                  dockerfile              models                  node_modules            package-lock.json       package.json
+lehieu@192 network % 
+lehieu@192 network % node app.js
+(node:87535) [MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+(Use `node --trace-warnings ...` to show where the warning was created)
+node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1904:16)
+    at listenInCluster (node:net:1961:12)
+    at Server.listen (node:net:2063:7)
+    at Function.listen (/Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/express/lib/application.js:635:24)
+    at /Users/lehieu/Downloads/Hisu/Projects/docker/network/app.js:79:11
+    at /Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/mongoose/lib/helpers/promiseOrCallback.js:25:16
+    at /Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/mongoose/lib/index.js:355:14
+    at /Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/mongoose/lib/connection.js:874:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1940:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v20.17.0
+lehieu@192 network % node app.js
+(node:87725) [MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+(Use `node --trace-warnings ...` to show where the warning was created)
+node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1904:16)
+    at listenInCluster (node:net:1961:12)
+    at Server.listen (node:net:2063:7)
+    at Function.listen (/Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/express/lib/application.js:635:24)
+    at /Users/lehieu/Downloads/Hisu/Projects/docker/network/app.js:79:11
+    at /Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/mongoose/lib/helpers/promiseOrCallback.js:25:16
+    at /Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/mongoose/lib/index.js:355:14
+    at /Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/mongoose/lib/connection.js:874:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1940:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v20.17.0
+lehieu@192 network % 
+ *  History restored 
+
+lehieu@192 network % node app.js
+(node:88227) [MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+(Use `node --trace-warnings ...` to show where the warning was created)
+^C
+lehieu@192 network % node app.js
+(node:89472) [MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+(Use `node --trace-warnings ...` to show where the warning was created)
+^C
+lehieu@192 network % docker stop
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+lehieu@192 network % docker stop network-app
+network-app
+lehieu@192 network % node app.js
+node:events:485
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/lehieu/Downloads/Hisu/Projects/docker/network/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/lehieu/Downloads/Hisu/Projects/docker/network/app.js:103:5)
+    at Module._compile (node:internal/modules/cjs/loader:1550:14)
+    at Object..js (node:internal/modules/cjs/loader:1702:10)
+    at Module.load (node:internal/modules/cjs/loader:1307:32)
+    at Function._load (node:internal/modules/cjs/loader:1121:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1948:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v23.2.0
+lehieu@192 network % node app.js
+^C
+lehieu@192 network % node app.js
+^C
+lehieu@192 network % node app.js
+^C
+lehieu@192 network % node app.js
+^C
+lehieu@192 network % node app.js
+
+ *  History restored 
+
+lehieu@192 network % history
+ 1199  node app.js
+ 1200  supabase db push
+ 1201  supabase db push --include-all
+ 1202  supabase db push --include-all
+ 1203  node app.js
+ 1204  node app.js
+ 1205  docker stop
+ 1206  docker stop network-app
+ 1207  node app.js
+ 1208  node app.js
+ 1209  node app.js
+ 1210  node app.js
+ 1211  node app.js
+ 1212  node app.js
+ 1213  supabase start
+ 1214  bun run dev
+lehieu@192 network % 
+lehieu@192 docker % cd network 
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS       NAMES
+b9485149b6f8   mongo:latest   "docker-entrypoint.s…"   20 minutes ago   Up 20 minutes   27017/tcp   mongodb
+lehieu@192 network % docker images
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+network-image   latest    c50855106ab6   17 minutes ago   1.17GB
+mongo           latest    39c53a547a74   3 weeks ago      845MB
+lehieu@192 network % docker build -t network-image . 
+[+] Building 3.0s (11/11) FINISHED                                                                                                                           docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                                         0.0s
+ => => transferring dockerfile: 182B                                                                                                                                         0.0s
+ => [internal] load metadata for docker.io/library/node:latest                                                                                                               2.5s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                                                  0.0s
+ => [internal] load .dockerignore                                                                                                                                            0.0s
+ => => transferring context: 2B                                                                                                                                              0.0s
+ => [1/5] FROM docker.io/library/node:latest@sha256:c65ab339c494443a7d2ed36140674bc8815f7100b0d4cebfe0144ce35267a693                                                         0.0s
+ => [internal] load build context                                                                                                                                            0.1s
+ => => transferring context: 158.51kB                                                                                                                                        0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                                                0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                                         0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                                             0.0s
+ => [5/5] COPY . .                                                                                                                                                           0.2s
+ => exporting to image                                                                                                                                                       0.1s
+ => => exporting layers                                                                                                                                                      0.1s
+ => => writing image sha256:f583bde51f77927a652fa62b127d464da0d70cadebdc38c30588bd1e0b5201b1                                                                                 0.0s
+ => => naming to docker.io/library/network-image                                                                                                                             0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/jdwi05tp2og5gbvpgtw4ebfd6
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview 
+lehieu@192 network % docker build -d -p 3000:3000 --name network-app network-image
+unknown shorthand flag: 'd' in -d
+See 'docker buildx build --help'.
+lehieu@192 network % docker run  -d -p 3000:3000 --name network-app network-image
+2d23f3f9696e83758f2fc3cc28bd1de523b058415c4213fd923423f2fcc757fb
+lehieu@192 network % docker build -t nothisu/network .
+[+] Building 2.3s (11/11) FINISHED                                                                                                                           docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                                         0.0s
+ => => transferring dockerfile: 182B                                                                                                                                         0.0s
+ => [internal] load metadata for docker.io/library/node:latest                                                                                                               2.1s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                                                  0.0s
+ => [internal] load .dockerignore                                                                                                                                            0.0s
+ => => transferring context: 2B                                                                                                                                              0.0s
+ => [1/5] FROM docker.io/library/node:latest@sha256:c65ab339c494443a7d2ed36140674bc8815f7100b0d4cebfe0144ce35267a693                                                         0.0s
+ => [internal] load build context                                                                                                                                            0.1s
+ => => transferring context: 154.37kB                                                                                                                                        0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                                                0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                                         0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                                             0.0s
+ => CACHED [5/5] COPY . .                                                                                                                                                    0.0s
+ => exporting to image                                                                                                                                                       0.0s
+ => => exporting layers                                                                                                                                                      0.0s
+ => => writing image sha256:f583bde51f77927a652fa62b127d464da0d70cadebdc38c30588bd1e0b5201b1                                                                                 0.0s
+ => => naming to docker.io/nothisu/network                                                                                                                                   0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/z0e7a5dz1hzcmgqr91ql7btn0
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview 
+lehieu@192 network % docker push nothisu/network 
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/network]
+b0c6cc8c6f11: Pushed 
+27b4f8743cf0: Pushed 
+7eabbad3abfa: Pushed 
+346421383bb6: Pushed 
+e1ab299f1d56: Mounted from library/node 
+6a2a1de66ca2: Mounted from library/node 
+b6d9fd743213: Mounted from library/node 
+5ea68e7ba33a: Mounted from library/node 
+c5d4093056ba: Mounted from nothisu/random 
+29842e18ccdd: Mounted from nothisu/random 
+de0d18f93508: Mounted from nothisu/random 
+ec8ae7dad7ab: Mounted from nothisu/random 
+latest: digest: sha256:a3a867fe71f1268d7e1959864b0846aefb5b26d2df3fccec4a252ad12dc08264 size: 2839
+lehieu@192 network % docker ps -a                  
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS          PORTS                    NAMES
+2d23f3f9696e   network-image   "docker-entrypoint.s…"   5 minutes ago    Up 5 minutes    0.0.0.0:3000->3000/tcp   network-app
+b9485149b6f8   mongo:latest    "docker-entrypoint.s…"   26 minutes ago   Up 26 minutes   27017/tcp                mongodb
+lehieu@192 network % docker images
+REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
+network-image     latest    f583bde51f77   6 minutes ago    1.17GB
+nothisu/network   latest    f583bde51f77   6 minutes ago    1.17GB
+<none>            <none>    c50855106ab6   24 minutes ago   1.17GB
+mongo             latest    39c53a547a74   3 weeks ago      845MB
+lehieu@192 network % docker rm network-app
+Error response from daemon: cannot remove container "/network-app": container is running: stop the container before removing or force remove
+lehieu@192 network % docker stop network-app
+network-app
+lehieu@192 network % docker run -d -p 3000:3000 --name network-app nothisu/network
+docker: Error response from daemon: Conflict. The container name "/network-app" is already in use by container "2d23f3f9696e83758f2fc3cc28bd1de523b058415c4213fd923423f2fcc757fb". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS                        PORTS       NAMES
+2d23f3f9696e   network-image   "docker-entrypoint.s…"   7 minutes ago    Exited (137) 45 seconds ago               network-app
+b9485149b6f8   mongo:latest    "docker-entrypoint.s…"   28 minutes ago   Up 28 minutes                 27017/tcp   mongodb
+lehieu@192 network % docker rm network-app
+network-app
+lehieu@192 network % docker run -d -p 3000:3000 --name network-app nothisu/network
+411ee8c6ff7c8d826fb2aa95b0885a1a1c5e265291a430b8b143660af14455f7
+lehieu@192 network % docker ps -a    
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                        PORTS                                                        NAMES
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    58 minutes ago      Up 58 minutes (healthy)       0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    58 minutes ago      Up 58 minutes (healthy)       8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    58 minutes ago      Up 58 minutes                 8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                58 minutes ago      Up 58 minutes (healthy)       8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    58 minutes ago      Up 58 minutes (healthy)       5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               59 minutes ago      Up 59 minutes                 3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    59 minutes ago      Up 59 minutes (healthy)       4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    About an hour ago   Up About an hour (healthy)    1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    About an hour ago   Up About an hour (healthy)    9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour (healthy)    8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   About an hour ago   Up About an hour (healthy)    0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+411ee8c6ff7c   nothisu/network                                   "docker-entrypoint.s…"    2 hours ago         Exited (137) 57 minutes ago                                                                network-app
+b9485149b6f8   mongo:latest                                      "docker-entrypoint.s…"    2 hours ago         Exited (0) 58 minutes ago                                                                  mongodb
+lehieu@192 network % docker rm -f nothisu/network
+Error response from daemon: No such container: nothisu/network
+lehieu@192 network % docker rm -f network-app
+network-app
+lehieu@192 network % docker rmi -f nothisu/network
+Untagged: nothisu/network:latest
+Untagged: nothisu/network@sha256:a3a867fe71f1268d7e1959864b0846aefb5b26d2df3fccec4a252ad12dc08264
+lehieu@192 network % docker images -q
+f583bde51f77
+c50855106ab6
+5b934e90e6f2
+7e36aff11700
+a5ce91947797
+39c53a547a74
+861c8b9e6fc2
+b8655f4b182c
+2b0b74db6d56
+785ba46de01f
+caefe98d7bc4
+a5957d67fc55
+696a5c233e29
+e50d7c2197ff
+lehieu@192 network % docker images 
+REPOSITORY                              TAG                IMAGE ID       CREATED        SIZE
+network-image                           latest             f583bde51f77   2 hours ago    1.17GB
+<none>                                  <none>             c50855106ab6   2 hours ago    1.17GB
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   8 days ago     478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   12 days ago    692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago    631MB
+mongo                                   latest             39c53a547a74   3 weeks ago    845MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago    45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago    352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago   206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago   2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago   322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago    149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago    162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago    25.1MB
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                       PORTS                                                        NAMES
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    59 minutes ago      Up 59 minutes (healthy)      0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    59 minutes ago      Up 59 minutes (healthy)      8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    59 minutes ago      Up 59 minutes                8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                59 minutes ago      Up 59 minutes (healthy)      8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    59 minutes ago      Up 59 minutes (healthy)      5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               About an hour ago   Up About an hour             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    About an hour ago   Up About an hour (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    About an hour ago   Up About an hour (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    About an hour ago   Up About an hour (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   About an hour ago   Up About an hour (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+b9485149b6f8   mongo:latest                                      "docker-entrypoint.s…"    2 hours ago         Exited (0) 59 minutes ago                                                                 mongodb
+lehieu@192 network % docker build -t nothisu/network
+ERROR: "docker buildx build" requires exactly 1 argument.
+See 'docker buildx build --help'.
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Start a build
+lehieu@192 network % docker build -t nothisu/network .
+[+] Building 3.5s (11/11) FINISHED                                                                                                                           docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                                         0.0s
+ => => transferring dockerfile: 182B                                                                                                                                         0.0s
+ => [internal] load metadata for docker.io/library/node:latest                                                                                                               2.6s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                                                  0.0s
+ => [internal] load .dockerignore                                                                                                                                            0.0s
+ => => transferring context: 2B                                                                                                                                              0.0s
+ => [1/5] FROM docker.io/library/node:latest@sha256:c65ab339c494443a7d2ed36140674bc8815f7100b0d4cebfe0144ce35267a693                                                         0.0s
+ => [internal] load build context                                                                                                                                            0.1s
+ => => transferring context: 162.27kB                                                                                                                                        0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                                                0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                                         0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                                             0.0s
+ => [5/5] COPY . .                                                                                                                                                           0.6s
+ => exporting to image                                                                                                                                                       0.1s
+ => => exporting layers                                                                                                                                                      0.1s
+ => => writing image sha256:989880e722c7c1157c7e3ad83ff301a22e4805493244211f27d7a640c47b5341                                                                                 0.0s
+ => => naming to docker.io/nothisu/network                                                                                                                                   0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/yvw6uxivz6r358wxsek6f70kj
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview 
+lehieu@192 network % docker push nothisu/network
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/network]
+dd40c7a81c8e: Pushed 
+27b4f8743cf0: Layer already exists 
+7eabbad3abfa: Layer already exists 
+346421383bb6: Layer already exists 
+e1ab299f1d56: Layer already exists 
+6a2a1de66ca2: Layer already exists 
+b6d9fd743213: Layer already exists 
+5ea68e7ba33a: Layer already exists 
+c5d4093056ba: Layer already exists 
+29842e18ccdd: Layer already exists 
+de0d18f93508: Layer already exists 
+ec8ae7dad7ab: Layer already exists 
+latest: digest: sha256:1a9a027a65e85e12b7d57d029bce9c12579e24f3712141ac5903ede51d3efde6 size: 2839
+lehieu@192 network % docker rmi network-image nothisu/network
+Untagged: network-image:latest
+Deleted: sha256:f583bde51f77927a652fa62b127d464da0d70cadebdc38c30588bd1e0b5201b1
+Untagged: nothisu/network:latest
+Untagged: nothisu/network@sha256:1a9a027a65e85e12b7d57d029bce9c12579e24f3712141ac5903ede51d3efde6
+Deleted: sha256:989880e722c7c1157c7e3ad83ff301a22e4805493244211f27d7a640c47b5341
+lehieu@192 network % docker images 
+REPOSITORY                              TAG                IMAGE ID       CREATED        SIZE
+<none>                                  <none>             c50855106ab6   2 hours ago    1.17GB
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   8 days ago     478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   12 days ago    692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago    631MB
+mongo                                   latest             39c53a547a74   3 weeks ago    845MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago    45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago    352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago   206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago   2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago   322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago    149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago    162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago    25.1MB
+lehieu@192 network % docker rmi mongo c50855106ab6
+Deleted: sha256:c50855106ab653f3839a4865401225a0ca47f918e96aa3d0a87299bf4309c32d
+Error response from daemon: conflict: unable to remove repository reference "mongo" (must force) - container b9485149b6f8 is using its referenced image 39c53a547a74
+lehieu@192 network % docker rmi -f mongo             
+Untagged: mongo:latest
+Untagged: mongo@sha256:c165af1a407eefce644877bf5a59ba3d9ca762e62b4f1723c919dc08dc32f4d0
+Deleted: sha256:39c53a547a74ef5eb3b3e637c5a2a016710b2a21a8ae1ad0b4bf4d8ae585e323
+lehieu@192 network % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED        SIZE
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   8 days ago     478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   12 days ago    692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago    631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago    45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago    352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago   206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago   2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago   322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago    149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago    162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago    25.1MB
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                         PORTS                                                        NAMES
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour               8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                About an hour ago   Up About an hour (healthy)     8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               About an hour ago   Up About an hour               3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    About an hour ago   Up About an hour (healthy)     4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    About an hour ago   Up About an hour (healthy)     1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    About an hour ago   Up About an hour (healthy)     9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour (healthy)     8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   About an hour ago   Up About an hour (healthy)     0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+b9485149b6f8   39c53a547a74                                      "docker-entrypoint.s…"    2 hours ago         Exited (0) About an hour ago                                                                mongodb
+lehieu@192 network % docker pull nothisu/network
+Using default tag: latest
+latest: Pulling from nothisu/network
+1a3f1864ec54: Already exists 
+464f864cfaa8: Already exists 
+8bc6ea9985d6: Already exists 
+9cbd322119a1: Already exists 
+20303d4676d7: Already exists 
+83758b7d215b: Already exists 
+ce02e827d3dc: Already exists 
+9d9cdb64cb21: Already exists 
+a2802e1c8cc7: Already exists 
+3302ca8cd572: Already exists 
+e84fa5aa8d74: Already exists 
+56bc77fbbf38: Already exists 
+Digest: sha256:1a9a027a65e85e12b7d57d029bce9c12579e24f3712141ac5903ede51d3efde6
+Status: Downloaded newer image for nothisu/network:latest
+docker.io/nothisu/network:latest
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview nothisu/network
+lehieu@192 network % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED         SIZE
+nothisu/network                         latest             989880e722c7   5 minutes ago   1.17GB
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   8 days ago      478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   12 days ago     692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago     631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago     45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago     352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago    206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago    2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago    322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago     149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago     162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago     25.1MB
+lehieu@192 network % docker run -d -p 3001:3000 --name network-app nothisu/network
+d0d70cc67d1f5e120f9c568664ba8905b1935553904cfb046276a75d002b378c
+docker: Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:3001 -> 0.0.0.0:0: listen tcp4 0.0.0.0:3001: bind: address already in use.
+lehieu@192 network % docker run -d -p 3002:3000 --name network-app nothisu/network
+docker: Error response from daemon: Conflict. The container name "/network-app" is already in use by container "d0d70cc67d1f5e120f9c568664ba8905b1935553904cfb046276a75d002b378c". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                         PORTS                                                        NAMES
+d0d70cc67d1f   nothisu/network                                   "docker-entrypoint.s…"    59 seconds ago      Created                                                                                     network-app
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour               8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                About an hour ago   Up About an hour (healthy)     8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               About an hour ago   Up About an hour               3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    About an hour ago   Up About an hour (healthy)     4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    About an hour ago   Up About an hour (healthy)     1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    About an hour ago   Up About an hour (healthy)     9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour (healthy)     8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   About an hour ago   Up About an hour (healthy)     0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+b9485149b6f8   39c53a547a74                                      "docker-entrypoint.s…"    2 hours ago         Exited (0) About an hour ago                                                                mongodb
+lehieu@192 network % docker stop network-app
+network-app
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                         PORTS                                                        NAMES
+d0d70cc67d1f   nothisu/network                                   "docker-entrypoint.s…"    3 minutes ago       Created                                                                                     network-app
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour               8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                About an hour ago   Up About an hour (healthy)     8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               About an hour ago   Up About an hour               3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    About an hour ago   Up About an hour (healthy)     4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    About an hour ago   Up About an hour (healthy)     1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    About an hour ago   Up About an hour (healthy)     9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour (healthy)     8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   About an hour ago   Up About an hour (healthy)     0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+b9485149b6f8   39c53a547a74                                      "docker-entrypoint.s…"    2 hours ago         Exited (0) About an hour ago                                                                mongodb
+lehieu@192 network % docker stop mongodb
+mongodb
+lehieu@192 network % docker ps    
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                       PORTS                                                        NAMES
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour             8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                About an hour ago   Up About an hour (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               About an hour ago   Up About an hour             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    About an hour ago   Up About an hour (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    About an hour ago   Up About an hour (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    About an hour ago   Up About an hour (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   About an hour ago   Up About an hour (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@192 network % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED         SIZE
+nothisu/network                         latest             989880e722c7   9 minutes ago   1.17GB
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   8 days ago      478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   12 days ago     692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago     631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago     45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago     352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago    206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago    2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago    322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago     149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago     162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago     25.1MB
+lehieu@192 network % 
+lehieu@192 network % docker run -d -p 3000:3000 --rm --name network-app nothisu/network
+docker: Error response from daemon: Conflict. The container name "/network-app" is already in use by container "d0d70cc67d1f5e120f9c568664ba8905b1935553904cfb046276a75d002b378c". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+lehieu@192 network % docker rm -f network-app
+network-app
+lehieu@192 network % docker run -d -p 3000:3000 --rm --name network-app nothisu/network
+fd18cdcf917c058db8f405663feaef068a1fcadcb493cbe8e0ef4e7aea8196c2
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                         PORTS                                                        NAMES
+fd18cdcf917c   nothisu/network                                   "docker-entrypoint.s…"    18 seconds ago      Up 17 seconds                  0.0.0.0:3000->3000/tcp                                       network-app
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour               8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                About an hour ago   Up About an hour (healthy)     8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)     5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               About an hour ago   Up About an hour               3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    About an hour ago   Up About an hour (healthy)     4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    About an hour ago   Up About an hour (healthy)     1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    About an hour ago   Up About an hour (healthy)     9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour (healthy)     8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   About an hour ago   Up About an hour (healthy)     0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+b9485149b6f8   39c53a547a74                                      "docker-entrypoint.s…"    2 hours ago         Exited (0) About an hour ago                                                                mongodb
+lehieu@192 network % docker stop network-app
+network-app
+lehieu@192 network % docker rm -f network-app
+Error response from daemon: No such container: network-app
+lehieu@192 network % docker rmi -f nothisu/network-app
+Error response from daemon: No such image: nothisu/network-app:latest
+lehieu@192 network % docker rmi -f nothisu/network    
+Untagged: nothisu/network:latest
+Untagged: nothisu/network@sha256:1a9a027a65e85e12b7d57d029bce9c12579e24f3712141ac5903ede51d3efde6
+Deleted: sha256:989880e722c7c1157c7e3ad83ff301a22e4805493244211f27d7a640c47b5341
+lehieu@192 network % docker rmi -f mongodb
+Error response from daemon: No such image: mongodb:latest
+lehieu@192 network % docker rm -f mongodb
+mongodb
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                       PORTS                                                        NAMES
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour             8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                About an hour ago   Up About an hour (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               About an hour ago   Up About an hour             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    About an hour ago   Up About an hour (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    About an hour ago   Up About an hour (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    About an hour ago   Up About an hour (healthy)   9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   About an hour ago   Up About an hour (healthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@192 network % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED        SIZE
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   8 days ago     478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   12 days ago    692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago    631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago    45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago    352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago   206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago   2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago   322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago    149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago    162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago    25.1MB
+lehieu@192 network % docker build -t nothisu/network .
+[+] Building 3.0s (11/11) FINISHED                                                                                                                           docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                                         0.0s
+ => => transferring dockerfile: 182B                                                                                                                                         0.0s
+ => [internal] load metadata for docker.io/library/node:latest                                                                                                               2.5s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                                                  0.0s
+ => [internal] load .dockerignore                                                                                                                                            0.0s
+ => => transferring context: 2B                                                                                                                                              0.0s
+ => [1/5] FROM docker.io/library/node:latest@sha256:c65ab339c494443a7d2ed36140674bc8815f7100b0d4cebfe0144ce35267a693                                                         0.0s
+ => [internal] load build context                                                                                                                                            0.1s
+ => => transferring context: 162.27kB                                                                                                                                        0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                                                                0.0s
+ => CACHED [3/5] COPY package.json .                                                                                                                                         0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                                             0.0s
+ => [5/5] COPY . .                                                                                                                                                           0.3s
+ => exporting to image                                                                                                                                                       0.1s
+ => => exporting layers                                                                                                                                                      0.1s
+ => => writing image sha256:8cc65d3765e6c6492e78eb71dee127232b8947ea4aef0ce53aff5766216b872a                                                                                 0.0s
+ => => naming to docker.io/nothisu/network                                                                                                                                   0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/u20vvz5ysbo3fgzosaae0c5zy
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview 
+lehieu@192 network % docker push nothisu/network               
+Using default tag: latest
+The push refers to repository [docker.io/nothisu/network]
+b88f50b4a979: Pushed 
+27b4f8743cf0: Layer already exists 
+7eabbad3abfa: Layer already exists 
+346421383bb6: Layer already exists 
+e1ab299f1d56: Layer already exists 
+6a2a1de66ca2: Layer already exists 
+b6d9fd743213: Layer already exists 
+5ea68e7ba33a: Layer already exists 
+c5d4093056ba: Layer already exists 
+29842e18ccdd: Layer already exists 
+de0d18f93508: Layer already exists 
+ec8ae7dad7ab: Layer already exists 
+latest: digest: sha256:c2bb55dcf94ae3097fba63400a650c08aafdadf0e0ea290506f13adb47048f76 size: 2839
+lehieu@192 network % docker rmi nothisu/network
+Untagged: nothisu/network:latest
+Untagged: nothisu/network@sha256:c2bb55dcf94ae3097fba63400a650c08aafdadf0e0ea290506f13adb47048f76
+Deleted: sha256:8cc65d3765e6c6492e78eb71dee127232b8947ea4aef0ce53aff5766216b872a
+lehieu@192 network % docker pull nothisu/network
+Using default tag: latest
+latest: Pulling from nothisu/network
+1a3f1864ec54: Already exists 
+464f864cfaa8: Already exists 
+8bc6ea9985d6: Already exists 
+9cbd322119a1: Already exists 
+20303d4676d7: Already exists 
+83758b7d215b: Already exists 
+ce02e827d3dc: Already exists 
+9d9cdb64cb21: Already exists 
+a2802e1c8cc7: Already exists 
+3302ca8cd572: Already exists 
+e84fa5aa8d74: Already exists 
+3ae949ee2b5e: Already exists 
+Digest: sha256:c2bb55dcf94ae3097fba63400a650c08aafdadf0e0ea290506f13adb47048f76
+Status: Downloaded newer image for nothisu/network:latest
+docker.io/nothisu/network:latest
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview nothisu/network
+lehieu@192 network % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED              SIZE
+nothisu/network                         latest             8cc65d3765e6   About a minute ago   1.17GB
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   8 days ago           478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   12 days ago          692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago          631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   3 weeks ago          45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   4 weeks ago          352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago         206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago         2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago         322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago          149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago          162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago          25.1MB
+lehieu@192 network % docker run -d -p 3000:3000 --rm --name network-app nothisu/network
+c34d1d3230d11edede71889abc304dac5a76d51a96092c918784eb1049af32d3
+lehieu@192 network % docker stop network-app
+network-app
+lehieu@192 network % history 
+ 1218  docker ps -a 
+ 1219  docker stop network-app
+ 1220  docker rm -f network-app
+ 1221  docker rmi -f nothisu/network-app
+ 1222  docker rmi -f nothisu/network
+ 1223  docker rmi -f mongodb
+ 1224  docker rm -f mongodb
+ 1225  docker ps -a 
+ 1226  docker images
+ 1227  docker build -t nothisu/network .
+ 1228  docker push nothisu/network
+ 1229  docker rmi nothisu/network
+ 1230  docker pull nothisu/network
+ 1231  docker images
+ 1232  docker run -d -p 3000:3000 --rm --name network-app nothisu/network
+ 1233  docker stop network-app
+lehieu@192 network % 
+lehieu@192 network % docker run -d -p 3000:3000 --rm --name network-app nothisu/network
+135cb4f455eb17f3afbe33d18635cd3562d86ab23d5efa696193fd8fd6698a7e
+lehieu@192 network % docker logs network-app
+lehieu@192 network % docker logs network-app
+lehieu@192 network % docker logs network-app                                           
+lehieu@192 network % docker logs --help 
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+
+Aliases:
+  docker container logs, docker logs
+
+Options:
+      --details        Show extra details provided to logs
+  -f, --follow         Follow log output
+      --since string   Show logs since timestamp (e.g. "2013-01-02T13:23:37Z") or relative (e.g. "42m" for 42 minutes)
+  -n, --tail string    Number of lines to show from the end of the logs (default "all")
+  -t, --timestamps     Show timestamps
+      --until string   Show logs before a timestamp (e.g. "2013-01-02T13:23:37Z") or relative (e.g. "42m" for 42 minutes)
+lehieu@192 network % docker logs --details
+"docker logs" requires exactly 1 argument.
+See 'docker logs --help'.
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+lehieu@192 network % docker logs --details network-app
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED             STATUS                       PORTS                                                        NAMES
+135cb4f455eb   nothisu/network                                   "docker-entrypoint.s…"    3 minutes ago       Up 3 minutes                 0.0.0.0:3000->3000/tcp                                       network-app
+146060e60daf   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_creative-contact-prealpha
+62dd9cbe80a9   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   8080/tcp                                                     supabase_pg_meta_creative-contact-prealpha
+946c274c38fc   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    About an hour ago   Up About an hour             8081/tcp                                                     supabase_edge_runtime_creative-contact-prealpha
+46e0644f8d04   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                About an hour ago   Up About an hour (healthy)   8080/tcp                                                     supabase_imgproxy_creative-contact-prealpha
+16de402506a3   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    About an hour ago   Up About an hour (healthy)   5000/tcp                                                     supabase_storage_creative-contact-prealpha
+3c32a9d01eec   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               About an hour ago   Up About an hour             3000/tcp                                                     supabase_rest_creative-contact-prealpha
+edd140fe1afc   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    About an hour ago   Up About an hour (healthy)   4000/tcp                                                     supabase_realtime_creative-contact-prealpha
+d53d422c41a6   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    2 hours ago         Up 2 hours (healthy)         1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_creative-contact-prealpha
+dc9c7bd9f357   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    2 hours ago         Up 2 hours (healthy)         9999/tcp                                                     supabase_auth_creative-contact-prealpha
+f267ce325a15   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    2 hours ago         Up 2 hours (healthy)         8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_creative-contact-prealpha
+09462e932d7a   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   2 hours ago         Up 2 hours (healthy)         0.0.0.0:54322->5432/tcp                                      supabase_db_creative-contact-prealpha
+lehieu@192 network % docker stop network-app
+network-app
+lehieu@192 network % 
+
+---- app.js ----
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const axios = require("axios").default;
+// const mongoose = require("mongoose");
+
+// const Favorite = require("./models/favorite");
+
+const app = express();
+
+app.use(bodyParser.json());
+
+app.get("/movies", async (req, res) => {
+  try {
+    const response = await axios.get("https://swapi.dev/api/films");
+    res.status(200).json({ movies: response.data });
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+app.get("/people", async (req, res) => {
+  try {
+    const response = await axios.get("https://swapi.dev/api/people");
+    res.status(200).json({ people: response.data });
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Serve the HTML form
+app.get("/", (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>VN Public APIs</title>
+            <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #f4f4f4;
+        }
+        h1 {
+          color: #333;
+        }
+        form {
+          background: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input, button {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        input {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        button {
+          padding: 10px;
+          background: #007BFF;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        button:hover {
+          background: #0056b3;
+        }
+        #result {
+          margin-top: 20px;
+          white-space: pre-wrap;
+          background: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      </style>
+    </head>
+    <body>
+     <h1>Thông tin xã, phường, quận</h1>
+      <form id="locationForm">
+        <button type="button" onclick="fetchProvinces()">Lấy thông tin tỉnh/thành phố</button>
+        <button type="button" onclick="fetchDistricts()">Lấy thông tin quận/huyện</button>
+        <label for="provinceCode">Mã tỉnh/thành phố:</label>
+        <input type="text" id="provinceCode" name="provinceCode">
+        <button type="button" onclick="fetchDistrictsByProvince()">Lấy thông tin quận/huyện theo tỉnh/thành phố</button>
+        <button type="button" onclick="fetchWards()">Lấy thông tin xã/phường</button>
+        <label for="districtCode">Mã quận/huyện:</label>
+        <input type="text" id="districtCode" name="districtCode">
+        <button type="button" onclick="fetchWardsByDistrict()">Lấy thông tin xã/phường theo quận/huyện</button>
+      </form>
+      <div id="result"></div>
+
+      <script>
+        async function fetchProvinces() {
+          const response = await fetch('/provinces/getAll');
+          const data = await response.json();
+          document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+        }
+
+        async function fetchDistricts() {
+          const response = await fetch('/districts/getAll');
+          const data = await response.json();
+          document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+        }
+
+        async function fetchDistrictsByProvince() {
+          const provinceCode = document.getElementById('provinceCode').value;
+          const response = await fetch(\`/districts/getByProvince/\${provinceCode}\`);
+          const data = await response.json();
+          document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+        }
+
+        async function fetchWards() {
+          const response = await fetch('/wards/getAll');
+          const data = await response.json();
+          document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+        }
+
+        async function fetchWardsByDistrict() {
+          const districtCode = document.getElementById('districtCode').value;
+          const response = await fetch(\`/wards/getByDistrict/\${districtCode}\`);
+          const data = await response.json();
+          document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+        }
+
+
+      </script>
+    </body>
+    </html>
+  `);
+});
+
+
+app.get("/provinces/getAll", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://vn-public-apis.fpo.vn/provinces/getAll?limit=-1"
+    );
+    res.status(200).json({ provinces: response.data });
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+}
+);
+
+app.get("/districts/getAll", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://vn-public-apis.fpo.vn/districts/getAll?limit=-1"
+    );
+    res.status(200).json({ provinces: response.data });
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+app.get('/districts/getByProvince/:provinceCode', async (req, res) => {
+  const { provinceCode } = req.params;
+  try {
+    const response = await axios.get(`https://vn-public-apis.fpo.vn/districts/getByProvince?provinceCode=${provinceCode}&limit=-1`);
+    res.status(200).json({ districts: response.data });
+  } catch (error) {
+    res.status(500).json({ message: 'Something went wrong.' });
+  }
+});
+
+app.get("/wards/getAll", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://vn-public-apis.fpo.vn/wards/getAll?limit=-1"
+    );
+    res.status(200).json({ provinces: response.data });
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+app.get('/wards/getByDistrict/:districtCode', async (req, res) => {
+  const { districtCode } = req.params;
+  try {
+    const response = await axios.get(`https://vn-public-apis.fpo.vn/wards/getByDistrict?districtCode=${districtCode}&limit=-1`);
+    res.status(200).json({ wards: response.data });
+  } catch (error) {
+    res.status(500).json({ message: 'Something went wrong.' });
+  }
+}
+);
+
+
+
+app.listen(3001);
+
+// app.get("/favorites", async (req, res) => {
+//   const favorites = await Favorite.find();
+//   res.status(200).json({
+//     favorites: favorites,
+//   });
+// });
+// app.post("/favorites", async (req, res) => {
+//   const favName = req.body.name;
+//   const favType = req.body.type;
+//   const favUrl = req.body.url;
+
+//   try {
+//     if (favType !== "movie" && favType !== "character") {
+//       throw new Error('"type" should be "movie" or "character"!');
+//     }
+//     const existingFav = await Favorite.findOne({ name: favName });
+//     if (existingFav) {
+//       throw new Error("Favorite exists already!");
+//     }
+//   } catch (error) {
+//     return res.status(500).json({ message: error.message });
+//   }
+
+//   const favorite = new Favorite({
+//     name: favName,
+//     type: favType,
+//     url: favUrl,
+//   });
+
+//   try {
+//     await favorite.save();
+//     res
+//       .status(201)
+//       .json({ message: "Favorite saved!", favorite: favorite.toObject() });
+//   } catch (error) {
+//     res.status(500).json({ message: "Something went wrong." });
+//   }
+// });
+
+// mongoose.connect(
+//   // Container
+//   // "mongodb://host.docker.internal:27017/swfavorites",
+//   // or any 'http://host.docker.internal:8100',
+//   // NodeJS
+//   'mongodb://127.0.0.2:27017/swfavorites',
+//   // 'mongodb://localhost:27017/swfavorites',
+//   { useNewUrlParser: true },
+//   (err) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       app.listen(3000);
+//     }
+//   }
+// );
