@@ -8,11 +8,10 @@ const mongoose = require("mongoose");
 
 mongoose.connect(
   // Container
-  "mongodb://host.docker.internal:27017/vn_public_apis",
-  // "mongodb://172.17.0.2:27017/vn_public_apis", 
-  // or any 'http://host.docker.internal:8100',
+  // "mongodb://host.docker.internal:27017/vn_public_apis", // Container host
+  // "mongodb://172.17.0.2:27017/vn_public_apis", // MongoDB image
   // NodeJS
-  // "mongodb://localhost:27017/vn_public_apis",
+  "mongodb://localhost:27017/vn_public_apis", // Local MongoDB
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -194,6 +193,62 @@ app.get("/vn_public_apis", async (req, res) => {
   }
 });
 
+// Retrieve and display provinces
+app.get("/provinces/getAll", async (req, res) => {
+  try {
+    const provinces = await Province.find();
+    res.status(200).json(provinces);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Retrieve and display districts
+app.get("/districts/getAll", async (req, res) => {
+  try {
+    const districts = await District.find();
+    res.status(200).json(districts);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Retrieve and display districts by province code
+app.get("/districts/getByProvince/:provinceCode", async (req, res) => {
+  const { provinceCode } = req.params;
+  try {
+    const districts = await District.find({ provinceCode });
+    res.status(200).json(districts);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Retrieve and display wards
+app.get("/wards/getAll", async (req, res) => {
+  try {
+    const wards = await Ward.find();
+    res.status(200).json(wards);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Retrieve and display wards by district code
+app.get("/wards/getByDistrict/:districtCode", async (req, res) => {
+  const { districtCode } = req.params;
+  try {
+    const wards = await Ward.find({ districtCode });
+    res.status(200).json(wards);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+
 /* app.get("/provinces/getAll", async (req, res) => {
   try {
     const response = await axios.get(
@@ -281,62 +336,6 @@ app.get("/wards/getByDistrict/:districtCode", async (req, res) => {
     res.status(500).json({ message: "Something went wrong." });
   }
 }); */
-
-// Retrieve and display provinces
-app.get("/provinces/getAll", async (req, res) => {
-  try {
-    const provinces = await Province.find();
-    res.status(200).json(provinces);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-// Retrieve and display districts
-app.get("/districts/getAll", async (req, res) => {
-  try {
-    const districts = await District.find();
-    res.status(200).json(districts);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-// Retrieve and display districts by province code
-app.get("/districts/getByProvince/:provinceCode", async (req, res) => {
-  const { provinceCode } = req.params;
-  try {
-    const districts = await District.find({ provinceCode });
-    res.status(200).json(districts);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-// Retrieve and display wards
-app.get("/wards/getAll", async (req, res) => {
-  try {
-    const wards = await Ward.find();
-    res.status(200).json(wards);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-// Retrieve and display wards by district code
-app.get("/wards/getByDistrict/:districtCode", async (req, res) => {
-  const { districtCode } = req.params;
-  try {
-    const wards = await Ward.find({ districtCode });
-    res.status(200).json(wards);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
 
 /* app.get("/favorites", async (req, res) => {
   const favorites = await Favorite.find();

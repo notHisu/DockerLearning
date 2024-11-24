@@ -1352,6 +1352,168 @@ local     supabase_db_creative-contact-prealpha
 local     supabase_inbucket_creative-contact-prealpha
 local     supabase_storage_creative-contact-prealpha
 lehieu@192 network % 
+lehieu@192 network % docker images 
+REPOSITORY                              TAG                IMAGE ID       CREATED             SIZE
+nothisu/network                         latest             820606027c10   About an hour ago   1.17GB
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   13 days ago         478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   2 weeks ago         692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago         631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   4 weeks ago         45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   5 weeks ago         352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago        206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago        2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago        322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago         149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago         162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago         25.1MB
+lehieu@192 network % docker compise
+docker: 'compise' is not a docker command.
+See 'docker --help'
+lehieu@192 network % docker --help 
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  debug*      Get a shell into any image or container
+  desktop*    Docker Desktop commands (Alpha)
+  dev*        Docker Dev Environments
+  extension*  Manages Docker extensions
+  feedback*   Provide feedback, right in your terminal!
+  image       Manage images
+  init*       Creates Docker-related starter files for your project
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image
+  scout*      Docker Scout
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/Users/lehieu/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/Users/lehieu/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/Users/lehieu/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/Users/lehieu/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+lehieu@192 network % docker compose --help
+
+Usage:  docker compose [OPTIONS] COMMAND
+
+Define and run multi-container applications with Docker
+
+Options:
+      --all-resources              Include all resources, even those not used by services
+      --ansi string                Control when to print ANSI control characters ("never"|"always"|"auto") (default "auto")
+      --compatibility              Run compose in backward compatibility mode
+      --dry-run                    Execute command in dry run mode
+      --env-file stringArray       Specify an alternate environment file
+  -f, --file stringArray           Compose configuration files
+      --parallel int               Control max parallelism, -1 for unlimited (default -1)
+      --profile stringArray        Specify a profile to enable
+      --progress string            Set type of progress output (auto, tty, plain, json, quiet) (default "auto")
+      --project-directory string   Specify an alternate working directory
+                                   (default: the path of the, first specified, Compose file)
+  -p, --project-name string        Project name
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a service's running container
+  build       Build or rebuild services
+  config      Parse, resolve and render compose file in canonical format
+  cp          Copy files/folders between a service container and the local filesystem
+  create      Creates containers for a service
+  down        Stop and remove containers, networks
+  events      Receive real time events from containers
+  exec        Execute a command in a running container
+  images      List images used by the created containers
+  kill        Force stop service containers
+  logs        View output from containers
+  ls          List running compose projects
+  pause       Pause services
+  port        Print the public port for a port binding
+  ps          List containers
+  pull        Pull service images
+  push        Push service images
+  restart     Restart service containers
+  rm          Removes stopped service containers
+  run         Run a one-off command on a service
+  scale       Scale services 
+  start       Start services
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop services
+  top         Display the running processes
+  unpause     Unpause services
+  up          Create and start containers
+  version     Show the Docker Compose version information
+  wait        Block until containers of all (or specified) services stop.
+  watch       Watch build context for service and rebuild/refresh containers when files are updated
+
+Run 'docker compose COMMAND --help' for more information on a command.
+lehieu@192 network % 
 
 ---- app.js ----
 
@@ -1365,11 +1527,10 @@ const mongoose = require("mongoose");
 
 mongoose.connect(
   // Container
-  "mongodb://host.docker.internal:27017/vn_public_apis",
-  // "mongodb://172.17.0.2:27017/vn_public_apis", 
-  // or any 'http://host.docker.internal:8100',
+  // "mongodb://host.docker.internal:27017/vn_public_apis", // Container host
+  // "mongodb://172.17.0.2:27017/vn_public_apis", // MongoDB image
   // NodeJS
-  // "mongodb://localhost:27017/vn_public_apis",
+  "mongodb://localhost:27017/vn_public_apis", // Local MongoDB
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -1551,6 +1712,62 @@ app.get("/vn_public_apis", async (req, res) => {
   }
 });
 
+// Retrieve and display provinces
+app.get("/provinces/getAll", async (req, res) => {
+  try {
+    const provinces = await Province.find();
+    res.status(200).json(provinces);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Retrieve and display districts
+app.get("/districts/getAll", async (req, res) => {
+  try {
+    const districts = await District.find();
+    res.status(200).json(districts);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Retrieve and display districts by province code
+app.get("/districts/getByProvince/:provinceCode", async (req, res) => {
+  const { provinceCode } = req.params;
+  try {
+    const districts = await District.find({ provinceCode });
+    res.status(200).json(districts);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Retrieve and display wards
+app.get("/wards/getAll", async (req, res) => {
+  try {
+    const wards = await Ward.find();
+    res.status(200).json(wards);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+// Retrieve and display wards by district code
+app.get("/wards/getByDistrict/:districtCode", async (req, res) => {
+  const { districtCode } = req.params;
+  try {
+    const wards = await Ward.find({ districtCode });
+    res.status(200).json(wards);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+
 /* app.get("/provinces/getAll", async (req, res) => {
   try {
     const response = await axios.get(
@@ -1639,62 +1856,6 @@ app.get("/wards/getByDistrict/:districtCode", async (req, res) => {
   }
 }); */
 
-// Retrieve and display provinces
-app.get("/provinces/getAll", async (req, res) => {
-  try {
-    const provinces = await Province.find();
-    res.status(200).json(provinces);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-// Retrieve and display districts
-app.get("/districts/getAll", async (req, res) => {
-  try {
-    const districts = await District.find();
-    res.status(200).json(districts);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-// Retrieve and display districts by province code
-app.get("/districts/getByProvince/:provinceCode", async (req, res) => {
-  const { provinceCode } = req.params;
-  try {
-    const districts = await District.find({ provinceCode });
-    res.status(200).json(districts);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-// Retrieve and display wards
-app.get("/wards/getAll", async (req, res) => {
-  try {
-    const wards = await Ward.find();
-    res.status(200).json(wards);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-// Retrieve and display wards by district code
-app.get("/wards/getByDistrict/:districtCode", async (req, res) => {
-  const { districtCode } = req.params;
-  try {
-    const wards = await Ward.find({ districtCode });
-    res.status(200).json(wards);
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
-});
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
-
 /* app.get("/favorites", async (req, res) => {
   const favorites = await Favorite.find();
   res.status(200).json({
@@ -1751,5 +1912,7 @@ mongoose.connect(
   }
 );
  */
+
+----
 
 lehieu@192 network % docker pull nothisu/network 
