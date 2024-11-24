@@ -1287,6 +1287,71 @@ mongodb
 lehieu@192 network % docker run -d -p 3000:3000 --name network-app nothisu/network
 bba0b01a63f3f343dddcd2bbd94ab728845dfb86b148220aaf042a0649d9862c
 lehieu@192 network % 
+lehieu@192 network % docker volume
+
+Usage:  docker volume COMMAND
+
+Manage volumes
+
+Commands:
+  create      Create a volume
+  inspect     Display detailed information on one or more volumes
+  ls          List volumes
+  prune       Remove unused local volumes
+  rm          Remove one or more volumes
+
+Run 'docker volume COMMAND --help' for more information on a command.
+lehieu@192 network % docker volume ls 
+DRIVER    VOLUME NAME
+local     3f18c0dfa3fe50b47384f4d79b48c6a7391a36d17ce48cac45549d1f01d8d9de
+local     1548c8dc0f99e0c75d21879a4c2773139bed70ee8ddf0296a335f1e44def0323
+local     7255aae7644347eef32b143c9cfd66ae2ac08edc95d18dda9fc5682f872c37b2
+local     761297a7fdfde512d6b5637ae53fc9d424d361ee5e3fa4d5c731f3c207959d53
+local     86532442a5ea19439b45967f87b1d5a4597f7760dcfe4dcaeff55f8b6136c77b
+local     b7d925af25d6218322b2f61f17795d7943fb567a99307df163c3e2f6441f55be
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@192 network % docker ps -a 
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED         STATUS                            PORTS      NAMES
+bba0b01a63f3   nothisu/network                                   "docker-entrypoint.s…"    5 minutes ago   Exited (137) About a minute ago              network-app
+70c3ed6ed30c   public.ecr.aws/supabase/studio:20241106-f29003e   "docker-entrypoint.s…"    2 days ago      Exited (0) 10 minutes ago                    supabase_studio_creative-contact-prealpha
+a0d57ccad150   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s…"    2 days ago      Exited (0) 10 minutes ago                    supabase_pg_meta_creative-contact-prealpha
+fe841572fd6d   public.ecr.aws/supabase/edge-runtime:v1.61.0      "sh -c 'cat <<'EOF' …"    2 days ago      Exited (255) 19 hours ago         8081/tcp   supabase_edge_runtime_creative-contact-prealpha
+98973ac538a0   public.ecr.aws/supabase/imgproxy:v3.8.0           "imgproxy"                2 days ago      Exited (0) 10 minutes ago                    supabase_imgproxy_creative-contact-prealpha
+d5305da2cfd9   public.ecr.aws/supabase/storage-api:v1.13.0       "docker-entrypoint.s…"    2 days ago      Exited (0) 10 minutes ago                    supabase_storage_creative-contact-prealpha
+ff71f760ddc4   public.ecr.aws/supabase/postgrest:v12.2.3         "postgrest"               2 days ago      Exited (255) 10 minutes ago                  supabase_rest_creative-contact-prealpha
+95bd791da337   public.ecr.aws/supabase/realtime:v2.30.34         "/usr/bin/tini -s -g…"    2 days ago      Exited (0) 10 minutes ago                    supabase_realtime_creative-contact-prealpha
+d308a2b3ee45   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh …"    2 days ago      Exited (0) 10 minutes ago                    supabase_inbucket_creative-contact-prealpha
+578b038d1825   public.ecr.aws/supabase/gotrue:v2.163.2           "auth"                    2 days ago      Exited (0) 10 minutes ago                    supabase_auth_creative-contact-prealpha
+f63039afe95e   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' …"    2 days ago      Exited (137) 9 minutes ago                   supabase_kong_creative-contact-prealpha
+1d0f609a1128   public.ecr.aws/supabase/postgres:15.6.1.104       "sh -c '\ncat <<'EOF'…"   2 days ago      Exited (137) 9 minutes ago                   supabase_db_creative-contact-prealpha
+lehieu@192 network % docker images
+REPOSITORY                              TAG                IMAGE ID       CREATED         SIZE
+nothisu/network                         latest             e6451cfa24ab   8 minutes ago   1.17GB
+public.ecr.aws/supabase/storage-api     v1.13.0            5b934e90e6f2   12 days ago     478MB
+public.ecr.aws/supabase/studio          20241106-f29003e   7e36aff11700   2 weeks ago     692MB
+public.ecr.aws/supabase/edge-runtime    v1.61.0            a5ce91947797   2 weeks ago     631MB
+public.ecr.aws/supabase/gotrue          v2.163.2           861c8b9e6fc2   4 weeks ago     45.5MB
+public.ecr.aws/supabase/postgres-meta   v0.84.2            b8655f4b182c   5 weeks ago     352MB
+public.ecr.aws/supabase/realtime        v2.30.34           2b0b74db6d56   2 months ago    206MB
+public.ecr.aws/supabase/postgres        15.6.1.104         785ba46de01f   3 months ago    2.03GB
+public.ecr.aws/supabase/postgrest       v12.2.3            caefe98d7bc4   3 months ago    322MB
+public.ecr.aws/supabase/kong            2.8.1              a5957d67fc55   2 years ago     149MB
+public.ecr.aws/supabase/imgproxy        v3.8.0             696a5c233e29   2 years ago     162MB
+public.ecr.aws/supabase/inbucket        3.0.3              e50d7c2197ff   2 years ago     25.1MB
+lehieu@192 network % docker start network-app
+network-app
+lehieu@192 network % docker stop network-app
+network-app
+lehieu@192 network % docker volume ls 
+DRIVER    VOLUME NAME
+local     supabase_config_creative-contact-prealpha
+local     supabase_db_creative-contact-prealpha
+local     supabase_inbucket_creative-contact-prealpha
+local     supabase_storage_creative-contact-prealpha
+lehieu@192 network % 
 
 ---- app.js ----
 
@@ -1687,3 +1752,4 @@ mongoose.connect(
 );
  */
 
+lehieu@192 network % docker pull nothisu/network 
