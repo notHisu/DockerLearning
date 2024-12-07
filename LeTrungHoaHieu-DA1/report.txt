@@ -1,4 +1,4 @@
-Các Framework Phát Triển Được Sử Dụng Trong Các Container
+Các Framework phát triển được sử dụng trong các Container
 
 Frontend
 
@@ -25,7 +25,7 @@ Database
 
 Container database sử dụng MongoDB, một chương trình cơ sở dữ liệu NoSQL sử dụng các tài liệu kiểu JSON với các schema tùy chọn. Image MongoDB được chỉ định trong file docker-compose.yml, và dữ liệu ban đầu được thiết lập thông qua script init.js.
 
-Các Lệnh Docker Hữu Ích
+Các lệnh Docker hữu ích
 
 `docker build`
 
