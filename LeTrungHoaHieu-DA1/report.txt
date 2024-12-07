@@ -1,0 +1,70 @@
+Các Framework Phát Triển Được Sử Dụng Trong Các Container
+
+Frontend
+
+Container frontend sử dụng các framework và thư viện sau:
+
+1. Express.js: Một framework ứng dụng web Node.js tối giản và linh hoạt, cung cấp một bộ tính năng mạnh mẽ cho các ứng dụng web và di động. Nó được sử dụng để xử lý các yêu cầu HTTP và phục vụ ứng dụng frontend.
+2. Axios: Một thư viện HTTP client dựa trên promise cho trình duyệt và Node.js. Nó được sử dụng để gửi các yêu cầu HTTP từ frontend đến backend API.
+
+Container frontend được định nghĩa trong các file Dockerfile và docker-compose.yml. Dockerfile chỉ định image Node.js, thiết lập thư mục làm việc, cài đặt các phụ thuộc và chạy ứng dụng.
+
+Backend
+
+Container backend sử dụng các framework và thư viện sau:
+
+1. Express.js: Được sử dụng để tạo ra server backend và xử lý các yêu cầu HTTP.
+2. Mongoose: Một thư viện Object Data Modeling (ODM) cho MongoDB và Node.js. Nó cung cấp một giải pháp đơn giản, dựa trên schema để mô hình hóa dữ liệu ứng dụng.
+3. Morgan: Middleware ghi log các yêu cầu HTTP cho Node.js. Nó được sử dụng để ghi lại các yêu cầu HTTP vào file `access.log`.
+4. Body-Parser: Middleware để phân tích các body của yêu cầu đầu vào trước khi được xử lý bởi các handler, và cung cấp chúng dưới thuộc tính `req.body`.
+5. CORS: Middleware để bật Cross-Origin Resource Sharing (CORS) với các tùy chọn khác nhau.
+
+Container backend được định nghĩa trong các file Dockerfile và docker-compose.yml. Dockerfile chỉ định image Node.js, thiết lập thư mục làm việc, cài đặt các phụ thuộc và chạy ứng dụng.
+
+Database
+
+Container database sử dụng MongoDB, một chương trình cơ sở dữ liệu NoSQL sử dụng các tài liệu kiểu JSON với các schema tùy chọn. Image MongoDB được chỉ định trong file docker-compose.yml, và dữ liệu ban đầu được thiết lập thông qua script init.js.
+
+Các Lệnh Docker Hữu Ích
+
+`docker build`
+
+Lệnh `docker build` xây dựng các Docker images từ một Dockerfile và "context". Context là một tập hợp các tệp được đặt trong một PATH hoặc URL cụ thể. Quá trình build có thể tham chiếu đến bất kỳ tệp nào trong context.
+
+Lệnh này rất quan trọng để tạo ra các Docker images, giúp đóng gói ứng dụng và các phụ thuộc của nó vào trong một image duy nhất.
+
+`docker run`
+
+Lệnh `docker run` tạo và khởi chạy một container từ một image đã chỉ định. Nó cũng có thể được sử dụng để thay thế lệnh mặc định được chỉ định trong Dockerfile.
+
+Lệnh này được sử dụng để khởi chạy các container từ các image. Đây là cách chủ yếu để chạy các ứng dụng trong Docker.
+
+`docker volume`
+
+Lệnh `docker volume` quản lý các Docker volumes. Volumes được sử dụng để duy trì dữ liệu được tạo ra và sử dụng bởi các container Docker.
+
+Volumes rất quan trọng trong việc lưu trữ dữ liệu lâu dài. Chúng cho phép lưu trữ dữ liệu ngoài hệ thống tệp của container, giúp dữ liệu không bị mất khi container bị xóa.
+
+`docker-compose up`
+
+Lệnh `docker-compose up` xây dựng, (tạo lại), khởi chạy và kết nối với các container cho dịch vụ được định nghĩa trong file docker-compose.yml.
+
+Lệnh này giúp đơn giản hóa quá trình khởi chạy nhiều container được định nghĩa trong file docker-compose.yml. Nó đặc biệt hữu ích khi thiết lập các ứng dụng phức tạp với nhiều dịch vụ.
+
+`docker-compose down`
+
+Lệnh `docker-compose down` dừng và xóa các container, mạng, volumes và images được tạo ra bởi lệnh `docker-compose up`.
+
+Lệnh này giúp dọn dẹp môi trường Docker của bạn. Nó đảm bảo rằng tất cả các tài nguyên được tạo ra bởi lệnh `docker-compose up` sẽ được xóa.
+
+`docker ps`
+
+Lệnh `docker ps` liệt kê các container đang chạy. Nó cung cấp thông tin như ID container, image, lệnh, thời gian tạo, trạng thái, cổng và tên của container.
+
+Lệnh này hữu ích để theo dõi trạng thái của các container. Nó cho phép bạn xem các container nào đang chạy và trạng thái hiện tại của chúng.
+
+`docker logs`
+
+Lệnh `docker logs` lấy log của một container. Nó rất hữu ích trong việc gỡ lỗi và theo dõi đầu ra của ứng dụng.
+
+Lệnh này rất quan trọng trong việc xử lý sự cố với các container. Nó cho phép bạn xem đầu ra và log lỗi của ứng dụng, từ đó giúp bạn xác định và khắc phục sự cố.
